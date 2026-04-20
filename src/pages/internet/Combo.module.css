@@ -1,0 +1,269 @@
+.comboPage {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* HERO SECTION */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('https://s3-api.fpt.vn/fptvn-storage/2025-02-09/1739097611_Banner-Ngoai-hang-Anh-2024-2025-PC.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  max-width: 600px;
+  padding: 0 20px;
+  margin-right: auto;
+  margin-left: 10%;
+}
+
+.heroTitle {
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.heroSubtitle {
+  font-size: 18px;
+  color: #e2e8f0;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.heroBtn {
+  background: linear-gradient(135deg, #f57020, #e85d04);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 112, 32, 0.4);
+}
+
+.heroBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 112, 32, 0.6);
+}
+
+/* V.VIP SECTION */
+.vipSection {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.sectionSubtitle {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.vipGrid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vipCard {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  max-width: 450px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.vipCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-color: #cbd5e1;
+}
+
+.vipImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.vipContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vipName {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f57020;
+  margin-bottom: 8px;
+}
+
+.vipPrice {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.vipPrice span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.vipFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+
+.vipFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.vipCheck {
+  color: #2ecc71;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.vipBtn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vipCard:hover .vipBtn {
+  background-color: #f57020;
+  color: #fff;
+}
+
+/* COMBO SECTION */
+.comboSection {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* BENEFITS SECTION */
+.benefitsSection {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefitItem {
+  text-align: center;
+  padding: 30px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.benefitItem:hover {
+  transform: translateY(-5px);
+  background: #f1f5f9;
+}
+
+.benefitIcon {
+  width: 60px;
+  height: 60px;
+  background: rgba(245, 112, 32, 0.1);
+  color: #f57020;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.benefitTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.benefitDesc {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .vipGrid {
+    flex-direction: column;
+  }
+  .heroTitle {
+    font-size: 32px;
+  }
+  .heroContent {
+    margin-left: auto;
+    text-align: center;
+  }
+}

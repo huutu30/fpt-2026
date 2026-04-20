@@ -1,0 +1,102 @@
+.siteFooter {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 60px 0 0 0;
+  font-family: inherit;
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footerCol h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.companyInfo p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.companyInfo strong {
+  color: #e2e8f0;
+}
+
+.contactLink {
+  color: #f57020;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 12px;
+}
+
+.footerLinks a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footerLinks a:hover {
+  color: #f57020;
+  transform: translateX(4px);
+}
+
+.socialBox {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  background-color: #1e293b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background-color: #f57020;
+  transform: translateY(-3px);
+}
+
+.footerBottom {
+  background-color: #020617;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  border-top: 1px solid #1e293b;
+}
+
+@media (max-width: 768px) {
+  .footerTop {
+    grid-template-columns: 1fr;
+  }
+}

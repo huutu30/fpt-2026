@@ -1,0 +1,119 @@
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight, Download, Upload, Check } from 'lucide-react';
+
+/**
+ * ProductCardSlider - Card slider tái sử dụng cho mọi section
+ * Props:
+ *  - title: tiêu đề section
+ *  - subtitle: phụ đề (optional)
+ *  - data: mảng sản phẩm
+ *  - region: vùng miền hiện tại
+ *  - badgeSub: dòng phụ trên banner overlay (optional, mặc định = tên gói)
+ */
+export default function ProductCardSlider({ title, subtitle, data, region, badgeSub }) {
+  const scrollRef = useRef(null);
+
+  const scroll = (dir) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const w = el.offsetWidth * 0.75;
+    el.scrollBy({ left: dir === 'left' ? -w : w, behavior: 'smooth' });
+  };
+
+  if (!data || data.length === 0) return null;
+
+  return (
+    <section className="combo-sport-section" aria-label={title}>
+      {/* HEADER */}
+      <div className="combo-sport-header">
+        <div className="combo-sport-title-group">
+          {title && <h2 className="combo-sport-title">{title}</h2>}
+          {subtitle && <p className="combo-sport-subtitle">{subtitle}</p>}
+        </div>
+        <div className="combo-sport-nav">
+          <button className="combo-nav-btn" onClick={() => scroll('left')} aria-label="Xem trước">
+            <ChevronLeft size={22} />
+          </button>
+          <button className="combo-nav-btn" onClick={() => scroll('right')} aria-label="Xem tiếp">
+            <ChevronRight size={22} />
+          </button>
+        </div>
+      </div>
+
+      {/* CARD TRACK */}
+      <div className="combo-sport-track" ref={scrollRef}>
+        {data.map((item) => {
+          const price = typeof item.price === 'object' ? item.price[region] : item.price;
+
+          return (
+            <article className="combo-card" key={item.id}>
+              {/* BANNER IMAGE + OVERLAY */}
+              <div className="combo-card-banner">
+                <img
+                  src={item.image}
+                  alt={item.alt || `${item.name} FPT Telecom`}
+                  loading="lazy"
+                  width="300"
+                  height="180"
+                />
+                <div className="combo-card-overlay">
+                  <span className="combo-card-badge-name">{item.name}</span>
+                  {badgeSub && <span className="combo-card-badge-sub">{badgeSub}</span>}
+                </div>
+                {item.promo && <span className="combo-promo-badge">{item.promo}</span>}
+              </div>
+
+              {/* CONTENT */}
+              <div className="combo-card-body">
+                <h3 className="combo-card-name">{item.name}</h3>
+                <div className="combo-card-price">
+                  <span className="combo-price-value">{(price || 0).toLocaleString('vi-VN')}đ</span>
+                  <span className="combo-price-unit">/tháng</span>
+                </div>
+
+                {/* SPEED BOX */}
+                {item.dl && item.ul && (
+                  <div className="combo-speed-box">
+                    <span className="combo-speed-label">Tốc độ (Download/Upload)</span>
+                    <div className="combo-speed-row">
+                      <div className="combo-speed-item">
+                        <Download size={14} className="combo-speed-icon dl" aria-hidden="true" />
+                        <span>{item.dl}</span>
+                      </div>
+                      <div className="combo-speed-item">
+                        <Upload size={14} className="combo-speed-icon ul" aria-hidden="true" />
+                        <span>{item.ul}</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* FEATURES */}
+                <ul className="combo-features">
+                  {(item.features || item.details)?.map((f, i) => (
+                    <li key={i}>
+                      <Check size={15} className="combo-check-icon" aria-hidden="true" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* BUTTON */}
+                <div className="combo-card-actions">
+                  <Link
+                    to={item.path || `/dang-ky?product=${encodeURIComponent(item.name)}`}
+                    className="combo-btn-primary"
+                    title={`Đăng ký ${item.name} ngay hôm nay`}
+                  >
+                    Đăng ký ngay
+                  </Link>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}

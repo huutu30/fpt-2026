@@ -1,0 +1,286 @@
+.gameThuPage {
+  background-color: #0f172a; /* Slate 900 */
+  min-height: 100vh;
+  padding-bottom: 60px;
+  color: #f8fafc;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  background: radial-gradient(circle at center, #1e1b4b 0%, #020617 100%);
+  padding: 100px 0 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop') center/cover;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #22d3ee, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+.heroDesc {
+  font-size: 18px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* SECTION COMMON */
+.section {
+  padding: 80px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sectionTitle span {
+  color: #22d3ee;
+}
+
+.sectionDesc {
+  font-size: 16px;
+  color: #94a3b8;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* BENEFITS GRID */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.benefitCard {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  border: 1px solid #334155;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefitCard::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  border-color: #475569;
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.1);
+}
+
+.benefitCard:hover::after {
+  transform: translateX(100%);
+}
+
+.benefitIcon {
+  width: 70px;
+  height: 70px;
+  background: rgba(34, 211, 238, 0.1);
+  color: #22d3ee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.benefitTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 15px;
+}
+
+.benefitDesc {
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* TESTIMONIALS (ESPORTS TEAMS) */
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.teamCard {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  border-left: 4px solid #f59e0b;
+}
+
+.teamName {
+  font-size: 18px;
+  font-weight: 800;
+  color: #f59e0b; /* Màu cam đặc trưng của GAM / Team Flash */
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.teamQuote {
+  font-size: 16px;
+  color: #cbd5e1;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* TABLES & SEO CONTENT */
+.seoContent {
+  background: #1e293b;
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid #334155;
+}
+
+.seoTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.seoText {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.priceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: #0f172a;
+}
+
+.priceTable th, .priceTable td {
+  border: 1px solid #334155;
+  padding: 15px;
+  text-align: left;
+}
+
+.priceTable th {
+  background: #1e293b;
+  font-weight: 800;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.priceTable td {
+  color: #cbd5e1;
+}
+
+/* FAQ SECTION */
+.faqSection {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  margin-bottom: 20px;
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.faqQuestion {
+  padding: 20px 25px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+  background: #0f172a;
+  border-bottom: 1px solid #334155;
+}
+
+.faqAnswer {
+  padding: 20px 25px;
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* OVERRIDE PRODUCT SLIDER TEXT COLOR FOR DARK BACKGROUND */
+.sliderWrapper {
+  /* Using a specific class to wrap ProductCardSlider so it handles dark mode text gracefully */
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 32px;
+  }
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+  .sectionTitle {
+    font-size: 28px;
+  }
+}
