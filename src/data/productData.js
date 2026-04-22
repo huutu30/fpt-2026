@@ -34,6 +34,55 @@ export const QUICK_LINKS = [
   { id: 'smart-device', label: 'Thiết bị thông minh' },
 ];
 
+export const CATEGORY_DATA = [
+  {
+    id: "ca-nhan",
+    type: "INTERNET",
+    name: "CÁ NHÂN",
+    color: "#f26f21",
+    gradient: "linear-gradient(160deg, #f26f21 0%, #ff9f4a 100%)",
+    image: "https://s3-api.fpt.vn/fptvn-storage/images/product-internet-personal.png",
+    link: "/internet/ca-nhan",
+  },
+  {
+    id: "gia-dinh",
+    type: "INTERNET",
+    name: "GIA ĐÌNH",
+    color: "#1c6dd0",
+    gradient: "linear-gradient(160deg, #1c6dd0 0%, #3b8fe8 100%)",
+    image: "https://s3-api.fpt.vn/fptvn-storage/images/product-internet-family.png",
+    link: "/internet/gia-dinh",
+  },
+  {
+    id: "game-thu",
+    type: "INTERNET",
+    name: "GAME THỦ",
+    color: "#6a0dad",
+    gradient: "linear-gradient(160deg, #6a0dad 0%, #9b27af 100%)",
+    image: "https://s3-api.fpt.vn/fptvn-storage/images/product-internet-gamethu.png",
+    link: "/internet/game-thu",
+  },
+  {
+    id: "giai-tri",
+    type: "TRUYỀN HÌNH",
+    name: "GIẢI TRÍ",
+    color: "#111111",
+    gradient: "linear-gradient(160deg, #1a1a1a 0%, #333333 100%)",
+    image: "https://s3-api.fpt.vn/fptvn-storage/images/product-tv-entertainment.png",
+    link: "/giai-tri/fpt-play",
+  },
+  {
+    id: "camera",
+    type: "THIẾT BỊ",
+    name: "CAMERA",
+    color: "#b05e00",
+    gradient: "linear-gradient(160deg, #b05e00 0%, #d97b1a 100%)",
+    image: "https://s3-api.fpt.vn/fptvn-storage/images/product-camera.png",
+    link: "/thiet-bi/camera",
+  },
+];
+
+
 export const PRODUCT_DATA = {
   ca_nhan: autoOptimizeSEO([
     {

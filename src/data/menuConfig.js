@@ -44,8 +44,7 @@ export const NAV_MENU = [
         color: '#4e69fd',
         items: [
           { name: 'FPT Play', path: '/giai-tri/fpt-play', seoTitle: 'Truyền hình FPT Play - Xem phim, thể thao trực tuyến' },
-          { name: 'Gói cước truyền hình', path: '/giai-tri/combo-tv', seoTitle: 'Bảng giá gói cước truyền hình FPT' },
-          { name: 'Combo Net + TV', path: '/giai-tri/combo-pl', seoTitle: 'Combo Internet kèm truyền hình giá ưu đãi' },
+          { name: 'Combo Ngoại hạng Anh', path: '/giai-tri/ngoai-hang-anh', badge: 'Hot', seoTitle: 'Combo Internet và Truyền hình Ngoại hạng Anh' },
         ]
       },
       {

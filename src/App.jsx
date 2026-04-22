@@ -10,6 +10,7 @@ import GiaDinh from './pages/internet/GiaDinh';
 import GameThu from './pages/internet/GameThu';
 import DoanhNghiep from './pages/internet/DoanhNghiep';
 import FptPlay from './pages/giai-tri/FptPlay';
+import NgoaiHangAnh from './pages/giai-tri/NgoaiHangAnh';
 import Camera from './pages/smart-device/Camera';
 import Register from './pages/register/Register';
 import NewsPage from './pages/news/NewsPage';
@@ -38,8 +39,7 @@ function App() {
 
           {/* NHÓM GIẢI TRÍ */}
           <Route path="/giai-tri/fpt-play" element={<FptPlay region={region} />} />
-          <Route path="/giai-tri/combo-tv" element={<div>Trang Combo TV - Region: {region}</div>} />
-          <Route path="/giai-tri/combo-pl" element={<div>Trang Ngoại hạng Anh - Region: {region}</div>} />
+          <Route path="/giai-tri/ngoai-hang-anh" element={<NgoaiHangAnh region={region} />} />
 
           {/* NHÓM THIẾT BỊ */}
           <Route path="/thiet-bi/camera" element={<Camera region={region} />} />

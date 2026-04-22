@@ -4,6 +4,7 @@ import DiscoverySection from "../../components/home/DiscoverySection";
 import ProductCardSlider from "../../components/common/ProductCardSlider";
 import { PRODUCT_DATA } from "../../data/productData";
 import Wifi7Section from "../../components/home/Wifi7Section";
+import ProductCategorySection from "../../components/home/ProductCategorySection";
 import NewsSection from "../../components/home/NewsSection";
 
 export default function Home({ region }) {
@@ -72,6 +73,9 @@ export default function Home({ region }) {
 
         {/* SECTION 5: SPEEDX - WIFI 7 */}
         <Wifi7Section region={region} />
+
+        {/* SECTION 6: DANH MỤC SẢN PHẨM ĐA DẠNG */}
+        <ProductCategorySection />
       </div>
 
       {/* SECTION 6: TIN TỨC & KHUYẾN MÃI */}
