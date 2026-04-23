@@ -1,18 +1,67 @@
 import React, { useEffect, useState } from 'react';
-import { ShieldCheck, Wifi, Activity, MonitorPlay, CheckCircle, ChevronRight, Download, Upload, Monitor } from 'lucide-react';
+import { ShieldCheck, Wifi, Activity, MonitorPlay, CheckCircle, ChevronRight, ChevronDown, Download, Upload, Monitor, Gamepad2, Trophy } from 'lucide-react';
 import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import NewsSection from '../../components/home/NewsSection';
 import { Link } from 'react-router-dom';
 import styles from './CaNhan.module.css';
 
+const TABS = [
+  { id: 'internet', label: 'Internet Cá Nhân', icon: <Wifi size={18} /> },
+  { id: 'combo', label: 'Combo Truyền Hình', icon: <MonitorPlay size={18} /> },
+  { id: 'thethao', label: 'Combo Thể Thao NHA', icon: <Trophy size={18} /> },
+  { id: 'gamethu', label: 'Game Thủ', icon: <Gamepad2 size={18} /> },
+];
+
+const TAB_CONFIG = {
+  internet: {
+    title: 'Gói cước Internet Tốc độ cao',
+    desc: 'Khám phá các gói cước Internet FPT dành cho cá nhân với mức giá rõ ràng, tốc độ cao, dễ chọn theo nhu cầu học tập, làm việc, giải trí và sử dụng nhiều thiết bị.',
+    dataKey: 'ca_nhan',
+    badgeSub: 'INTERNET CÁ NHÂN',
+  },
+  combo: {
+    title: 'Combo Internet & Truyền hình',
+    desc: 'Cập nhật bảng giá gói cước FPT tích hợp Internet và truyền hình với chi phí tiết kiệm, phù hợp gia đình cần vừa lắp mạng ổn định vừa xem giải trí trên FPT Play.',
+    dataKey: 'gia_dinh',
+    badgeSub: 'COMBO INTERNET & TRUYỀN HÌNH',
+  },
+  thethao: {
+    title: 'Combo Internet Ngoại Hạng Anh',
+    desc: 'Khám phá các gói cước FPT xem Ngoại Hạng Anh với nhiều lựa chọn băng thông, thiết bị đi kèm và ưu đãi đăng ký mới, phù hợp gia đình yêu thể thao.',
+    dataKey: 'the_thao',
+    badgeSub: 'COMBO THỂ THAO NHA',
+  },
+  gamethu: {
+    title: 'Gói cước dành cho Game Thủ',
+    desc: 'Khám phá các gói cước FPT dành cho game thủ với tốc độ cao, đường truyền ổn định và cấu hình phù hợp nhu cầu chơi game online, livestream, giải trí tại nhà.',
+    dataKey: 'f_game',
+    badgeSub: 'GAME THỦ',
+  },
+};
+
+const FAQ_DATA = [
+  { q: "Tôi cần chuẩn bị giấy tờ gì khi đăng ký lắp mạng FPT?", a: "Cá nhân Việt Nam cần CMND/CCCD gốc hoặc bản công chứng. Khách nước ngoài cần hộ chiếu và giấy tạm trú/thường trú hợp lệ. Doanh nghiệp hoặc tổ chức cần Giấy phép kinh doanh, dấu công ty và người đại diện pháp luật." },
+  { q: "Lắp wifi FPT mất bao lâu thì có thể sử dụng?", a: "Sau khi hoàn tất thủ tục đăng ký mạng FPT, kỹ thuật viên sẽ liên hệ và triển khai lắp đặt trong vòng 24–48 giờ. Một số khu vực có thể được lắp ngay trong ngày nếu hạ tầng có sẵn." },
+  { q: "Có những gói cước wifi FPT nào phù hợp để lắp wifi gia đình?", a: "FPT cung cấp nhiều gói cước phù hợp cho hộ gia đình như Giga (300Mbps), Sky (1Gbps) và các combo internet + truyền hình FPT Play. Tùy vào nhu cầu sử dụng, bạn sẽ được tư vấn gói cước tối ưu nhất." },
+  { q: "Chi phí lắp đặt wifi FPT là bao nhiêu?", a: "Phí hòa mạng lắp wifi FPT bao gồm phí cước tháng và phí lắp đặt. Chi phí này sẽ khác nhau tùy theo gói cước, khu vực và chương trình khuyến mãi hiện hành." },
+  { q: "Tôi có thể đăng ký wifi FPT online không?", a: "Bạn có thể đăng ký lắp mạng FPT online qua website fpt.vn. Sau khi xác nhận, nhân viên sẽ hỗ trợ tư vấn và sắp xếp kỹ thuật lắp đặt nhanh chóng." },
+  { q: "Có thể chuyển địa chỉ lắp wifi FPT được không?", a: "Hoàn toàn được. Bạn chỉ cần liên hệ tổng đài hoặc trung tâm FPT gần nhất để đăng ký chuyển địa chỉ mạng FPT. Thời gian xử lý từ 1–2 ngày làm việc và sẽ được giữ nguyên gói cước nếu địa chỉ mới có hạ tầng." },
+  { q: "Khi lắp mạng FPT, tôi được cung cấp thiết bị gì?", a: "Tùy theo gói cước, khách hàng được trang bị modem WiFi 6, WiFi Mesh hoặc thiết bị chuyên dụng như Mikrotik, Aruba... Thiết bị được bảo hành chính hãng, hỗ trợ kỹ thuật 24/7." },
+  { q: "Các hình thức thanh toán khi lắp wifi FPT là gì?", a: "Khách hàng có thể thanh toán bằng ứng dụng Hi FPT, Internet Banking, ví điện tử (MoMo, ZaloPay...), chuyển khoản ngân hàng, hoặc trực tiếp tại các điểm giao dịch FPT." },
+  { q: "Lắp mạng internet FPT có ổn định không?", a: "FPT sử dụng hạ tầng cáp quang FTTH đồng bộ, trang bị modem WiFi 6 hiện đại, mang lại tốc độ truy cập nhanh, ổn định. Ngoài ra, FPT có đội ngũ kỹ thuật hỗ trợ tận nơi nếu xảy ra sự cố mạng." }
+];
+
 export default function CaNhan({ region }) {
   const [activeTab, setActiveTab] = useState('internet');
+  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "Bảng giá gói cước internet FPT cá nhân gia đình | FPT Telecom";
   }, []);
+
+  const currentTab = TAB_CONFIG[activeTab];
 
   return (
     <div className={styles.caNhanPage}>
@@ -25,7 +74,7 @@ export default function CaNhan({ region }) {
               Internet FPT <span>Cá nhân & Gia đình</span>
             </h1>
             <p className={styles.heroDesc}>
-              Trải nghiệm Wi-Fi 6 siêu tốc độ, băng thông không giới hạn. Phù hợp mọi nhu cầu học tập, làm việc và giải trí tại nhà với độ trễ thấp nhất.
+              Khám phá các gói cước Internet FPT dành cho cá nhân và hộ gia đình với mức giá rõ ràng, tốc độ cao, dễ chọn theo nhu cầu học tập, làm việc, giải trí và sử dụng nhiều thiết bị mỗi ngày.
             </p>
             <a href="#packages" className={styles.heroBtn}>
               Xem gói cước <ChevronRight size={20} />
@@ -35,84 +84,54 @@ export default function CaNhan({ region }) {
 
         {/* TABS NAVIGATION */}
         <div className={styles.tabsNav} id="packages">
-          <button 
-            className={`${styles.tabBtn} ${activeTab === 'internet' ? styles.active : ''}`}
-            onClick={() => setActiveTab('internet')}
-          >
-            Internet Cá Nhân
-          </button>
-          <button 
-            className={`${styles.tabBtn} ${activeTab === 'combo' ? styles.active : ''}`}
-            onClick={() => setActiveTab('combo')}
-          >
-            Combo Truyền Hình
-          </button>
+          {TABS.map(tab => (
+            <button
+              key={tab.id}
+              className={`${styles.tabBtn} ${activeTab === tab.id ? styles.active : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
         </div>
 
-        {/* GÓI CƯỚC INTERNET ĐƠN LẺ */}
-        {activeTab === 'internet' && (
-          <section className={styles.section} style={{ paddingTop: '0' }}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Gói cước Internet Tốc độ cao</h2>
-              <p className={styles.sectionDesc}>
-                Khám phá các gói cước Internet FPT dành cho cá nhân với mức giá rõ ràng, tốc độ cao, dễ chọn theo nhu cầu học tập, làm việc, giải trí và sử dụng nhiều thiết bị.
-              </p>
-            </div>
-            
-            <ProductCardSlider 
-              data={PRODUCT_DATA.ca_nhan} 
-              region={region} 
-              badgeSub="INTERNET CÁ NHÂN"
-            />
-          </section>
-        )}
-
-        {/* GÓI CƯỚC COMBO GIA ĐÌNH */}
-        {activeTab === 'combo' && (
-          <section className={styles.section} style={{ paddingTop: '0' }}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Combo Internet & Truyền hình</h2>
-              <p className={styles.sectionDesc}>
-                Cập nhật bảng giá gói cước FPT tích hợp Internet và truyền hình với chi phí tiết kiệm, phù hợp gia đình cần vừa lắp mạng ổn định vừa xem giải trí trên FPT Play.
-              </p>
-            </div>
-            
-            <ProductCardSlider 
-              data={PRODUCT_DATA.gia_dinh} 
-              region={region} 
-              badgeSub="COMBO INTERNET & TRUYỀN HÌNH"
-            />
-          </section>
-        )}
-
-        {/* LÝ DO CHỌN FPT */}
-        <section className={styles.section}>
+        {/* PRODUCT CARDS - Dynamic based on active tab */}
+        <section className={styles.section} style={{ paddingTop: '0' }}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Vì sao nên chọn mạng FPT?</h2>
-            <p className={styles.sectionDesc}>
-              Mạng FPT là sự lựa chọn hàng đầu nhờ hệ thống hạ tầng cáp quang hiện đại và dịch vụ chăm sóc khách hàng chuyên nghiệp 24/7.
-            </p>
+            <h2 className={styles.sectionTitle}>{currentTab.title}</h2>
+            <p className={styles.sectionDesc}>{currentTab.desc}</p>
           </div>
-          <div className={styles.benefitsGrid}>
-            <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}><Wifi size={36} /></div>
-              <h3 className={styles.benefitTitle}>Công nghệ Wi-Fi 6</h3>
-              <p className={styles.benefitDesc}>Trang bị miễn phí Modem Wi-Fi 6 hiện đại, cho vùng phủ sóng rộng hơn, kết nối mượt mà hơn.</p>
+          
+          <ProductCardSlider 
+            data={PRODUCT_DATA[currentTab.dataKey]} 
+            region={region} 
+            badgeSub={currentTab.badgeSub}
+          />
+        </section>
+
+        {/* HIGHLIGHTS - 4 điểm nổi bật */}
+        <section className={styles.section}>
+          <div className={styles.highlightsGrid}>
+            <div className={styles.highlightCard}>
+              <div className={styles.highlightIcon}><Activity size={32} /></div>
+              <h3>Gói cước FPT tốc độ đến 1Gbps</h3>
+              <p>Xem bảng giá mạng FPT với nhiều lựa chọn băng thông mạnh, phù hợp học tập, làm việc và giải trí tại nhà.</p>
             </div>
-            <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}><Activity size={36} /></div>
-              <h3 className={styles.benefitTitle}>Tốc độ vượt trội</h3>
-              <p className={styles.benefitDesc}>Các gói cước Meta, Sky mở khóa băng thông lên đến 1Gbps, giúp học online, chơi game cực kỳ ổn định.</p>
+            <div className={styles.highlightCard}>
+              <div className={styles.highlightIcon}><Wifi size={32} /></div>
+              <h3>Phủ sóng tốt, kết nối ổn định hơn</h3>
+              <p>Bảng giá mạng FPT đi kèm nhiều lựa chọn thiết bị và giải pháp phủ sóng, phù hợp không gian sống hiện đại.</p>
             </div>
-            <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}><ShieldCheck size={36} /></div>
-              <h3 className={styles.benefitTitle}>Bảo mật an toàn F-Safe</h3>
-              <p className={styles.benefitDesc}>Công nghệ bảo mật tự động tích hợp, giúp chặn các trang web độc hại và bảo vệ trẻ em.</p>
+            <div className={styles.highlightCard}>
+              <div className={styles.highlightIcon}><MonitorPlay size={32} /></div>
+              <h3>Trải nghiệm online mượt hơn mỗi ngày</h3>
+              <p>Các gói cước FPT hỗ trợ học online, làm việc từ xa, xem phim, chơi game và kết nối nhiều thiết bị cùng lúc.</p>
             </div>
-            <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}><MonitorPlay size={36} /></div>
-              <h3 className={styles.benefitTitle}>Giải trí đỉnh cao</h3>
-              <p className={styles.benefitDesc}>Kết hợp hoàn hảo với FPT Play, mang đến hàng trăm kênh truyền hình và thể thao độc quyền.</p>
+            <div className={styles.highlightCard}>
+              <div className={styles.highlightIcon}><ShieldCheck size={32} /></div>
+              <h3>Nhiều ưu đãi khi đăng ký gói cước FPT</h3>
+              <p>Cập nhật bảng giá mạng FPT cùng các chương trình khuyến mãi giúp người dùng dễ chọn gói cước phù hợp ngân sách.</p>
             </div>
           </div>
         </section>
@@ -180,23 +199,22 @@ export default function CaNhan({ region }) {
         {/* SEO CONTENT & PRICING TABLES */}
         <section className={styles.section} style={{ paddingTop: '0' }}>
           <div className={styles.seoContent}>
-            <h2 className={styles.seoTitle}>Vì sao gói cước Internet cá nhân FPT là lựa chọn phù hợp cho bạn</h2>
+            <h2 className={styles.seoTitle}>Các gói cước Internet cá nhân FPT - Linh hoạt nhu cầu, dễ chọn theo mức sử dụng</h2>
             <p className={styles.seoText}>
-              Đối với nhu cầu sử dụng Internet tại nhà, người dùng thường quan tâm đến tốc độ ổn định, thiết bị đi kèm, khả năng kết nối nhiều thiết bị và mức giá hợp lý. Các gói cước Internet cá nhân FPT đáp ứng khá tốt những tiêu chí này nhờ hạ tầng cáp quang chuẩn quốc tế, modem Wi-Fi 6 hiện đại và nhiều lựa chọn phù hợp theo từng mức độ sử dụng thực tế.
+              FPT hiện cung cấp nhiều gói cước Internet cá nhân dành cho người dùng tại nhà, từ nhu cầu cơ bản như lướt web, học online, xem phim đến nhu cầu cao hơn như kết nối nhiều thiết bị hoặc cần vùng phủ sóng rộng hơn trong căn hộ, nhà phố.
             </p>
-            <ul style={{ paddingLeft: '20px', marginBottom: '40px', color: '#475569', lineHeight: '1.8', fontSize: '16px' }}>
-              <li style={{marginBottom: '10px'}}><strong>Phù hợp nhu cầu sử dụng tại nhà:</strong> Thiết kế cho người dùng cá nhân, gia đình nhỏ, căn hộ hoặc nhà phố với mức tốc độ và chi phí dễ lựa chọn.</li>
-              <li style={{marginBottom: '10px'}}><strong>Hạ tầng cáp quang ổn định:</strong> Đường truyền cáp quang giúp kết nối Internet ổn định hơn cho học tập, làm việc online, xem video 4K.</li>
-              <li style={{marginBottom: '10px'}}><strong>Trang bị modem Wi-Fi 6:</strong> Hỗ trợ kết nối tốt hơn, giảm độ trễ, cực kỳ mượt mà khi trong nhà có nhiều thiết bị thông minh cùng hoạt động.</li>
-            </ul>
 
             <h2 className={styles.seoTitle}>Bảng giá gói cước Internet cá nhân FPT cho nhu cầu sử dụng tại nhà</h2>
+            <p className={styles.seoText}>
+              Tham khảo bảng giá các gói Internet cá nhân FPT phù hợp cho người ở một mình, gia đình nhỏ, căn hộ chung cư hoặc nhu cầu sử dụng Internet hằng ngày tại nhà.
+            </p>
             <div style={{ overflowX: 'auto', marginBottom: '40px' }}>
               <table className={styles.priceTable}>
                 <thead>
                   <tr>
                     <th>Gói cước</th>
                     <th>Giá cước (chỉ từ)</th>
+                    <th>Đăng ký</th>
                     <th>Thiết bị, dịch vụ đi kèm</th>
                   </tr>
                 </thead>
@@ -204,34 +222,57 @@ export default function CaNhan({ region }) {
                   <tr>
                     <td><strong>Giga</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>195,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Internet%20Giga" className={styles.tableCta}>Đăng ký</Link></td>
                     <td>Modem Wi-Fi 6</td>
                   </tr>
                   <tr>
                     <td><strong>Sky</strong> (1Gb - 300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>195,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Internet%20Sky" className={styles.tableCta}>Đăng ký</Link></td>
                     <td>Modem Wi-Fi 6</td>
                   </tr>
                   <tr>
                     <td><strong>Giga F1</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>205,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Internet%20Giga%20F1" className={styles.tableCta}>Đăng ký</Link></td>
                     <td>Modem Wi-Fi 6, Access Point</td>
                   </tr>
                   <tr>
                     <td><strong>Sky F1</strong> (1Gb - 300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>210,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Internet%20Sky%20F1" className={styles.tableCta}>Đăng ký</Link></td>
                     <td>Modem Wi-Fi 6, Access Point</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Giga F2</strong> (300Mb)</td>
+                    <td style={{ color: '#ea580c', fontWeight: 'bold' }}>225,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Internet%20Giga%20F2" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td>Modem Wi-Fi 6, 2 Access Point</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sky F2</strong> (1Gb - 300Mb)</td>
+                    <td style={{ color: '#ea580c', fontWeight: 'bold' }}>230,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Internet%20Sky%20F2" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td>Modem Wi-Fi 6, 2 Access Point</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p style={{ fontSize: '14px', color: '#94a3b8', fontStyle: 'italic', marginBottom: '40px' }}>
+              * Lưu ý: giá gói cước Internet cá nhân FPT có thể thay đổi theo khu vực, thời điểm đăng ký và chính sách hiện hành. Để nhận báo giá chính xác nhất, bạn có thể nhấn Đăng ký hoặc gọi 1900.6600 để được tư vấn nhanh.
+            </p>
 
             <h2 className={styles.seoTitle}>Bảng giá các gói combo Internet và truyền hình FPT Play</h2>
+            <p className={styles.seoText}>
+              Bảng giá các gói combo Internet và truyền hình FPT Play dành cho nhu cầu giải trí tại nhà:
+            </p>
             <div style={{ overflowX: 'auto' }}>
               <table className={styles.priceTable}>
                 <thead>
                   <tr>
                     <th>Gói cước</th>
                     <th>Giá cước (chỉ từ)</th>
+                    <th>Đăng ký</th>
                     <th>Thiết bị, dịch vụ đi kèm</th>
                   </tr>
                 </thead>
@@ -239,23 +280,32 @@ export default function CaNhan({ region }) {
                   <tr>
                     <td><strong>Combo Giải trí</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>200,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Combo%20Giai%20Tri" className={styles.tableCta}>Đăng ký</Link></td>
                     <td>Modem Wi-Fi 6, FPT Play Box</td>
                   </tr>
                   <tr>
-                    <td><strong>Combo Truyền hình</strong> (1Gbps/300Mb)</td>
+                    <td><strong>Combo Truyền hình</strong> (1Gbps)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>210,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Combo%20Truyen%20Hinh" className={styles.tableCta}>Đăng ký</Link></td>
                     <td>Modem Wi-Fi 6, FPT Play Box</td>
                   </tr>
                   <tr>
                     <td><strong>Combo Giga F1</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>220,000 ₫</td>
-                    <td>Modem Wi-Fi 6, FPT Play Box, Access Point</td>
+                    <td><Link to="/dang-ky?product=Combo%20Giga%20F1" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td>Modem Wi-Fi 6, FPT Play Box</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Combo Sky F1</strong> (1Gb - 300Mb)</td>
+                    <td style={{ color: '#ea580c', fontWeight: 'bold' }}>239,000 ₫</td>
+                    <td><Link to="/dang-ky?product=Combo%20Sky%20F1" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td>Modem Wi-Fi 6, FPT Play Box</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p style={{ fontSize: '14px', color: '#94a3b8', fontStyle: 'italic', marginTop: '15px' }}>
-              * Lưu ý: giá gói cước Internet cá nhân FPT có thể thay đổi theo khu vực, thời điểm đăng ký.
+              * Lưu ý: giá gói combo Internet và truyền hình có thể thay đổi theo khu vực, thời điểm đăng ký và chính sách hiện hành. Nhấn ngay vào Đăng ký hoặc gọi 1900.6600 để được tư vấn chi tiết.
             </p>
 
             <h2 className={styles.seoTitle} style={{marginTop: '40px'}}>Đăng ký gói cước Internet cá nhân FPT phù hợp với nhu cầu của bạn</h2>
@@ -278,23 +328,15 @@ export default function CaNhan({ region }) {
           </div>
           
           <div className={styles.faqSection}>
-            {[
-              { q: "Tôi cần chuẩn bị giấy tờ gì khi đăng ký lắp mạng FPT?", a: "Cá nhân Việt Nam cần CMND/CCCD gốc hoặc bản công chứng. Khách nước ngoài cần hộ chiếu và giấy tạm trú/thường trú hợp lệ. Doanh nghiệp hoặc tổ chức cần Giấy phép kinh doanh, dấu công ty và người đại diện pháp luật." },
-              { q: "Lắp wifi FPT mất bao lâu thì có thể sử dụng?", a: "Sau khi hoàn tất thủ tục đăng ký mạng FPT, kỹ thuật viên sẽ liên hệ và triển khai lắp đặt trong vòng 24–48 giờ. Một số khu vực có thể được lắp ngay trong ngày nếu hạ tầng có sẵn." },
-              { q: "Có những gói cước wifi FPT nào phù hợp để lắp wifi gia đình?", a: "FPT cung cấp nhiều gói cước phù hợp cho hộ gia đình như Giga (300Mbps), Sky (1Gbps) và các combo internet + truyền hình FPT Play. Tùy vào nhu cầu sử dụng, bạn sẽ được tư vấn gói cước tối ưu nhất." },
-              { q: "Chi phí lắp đặt wifi FPT là bao nhiêu?", a: "Phí hòa mạng lắp wifi FPT bao gồm phí cước tháng và phí lắp đặt. Chi phí này sẽ khác nhau tùy theo gói cước, khu vực và chương trình khuyến mãi hiện hành." },
-              { q: "Tôi có thể đăng ký wifi FPT online không?", a: "Bạn có thể đăng ký lắp mạng FPT online qua website fpt.vn. Sau khi xác nhận, nhân viên sẽ hỗ trợ tư vấn và sắp xếp kỹ thuật lắp đặt nhanh chóng." },
-              { q: "Có thể chuyển địa chỉ lắp wifi FPT được không?", a: "Hoàn toàn được. Bạn chỉ cần liên hệ tổng đài hoặc trung tâm FPT gần nhất để đăng ký chuyển địa chỉ mạng FPT. Thời gian xử lý từ 1–2 ngày làm việc và sẽ được giữ nguyên gói cước nếu địa chỉ mới có hạ tầng." },
-              { q: "Khi lắp mạng FPT, tôi được cung cấp thiết bị gì?", a: "Tùy theo gói cước, khách hàng được trang bị modem WiFi 6, WiFi Mesh hoặc thiết bị chuyên dụng như Mikrotik, Aruba... Thiết bị được bảo hành chính hãng, hỗ trợ kỹ thuật 24/7." },
-              { q: "Các hình thức thanh toán khi lắp wifi FPT là gì?", a: "Khách hàng có thể thanh toán bằng ứng dụng Hi FPT, Internet Banking, ví điện tử (MoMo, ZaloPay...), chuyển khoản ngân hàng, hoặc trực tiếp tại các điểm giao dịch FPT." },
-              { q: "Lắp mạng internet FPT có ổn định không?", a: "FPT sử dụng hạ tầng cáp quang FTTH đồng bộ, trang bị modem WiFi 6 hiện đại, mang lại tốc độ truy cập nhanh, ổn định. Ngoài ra, FPT có đội ngũ kỹ thuật hỗ trợ tận nơi nếu xảy ra sự cố mạng." }
-            ].map((faq, index) => (
-              <div key={index} className={styles.faqItem}>
-                <h4 className={styles.faqQuestion}>
+            {FAQ_DATA.map((faq, index) => (
+              <div key={index} className={`${styles.faqItem} ${openFaq === index ? styles.faqOpen : ''}`}>
+                <h4 className={styles.faqQuestion} onClick={() => setOpenFaq(openFaq === index ? null : index)}>
                   {faq.q}
-                  <ChevronRight size={20} color="#94a3b8" />
+                  <ChevronDown size={20} className={styles.faqChevron} />
                 </h4>
-                <p className={styles.faqAnswer}>{faq.a}</p>
+                {openFaq === index && (
+                  <p className={styles.faqAnswer}>{faq.a}</p>
+                )}
               </div>
             ))}
           </div>
