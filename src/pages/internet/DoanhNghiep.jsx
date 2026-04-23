@@ -1,77 +1,10 @@
 import React, { useEffect } from 'react';
 import { Network, ShieldCheck, Zap, HeadphonesIcon } from 'lucide-react';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
+import { PRODUCT_DATA } from '../../data/productData';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './DoanhNghiep.module.css';
 
-// MOCK DATA for Enterprise (Since it's not in productData.js yet)
-const ENTERPRISE_DATA = [
-  {
-    id: "lux-500",
-    name: "Lux500",
-    price: 800000,
-    originalPrice: 1000000,
-    speed: "500 Mbps",
-    features: [
-      "Modem Wi-Fi 6 + 01 Access Point",
-      "Kết nối lên đến 125 thiết bị",
-      "Tích hợp Ultra Fast tối ưu tốc độ"
-    ],
-    image: "https://fpt.vn/storage/upload/images/thumbs/product/Internet%201/LUX500.png"
-  },
-  {
-    id: "lux-800",
-    name: "Lux800",
-    price: 1000000,
-    originalPrice: 1200000,
-    speed: "800 Mbps",
-    features: [
-      "Modem Wi-Fi 6 + 01 Access Point",
-      "Kết nối lên đến 160 thiết bị",
-      "Tích hợp Ultra Fast tối ưu tốc độ"
-    ],
-    image: "https://fpt.vn/storage/upload/images/thumbs/product/Internet%201/LUX800.png"
-  },
-  {
-    id: "super-300-biz",
-    name: "Super300 Biz",
-    price: 900000,
-    originalPrice: null,
-    speed: "300 Mbps",
-    features: [
-      "Trang bị Cân bằng tải",
-      "1 thiết bị Access Point",
-      "Độ trễ thấp, kết nối ổn định"
-    ],
-    image: "https://fpt.vn/storage/upload/images/thumbs/product/Internet%201/wifi6-48.png"
-  },
-  {
-    id: "super-300-biz-plus",
-    name: "Super300 Biz Plus",
-    price: 1100000,
-    originalPrice: null,
-    speed: "300 Mbps",
-    features: [
-      "Trang bị Cân bằng tải",
-      "1 thiết bị Access Point",
-      "Tích hợp sẵn IP Tĩnh"
-    ],
-    image: "https://fpt.vn/storage/upload/images/thumbs/product/Internet%201/wifi6-48.png"
-  },
-  {
-    id: "super-500-biz",
-    name: "Super500 Biz",
-    price: 1500000,
-    originalPrice: null,
-    speed: "500 Mbps",
-    features: [
-      "Trang bị Cân bằng tải",
-      "1 thiết bị Access Point",
-      "Băng thông quốc tế lớn"
-    ],
-    image: "https://fpt.vn/storage/upload/images/thumbs/product/Internet%201/wifi6-48.png"
-  }
-];
 
 export default function DoanhNghiep({ region }) {
   useEffect(() => {
@@ -81,7 +14,7 @@ export default function DoanhNghiep({ region }) {
 
   return (
     <div className={styles.doanhNghiepPage}>
-      
+
       {/* HERO SECTION */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
@@ -137,7 +70,7 @@ export default function DoanhNghiep({ region }) {
               Tối ưu cho văn phòng, cửa hàng, công ty cần đường truyền ổn định để làm việc, họp online và vận hành hệ thống.
             </p>
           </div>
-          <ProductCardSlider data={ENTERPRISE_DATA} region={region} />
+          <ProductCardSlider data={PRODUCT_DATA.doanh_nghiep} region={region} />
         </div>
       </section>
 
@@ -210,7 +143,7 @@ export default function DoanhNghiep({ region }) {
               Doanh nghiệp khi đăng ký dịch vụ thường có những băn khoăn dưới đây.
             </p>
           </div>
-          
+
           <div className={styles.faqSection}>
             {[
               { q: "Doanh nghiệp tôi cần tốc độ Internet FPT bao nhiêu để hoạt động hiệu quả?", a: "Tốc độ cần thiết phụ thuộc vào quy mô, số lượng nhân viên và ứng dụng. FPT cung cấp từ gói Lux500 (500Mbps) cho văn phòng vừa, đến Lux800 (800Mbps) và các dòng Super Biz có thiết bị cân bằng tải chịu tải cực cao." },

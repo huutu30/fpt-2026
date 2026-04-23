@@ -73,8 +73,12 @@ export default function Navbar({ region, setRegion }) {
 
           {/* LOGO */}
           <Link to="/" className="site-logo" aria-label="Trang chủ FPT Telecom" title="Về trang chủ" id="site-logo" itemProp="url">
-            <span className="logo-fpt" aria-hidden="true">FPT</span>
-            <span className="logo-telecom" aria-hidden="true">Telecom</span>
+            <img 
+              src="https://fpt.vn/frontend_layout_2025_vibecode/assets/images/logo-ftel.svg" 
+              alt="FPT Telecom Logo" 
+              className="logo-img"
+              itemProp="logo"
+            />
             <span className="sr-only">FPT Telecom - Trang chủ</span>
           </Link>
 

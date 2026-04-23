@@ -30,7 +30,6 @@ export const NAV_MENU = [
         icon: 'Wifi',
         color: '#f57020',
         items: [
-          { name: 'Combo Internet', path: '/internet/combo', badge: 'Hot', seoTitle: 'Gói combo Internet FPT giá tốt nhất' },
           { name: 'Internet Wifi 7', path: '/internet/wifi-7', badge: 'Mới', seoTitle: 'Đăng ký Internet Wifi 7 tốc độ cao FPT' },
           { name: 'Internet Cá nhân', path: '/internet/ca-nhan', seoTitle: 'Gói Internet FPT dành cho cá nhân' },
           { name: 'Internet Gia đình', path: '/internet/gia-dinh', seoTitle: 'Gói Internet FPT dành cho gia đình' },
@@ -44,7 +43,7 @@ export const NAV_MENU = [
         color: '#4e69fd',
         items: [
           { name: 'FPT Play', path: '/giai-tri/fpt-play', seoTitle: 'Truyền hình FPT Play - Xem phim, thể thao trực tuyến' },
-          { name: 'Combo Ngoại hạng Anh', path: '/giai-tri/ngoai-hang-anh', badge: 'Hot', seoTitle: 'Combo Internet và Truyền hình Ngoại hạng Anh' },
+          { name: 'Combo Internet', path: '/internet/combo', badge: 'Hot', seoTitle: 'Gói combo Internet FPT giá tốt nhất' },
         ]
       },
       {

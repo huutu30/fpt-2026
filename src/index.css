@@ -1,49 +1,98 @@
-/* --- FPT SLIDER SYSTEM: CHỐT HẠ 100% --- */
 :root {
-  --fpt-blue: #4e69fd;
-  --fpt-green: #2ecc71;
-  --fpt-orange: #ff7a00;
-}
-/* ============================================
-   FPT TELECOM - NAVBAR SYSTEM
-   ============================================ */
-:root {
-  --fpt-orange: #f26f21;
+  /* Design Tokens from design.md */
+  --font-family-primary: 'SF Pro Display', -apple-system, system-ui, sans-serif;
+  --font-size-base: 16px;
+  --font-weight-base: 400;
+  --line-height-base: 1.15;
+  /* 18.4px / 16px */
+
+  --font-size-xs: 14px;
+  --font-size-sm: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 32px;
+
+  --color-text-primary: #3d3d3d;
+  --color-surface-base: #000000;
+  --color-text-tertiary: #ffffff;
+  --color-surface-muted: #4564ed;
+  --color-surface-raised: #f3f3f3;
+
+  --space-1: 1px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 13px;
+  --space-7: 14px;
+  --space-8: 16px;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 50px;
+  --radius-xl: 999px;
+
+  --motion-duration-instant: 300ms;
+
+  /* Legacy variables for backward compatibility if needed */
+  --fpt-orange: var(--color-surface-muted);
+  /* Chuyển màu nhấn sang xanh chuẩn mới */
   --fpt-blue: #004a9c;
-  --fpt-dark: #1a1a2e;
+  --fpt-dark: var(--color-text-primary);
   --fpt-gray: #64748b;
-  --fpt-light: #f8fafc;
+  --fpt-light: var(--color-surface-raised);
   --fpt-border: #e8ecf1;
   --topbar-height: 36px;
   --navbar-height: 60px;
-  --header-total: 96px; /* topbar + navbar */
+  --header-total: 96px;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  margin: 0;
 }
 
 /* Screen reader only - SEO/Accessibility */
 .sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ===== HEADER TỔNG ===== */
 .site-header {
   position: fixed;
-  top: 0; left: 0; width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   transition: box-shadow 0.3s;
 }
+
 .site-header.scrolled {
-  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== TOP BAR: Hotline + Vùng miền ===== */
 .site-topbar {
-  background: #f5f5f5;
+  background: var(--color-surface-raised);
   border-bottom: 1px solid var(--fpt-border);
   height: var(--topbar-height);
-  font-size: 13px;
+  font-size: var(--font-size-xs);
 }
+
 .topbar-inner {
   display: flex;
   justify-content: space-between;
@@ -53,6 +102,7 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .topbar-hotline {
   display: flex;
   align-items: center;
@@ -62,8 +112,15 @@
   font-weight: 600;
   transition: opacity 0.2s;
 }
-.topbar-hotline:hover { opacity: 0.8; }
-.topbar-hotline strong { font-weight: 800; }
+
+.topbar-hotline:hover {
+  opacity: 0.8;
+}
+
+.topbar-hotline strong {
+  font-weight: 800;
+}
+
 .topbar-location {
   display: flex;
   align-items: center;
@@ -79,7 +136,10 @@
   font-family: inherit;
   padding: 0;
 }
-.topbar-location:hover { color: var(--fpt-orange); }
+
+.topbar-location:hover {
+  color: var(--fpt-orange);
+}
 
 /* ===== TẦNG 2: MAIN NAVBAR ===== */
 .site-navbar {
@@ -87,6 +147,7 @@
   height: var(--navbar-height);
   border-bottom: 1px solid var(--fpt-border);
 }
+
 .navbar-inner {
   display: flex;
   align-items: center;
@@ -101,19 +162,22 @@
 .site-logo {
   text-decoration: none;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-shrink: 0;
+  height: 100%;
 }
-.logo-fpt {
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--fpt-orange);
-  letter-spacing: -0.5px;
+
+.logo-img {
+  width: 140px;
+  max-height: 36px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
 }
-.logo-telecom {
-  font-size: 26px;
-  font-weight: 400;
-  color: var(--fpt-blue);
+
+.site-logo:hover .logo-img {
+  transform: scale(1.05);
 }
 
 /* HAMBURGER (ẨN TRÊN DESKTOP) */
@@ -127,6 +191,7 @@
   z-index: 1100;
   transition: color 0.3s;
 }
+
 .hamburger-btn:hover {
   color: var(--fpt-orange);
 }
@@ -137,6 +202,7 @@
   display: flex;
   align-items: center;
 }
+
 .nav-links {
   display: flex;
   list-style: none;
@@ -146,47 +212,63 @@
   height: var(--navbar-height);
   align-items: center;
 }
+
 .nav-li {
   position: relative;
   height: 100%;
   display: flex;
   align-items: center;
 }
+
 .nav-link {
   text-decoration: none;
-  font-size: 14px;
+  font-size: var(--font-size-xs);
   font-weight: 600;
-  color: #333;
-  padding: 0 18px;
+  color: var(--color-text-primary);
+  padding: 0 var(--space-6);
+  /* Giảm padding một chút cho thanh thoát */
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-2);
   white-space: nowrap;
   position: relative;
-  transition: color 0.2s;
+  transition: color var(--motion-duration-instant);
+  /* Reset button defaults */
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
 }
+
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0;
-  width: 0; height: 3px;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
   background: var(--fpt-orange);
   transition: width 0.3s ease;
   border-radius: 3px 3px 0 0;
 }
+
 .nav-link:hover,
 .nav-link.active {
   color: var(--fpt-orange);
 }
+
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
+
 .chevron-icon {
   transition: transform 0.3s;
   flex-shrink: 0;
 }
+
 .chevron-icon.rotate {
   transform: rotate(180deg);
 }
@@ -198,7 +280,7 @@
   left: 0;
   width: 100vw;
   background: #fff;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   border-top: 1px solid var(--fpt-border);
   padding: 35px 0;
   opacity: 0;
@@ -207,11 +289,13 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
 }
+
 .mega-menu.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
 .mega-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -220,7 +304,9 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .fpt-mega-col {}
+
 .mega-col-title {
   display: flex;
   align-items: center;
@@ -232,11 +318,13 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #f0f0f0;
 }
+
 .mega-col-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .mega-col-list li a {
   display: flex;
   align-items: center;
@@ -248,10 +336,12 @@
   padding: 7px 0;
   transition: all 0.2s;
 }
+
 .mega-col-list li a:hover {
   color: var(--fpt-orange);
   padding-left: 6px;
 }
+
 .mega-badge {
   display: inline-block;
   background: var(--fpt-orange);
@@ -279,7 +369,10 @@
   font-size: 15px;
   transition: background 0.2s;
 }
-.nav-hotline-mobile:hover { background: #fff7ed; }
+
+.nav-hotline-mobile:hover {
+  background: #fff7ed;
+}
 
 /* ===== SEARCH DESKTOP ===== */
 .search-desktop {
@@ -291,6 +384,7 @@
   transition: all 0.3s;
   flex-shrink: 0;
 }
+
 .search-desktop:hover {
   color: var(--fpt-orange);
   background: #fff7ed;
@@ -303,9 +397,11 @@
 
 /* ===== MOBILE BOTTOM NAV (GIỐNG FPT.VN) ===== */
 .bottom-nav {
-  display: none; /* Chỉ hiện trên mobile */
+  display: none;
+  /* Chỉ hiện trên mobile */
   position: fixed;
-  bottom: 0; left: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 60px;
   background: #fff;
@@ -315,6 +411,7 @@
   align-items: center;
   padding: 0 10px;
 }
+
 .bottom-nav-item {
   display: flex;
   flex-direction: column;
@@ -327,14 +424,17 @@
   transition: color 0.2s;
   padding: 6px 8px;
 }
+
 .bottom-nav-item:hover,
 .bottom-nav-item:active {
   color: var(--fpt-orange);
 }
+
 .bottom-nav-item.center-item {
   color: var(--fpt-orange);
   position: relative;
 }
+
 .bottom-nav-item.center-item::before {
   content: '';
   position: absolute;
@@ -350,9 +450,11 @@
 /* ===== OVERLAY MOBILE ===== */
 .mobile-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
   z-index: 998;
 }
 
@@ -363,7 +465,7 @@
   :root {
     --header-total: 60px;
   }
-  
+
   /* ẨN TOP BAR TRÊN MOBILE */
   .site-topbar {
     display: none;
@@ -373,11 +475,14 @@
   .site-navbar {
     height: 60px;
   }
+
   .navbar-inner {
     gap: 0;
     justify-content: space-between;
   }
-  .logo-fpt, .logo-telecom {
+
+  .logo-fpt,
+  .logo-telecom {
     font-size: 22px;
   }
 
@@ -407,8 +512,9 @@
     flex-direction: column;
     align-items: stretch;
     z-index: 1050;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
+
   .nav-menu.mobile-open {
     height: calc(100vh - 60px - 60px);
     overflow-y: auto;
@@ -420,11 +526,13 @@
     gap: 0;
     padding: 0;
   }
+
   .nav-li {
     height: auto;
     flex-direction: column;
     border-bottom: 1px solid #f1f5f9;
   }
+
   .nav-link {
     padding: 16px 20px;
     height: auto;
@@ -433,6 +541,7 @@
     justify-content: space-between;
     box-sizing: border-box;
   }
+
   .nav-link::after {
     display: none;
   }
@@ -450,22 +559,26 @@
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   }
+
   .mega-menu.show {
     max-height: 600px;
     padding: 15px 0 !important;
     opacity: 1;
     visibility: visible;
   }
+
   .mega-grid {
     grid-template-columns: 1fr !important;
     gap: 15px !important;
     padding: 0 20px !important;
   }
+
   .mega-col-title {
     font-size: 14px;
     margin-bottom: 8px;
     padding-bottom: 6px;
   }
+
   .mega-col-list li a {
     padding: 6px 0 6px 10px;
     font-size: 13px;
@@ -485,6 +598,7 @@
     padding: 0;
     transition: max-height 0.3s ease, opacity 0.3s ease;
   }
+
   .dropdown-menu.show {
     max-height: 300px;
     opacity: 1;
@@ -496,6 +610,7 @@
   .mobile-only {
     display: flex;
   }
+
   .nav-search {
     display: flex;
     align-items: center;
@@ -506,6 +621,7 @@
     border-radius: 8px;
     border: 1px solid var(--fpt-border);
   }
+
   .nav-search input {
     border: none;
     background: transparent;
@@ -514,6 +630,7 @@
     width: 100%;
     color: #333;
   }
+
   .nav-search svg {
     color: var(--fpt-gray);
     flex-shrink: 0;
@@ -525,18 +642,29 @@
   }
 
   /* CARD SLIDER MOBILE */
-  .fpt-card-column { min-width: 82% !important; max-width: 82% !important; flex: 0 0 82% !important; }
-  .fpt-track-container { margin: 0; padding-left: 15px; width: 100%; }
+  .fpt-card-column {
+    min-width: 82% !important;
+    max-width: 82% !important;
+    flex: 0 0 82% !important;
+  }
+
+  .fpt-track-container {
+    margin: 0;
+    padding-left: 15px;
+    width: 100%;
+  }
 
   /* PADDING BODY ĐỂ KHÔNG BỊ CHE */
   .app-container {
-    padding-bottom: 60px; /* Cho bottom nav */
+    padding-bottom: 60px;
+    /* Cho bottom nav */
   }
 }
 
 /* OFFSET CHO FIXED HEADER */
 .app-container {
-  padding-top: var(--header-total); /* 96px desktop, 60px mobile */
+  padding-top: var(--header-total);
+  /* 96px desktop, 60px mobile */
 }
 
 /* ============================================
@@ -549,6 +677,7 @@
   width: 100%;
   overflow: hidden;
 }
+
 .combo-sport-header {
   display: flex;
   flex-direction: column;
@@ -557,6 +686,7 @@
   margin-bottom: 28px;
   padding: 0 20px;
 }
+
 .combo-sport-title {
   font-size: 26px;
   font-weight: 800;
@@ -564,17 +694,20 @@
   margin: 0 0 6px;
   line-height: 1.3;
 }
+
 .combo-sport-subtitle {
   font-size: 14px;
   color: #64748b;
   margin: 0 0 16px;
   font-weight: 500;
 }
+
 .combo-sport-nav {
   display: flex;
   gap: 8px;
   flex-shrink: 0;
 }
+
 .combo-nav-btn {
   width: 40px;
   height: 40px;
@@ -588,6 +721,7 @@
   color: #475569;
   transition: all 0.25s;
 }
+
 .combo-nav-btn:hover {
   background: var(--fpt-orange);
   color: #fff;
@@ -605,9 +739,13 @@
   -ms-overflow-style: none;
   gap: 20px;
   padding: 10px 20px;
-  -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+  -webkit-overflow-scrolling: touch;
+  /* iOS smooth scroll */
 }
-.combo-sport-track::-webkit-scrollbar { display: none; }
+
+.combo-sport-track::-webkit-scrollbar {
+  display: none;
+}
 
 /* CARD */
 .combo-card {
@@ -615,17 +753,18 @@
   min-width: 280px;
   max-width: 320px;
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid #eef0f4;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border: 1px solid var(--fpt-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.3s, border-color 0.3s;
   display: flex;
   flex-direction: column;
   scroll-snap-align: start;
 }
+
 .combo-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   border-color: var(--fpt-orange);
 }
 
@@ -636,6 +775,7 @@
   height: 180px;
   overflow: hidden;
 }
+
 .combo-card-banner img {
   width: 100%;
   height: 100%;
@@ -643,30 +783,34 @@
   background: #f5f7fa;
   padding: 4px;
 }
+
 .combo-card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 14px 16px;
-  background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 60%, transparent 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
+
 .combo-card-badge-name {
   color: #fff;
   font-size: 16px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+
 .combo-card-badge-sub {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 11px;
   font-weight: 500;
 }
+
 .combo-promo-badge {
   position: absolute;
   top: 10px;
@@ -691,11 +835,12 @@
   flex-direction: column;
   gap: 0;
 }
+
 .combo-card-name {
-  font-size: 18px;
+  font-size: var(--font-size-md);
   font-weight: 700;
-  color: #1a202c;
-  margin: 0 0 8px;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
   line-height: 1.3;
 }
 
@@ -706,12 +851,14 @@
   gap: 4px;
   margin-bottom: 14px;
 }
+
 .combo-price-value {
-  font-size: 26px;
+  font-size: var(--font-size-2xl);
   font-weight: 800;
-  color: var(--fpt-orange);
+  color: var(--color-surface-muted);
   line-height: 1;
 }
+
 .combo-price-unit {
   font-size: 14px;
   color: #94a3b8;
@@ -726,6 +873,7 @@
   padding: 10px 14px;
   margin-bottom: 14px;
 }
+
 .combo-speed-label {
   display: block;
   font-size: 11px;
@@ -735,10 +883,12 @@
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
+
 .combo-speed-row {
   display: flex;
   gap: 20px;
 }
+
 .combo-speed-item {
   display: flex;
   align-items: center;
@@ -747,8 +897,14 @@
   font-weight: 700;
   color: #1e293b;
 }
-.combo-speed-icon.dl { color: #4e69fd; }
-.combo-speed-icon.ul { color: #2ecc71; }
+
+.combo-speed-icon.dl {
+  color: #4e69fd;
+}
+
+.combo-speed-icon.ul {
+  color: #2ecc71;
+}
 
 /* FEATURES */
 .combo-features {
@@ -759,7 +915,8 @@
   flex-direction: column;
   gap: 6px;
   flex-grow: 1;
-  max-height: 110px; /* Đủ chỗ cho khoảng 3-4 dòng */
+  max-height: 110px;
+  /* Đủ chỗ cho khoảng 3-4 dòng */
   overflow-y: auto;
   padding-right: 6px;
 }
@@ -768,16 +925,20 @@
 .combo-features::-webkit-scrollbar {
   width: 5px;
 }
+
 .combo-features::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .combo-features::-webkit-scrollbar-thumb {
   background: #e2e8f0;
   border-radius: 10px;
 }
+
 .combo-features::-webkit-scrollbar-thumb:hover {
   background: #cbd5e1;
 }
+
 .combo-features li {
   display: flex;
   align-items: flex-start;
@@ -787,6 +948,7 @@
   color: #475569;
   line-height: 1.4;
 }
+
 .combo-check-icon {
   color: #2ecc71;
   flex-shrink: 0;
@@ -800,6 +962,7 @@
   gap: 8px;
   margin-top: auto;
 }
+
 .combo-btn-primary {
   display: flex;
   align-items: center;
@@ -816,11 +979,13 @@
   transition: all 0.25s;
   box-shadow: 0 3px 12px rgba(242, 111, 33, 0.25);
 }
+
 .combo-btn-primary:hover {
   background: linear-gradient(135deg, #e05e10, #f26f21);
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(242, 111, 33, 0.35);
 }
+
 .combo-btn-outline {
   display: flex;
   align-items: center;
@@ -836,6 +1001,7 @@
   cursor: pointer;
   transition: all 0.25s;
 }
+
 .combo-btn-outline:hover {
   border-color: var(--fpt-orange);
   color: var(--fpt-orange);
@@ -844,77 +1010,107 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .combo-sport-section { padding: 30px 0; }
-  .combo-sport-header { padding: 0 15px; gap: 8px; }
-  .combo-sport-title { font-size: 20px; }
-  .combo-sport-track { gap: 14px; padding: 10px 15px; }
-  .combo-card { flex: 0 0 85%; min-width: 260px; max-width: 300px; }
-  .combo-card-banner { height: 150px; }
-  .combo-card-body { padding: 14px 14px 16px; }
-  .combo-price-value { font-size: 22px; }
+  .combo-sport-section {
+    padding: 30px 0;
+  }
+
+  .combo-sport-header {
+    padding: 0 15px;
+    gap: 8px;
+  }
+
+  .combo-sport-title {
+    font-size: 20px;
+  }
+
+  .combo-sport-track {
+    gap: 14px;
+    padding: 10px 15px;
+  }
+
+  .combo-card {
+    flex: 0 0 85%;
+    min-width: 260px;
+    max-width: 300px;
+  }
+
+  .combo-card-banner {
+    height: 150px;
+  }
+
+  .combo-card-body {
+    padding: 14px 14px 16px;
+  }
+
+  .combo-price-value {
+    font-size: 22px;
+  }
 }
 
- .fpt-slider-section {
-    padding: 40px 0;
-    background: #fff;
-    
-    /* ÉP CONTAINER Ở GIỮA */
-    max-width: 1240px; /* Chiều rộng chuẩn của web FPT */
-    margin: 0 auto;    /* Căn giữa màn hình */
-    width: 100%;
-    
-    overflow: hidden; 
-}
-.fpt-slider-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 20px; 
-    padding: 0 5px;
+.fpt-slider-section {
+  padding: 40px 0;
+  background: #fff;
+
+  /* ÉP CONTAINER Ở GIỮA */
+  max-width: 1240px;
+  /* Chiều rộng chuẩn của web FPT */
+  margin: 0 auto;
+  /* Căn giữa màn hình */
+  width: 100%;
+
+  overflow: hidden;
 }
 
-.fpt-main-title { 
-    font-size: 24px; 
-    font-weight: 800; 
-    color: #1a202c; 
+.fpt-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 5px;
 }
 
-.fpt-nav-btns { 
-    display: flex; 
-    gap: 8px; 
+.fpt-main-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a202c;
+}
+
+.fpt-nav-btns {
+  display: flex;
+  gap: 8px;
 }
 
 .fpt-nav-btn {
-    width: 36px; 
-    height: 36px; 
-    border-radius: 10px; 
-    border: 1px solid #e2e8f0;
-    background: #f8faff; 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    transition: 0.3s; 
-    color: #4e69fd;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8faff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  color: #4e69fd;
 }
 
-.fpt-nav-btn:hover { 
-    background: #00408f; 
-    color: #fff; 
-    border-color: #00408f;
-    transform: scale(1.1); 
-    box-shadow: 0 4px 10px rgba(78, 105, 253, 0.3);
+.fpt-nav-btn:hover {
+  background: #00408f;
+  color: #fff;
+  border-color: #00408f;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(78, 105, 253, 0.3);
 }
 
 
- .fpt-track-container {
-    display: flex;
-    width: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    /* Giữ nguyên các phần padding cũ của mày */
+.fpt-track-container {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* Giữ nguyên các phần padding cũ của mày */
 }
 
 .fpt-track-container {
@@ -922,168 +1118,231 @@
   width: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox [cite: 42] */
-  gap: 0; /* Đã có padding ở column nên để gap bằng 0 */
+  scrollbar-width: none;
+  /* Ẩn thanh cuộn trên Firefox [cite: 42] */
+  gap: 0;
+  /* Đã có padding ở column nên để gap bằng 0 */
 }
 
 
- .fpt-card-column {
-  flex: 0 0 25%; /* Không giãn, không co, chiếm đúng 25% chiều rộng */
-  min-width: 250px; /* Độ rộng tối thiểu để không bị bóp nghẹt [cite: 44] */
-  max-width: 310px; /* Giới hạn độ rộng tối đa để cân đối với container [cite: 45] */
+.fpt-card-column {
+  flex: 0 0 25%;
+  /* Không giãn, không co, chiếm đúng 25% chiều rộng */
+  min-width: 250px;
+  /* Độ rộng tối thiểu để không bị bóp nghẹt [cite: 44] */
+  max-width: 310px;
+  /* Giới hạn độ rộng tối đa để cân đối với container [cite: 45] */
   padding: 0 10px;
   box-sizing: border-box;
   display: flex;
-  align-items: stretch; /* Đảm bảo các card cao bằng nhau [cite: 46] */
+  align-items: stretch;
+  /* Đảm bảo các card cao bằng nhau [cite: 46] */
 }
 
 /* --- CHI TIẾT CARD ITEM: BẢN TỐI ƯU TRIỆT ĐỂ --- */
 .fpt-card-item {
-    background: #fff;
-    border-radius: 12px; /* Bo góc nhẹ cho hiện đại */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    
-    width: 100%;
-    height: 100%; 
-    /* 1. KHÓA CHIỀU CAO: 450px là cực kỳ gọn cho Card 4 cột */
-    min-height: 450px; 
-    
-    border: 1px solid #eef0f2;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  background: #fff;
+  border-radius: 12px;
+  /* Bo góc nhẹ cho hiện đại */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  /* 1. KHÓA CHIỀU CAO: 450px là cực kỳ gọn cho Card 4 cột */
+  min-height: 450px;
+
+  border: 1px solid #eef0f2;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
 
- .fpt-card-img {
-    width: 100%;
-    height: 180px; /* Hoặc chiều cao mày thấy vừa mắt */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa; /* Nền nhẹ để nếu ảnh trong suốt nhìn vẫn đẹp */
-    border-radius: 12px 12px 0 0;
+.fpt-card-img {
+  width: 100%;
+  height: 180px;
+  /* Hoặc chiều cao mày thấy vừa mắt */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  /* Nền nhẹ để nếu ảnh trong suốt nhìn vẫn đẹp */
+  border-radius: 12px 12px 0 0;
 }
 
 .fpt-card-img img {
-    width: 100%;
-    height: 100%;
-    /* THUỘC TÍNH QUAN TRỌNG NHẤT */
-    object-fit: contain; 
-    /* 'contain' giúp ảnh hiện đầy đủ không bị mất góc, 
+  width: 100%;
+  height: 100%;
+  /* THUỘC TÍNH QUAN TRỌNG NHẤT */
+  object-fit: contain;
+  /* 'contain' giúp ảnh hiện đầy đủ không bị mất góc, 
        nếu mày muốn ảnh tràn khung thì đổi thành 'cover' */
-    padding: 10px; /* Tạo khoảng trống để ảnh không dính sát mép khung */
-    transition: transform 0.3s ease;
+  padding: 10px;
+  /* Tạo khoảng trống để ảnh không dính sát mép khung */
+  transition: transform 0.3s ease;
 }
 
 .fpt-card-content {
-    flex: 1;
-    /* 3. PADDING CỰC GỌN: Dồn diện tích cho nội dung */
-    padding: 10px 14px 14px 14px; 
-    display: flex;
-    flex-direction: column;
-    gap: 2px; /* Ép các phần tử sát rạt nhau */
+  flex: 1;
+  /* 3. PADDING CỰC GỌN: Dồn diện tích cho nội dung */
+  padding: 10px 14px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  /* Ép các phần tử sát rạt nhau */
 }
 
 /* 4. CHỮ TO - DÒNG SÁT */
 .fpt-item-name {
-    font-size: 22px; /* Chữ to rõ */
-    font-weight: 800;
-    color: #1a1a1a;
-    margin: 0; 
-    line-height: 1.1; /* Ép dòng sát lại */
+  font-size: 22px;
+  /* Chữ to rõ */
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.1;
+  /* Ép dòng sát lại */
 }
 
 .fpt-price-row {
-    margin: 2px 0 6px 0; /* Khoảng cách cực nhỏ */
+  margin: 2px 0 6px 0;
+  /* Khoảng cách cực nhỏ */
 }
 
 .fpt-price-num {
-    font-size: 28px; /* Giá tiền nổi bật */
-    font-weight: 800;
-    color: #00408f;
-    line-height: 1;
+  font-size: 28px;
+  /* Giá tiền nổi bật */
+  font-weight: 800;
+  color: #00408f;
+  line-height: 1;
 }
 
 /* 5. TÍNH NĂNG: CHỮ TO - KHOẢNG CÁCH HẸP */
 .fpt-feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 10px 0;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 3px; /* Ép các dòng tính năng sát nhau */
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  /* Ép các dòng tính năng sát nhau */
 }
 
 .fpt-feature-list li {
-    font-size: 15px; /* Chữ to dễ đọc */
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: #334155;
-    line-height: 1.2;
+  font-size: 15px;
+  /* Chữ to dễ đọc */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #334155;
+  line-height: 1.2;
 }
 
 /* --- NÚT ĐĂNG KÝ: CHẮC CHẮN --- */
 .fpt-btn-order {
-    margin-top: auto; 
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    background-color: #00408f !important; 
-    color: #ffffff !important; 
-    height: 44px; /* Nút gọn gàng */
-    border-radius: 6px;
-    text-decoration: none !important;
-    font-weight: 700;
-    font-size: 16px;
-    width: 100%;
-    border: none;
-    cursor: pointer;
+  margin-top: auto;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: #00408f !important;
+  color: #ffffff !important;
+  height: 44px;
+  /* Nút gọn gàng */
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
 }
 
 .fpt-btn-order:hover {
-    background-color: #f57020 !important; 
-    box-shadow: 0 4px 12px rgba(245, 112, 32, 0.2);
+  background-color: #f57020 !important;
+  box-shadow: 0 4px 12px rgba(245, 112, 32, 0.2);
 }
 
- .fpt-card-item:hover .fpt-card-img img {
-    transform: scale(1.05); /* Hiệu ứng zoom nhẹ khi di chuột vào cho xịn */
+.fpt-card-item:hover .fpt-card-img img {
+  transform: scale(1.05);
+  /* Hiệu ứng zoom nhẹ khi di chuột vào cho xịn */
 }
 
 
-.fpt-card-item:hover .fpt-card-img img { transform: scale(1.1); }
+.fpt-card-item:hover .fpt-card-img img {
+  transform: scale(1.1);
+}
 
 .fpt-hot-badge {
-  position: absolute; top: 10px; left: 10px; background: #ff4d4f;
-  color: #fff; padding: 4px 10px; border-radius: 8px; font-size: 10px; font-weight: 800;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4d4f;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
   box-shadow: 0 2px 8px rgba(255, 77, 79, 0.4);
 }
 
 
 
 /* SPEED BAR: MẠNH MẼ */
-.fpt-speed-visual { 
-  background: #f9fbff; border-radius: 12px; padding: 10px; 
-  margin-bottom: 12px; border: 1px solid #edf2f7; 
+.fpt-speed-visual {
+  background: #f9fbff;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #edf2f7;
 }
-.fpt-speed-line { margin-bottom: 6px; }
-.fpt-speed-info { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 2px; }
-.fpt-speed-info strong { font-size: 15px; color: #1e293b; font-weight: 900; }
 
-.fpt-bar-bg { width: 100%; height: 7px; background: #e2e8f0; border-radius: 10px; overflow: hidden; }
-.fpt-bar-fill { height: 100%; border-radius: 10px; transition: width 1s ease-in-out; }
-.dl-blue { background: linear-gradient(to right, #4e69fd, #00c6ff); }
-.ul-green { background: linear-gradient(to right, #2ecc71, #39d353); }
+.fpt-speed-line {
+  margin-bottom: 6px;
+}
+
+.fpt-speed-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.fpt-speed-info strong {
+  font-size: 15px;
+  color: #1e293b;
+  font-weight: 900;
+}
+
+.fpt-bar-bg {
+  width: 100%;
+  height: 7px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fpt-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+.dl-blue {
+  background: linear-gradient(to right, #4e69fd, #00c6ff);
+}
+
+.ul-green {
+  background: linear-gradient(to right, #2ecc71, #39d353);
+}
 
 
 /* === HAMBURGER BUTTON (ẨN TRÊN DESKTOP) === */
 .hamburger-btn {
-  display: none; /* Mặc định ẩn trên desktop */
+  display: none;
+  /* Mặc định ẩn trên desktop */
   background: none;
   border: none;
   cursor: pointer;
@@ -1092,17 +1351,20 @@
   z-index: 1001;
   transition: color 0.3s;
 }
+
 .hamburger-btn:hover {
   color: var(--fpt-orange);
 }
 
 /* MOBILE LOCATION PILL - Ẩn trên desktop, hiện trên mobile */
 .mobile-location-pill {
-  display: none; /* Desktop: ẩn */
+  display: none;
+  /* Desktop: ẩn */
 }
 
 /* MOBILE: HIỆN 1 CARD + 1 MẨU */
 @media (max-width: 768px) {
+
   /* HIỆN NÚT HAMBURGER */
   .hamburger-btn {
     display: flex;
@@ -1127,17 +1389,22 @@
     transition: all 0.2s;
     white-space: nowrap;
   }
+
   .mobile-location-pill:active {
     border-color: var(--fpt-orange);
     color: var(--fpt-orange);
     background: #fff7ed;
   }
-  .mobile-loc-dot { font-size: 11px; }
+
+  .mobile-loc-dot {
+    font-size: 11px;
+  }
 
   /* ẨN MENU NGANG, CHUYỂN THÀNH MENU DỌC */
   .nav-center {
     position: fixed;
-    top: 70px; /* Ngay dưới navbar */
+    top: 70px;
+    /* Ngay dưới navbar */
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
@@ -1150,7 +1417,8 @@
   }
 
   .nav-center.mobile-open {
-    max-height: 80vh; /* Mở menu ra */
+    max-height: 80vh;
+    /* Mở menu ra */
     overflow-y: auto;
   }
 
@@ -1203,8 +1471,17 @@
     padding: 10px 15px !important;
   }
 
-  .fpt-card-column { min-width: 82% !important; max-width: 82% !important; flex: 0 0 82% !important; }
-  .fpt-track-container { margin: 0; padding-left: 15px; width: 100%; }
+  .fpt-card-column {
+    min-width: 82% !important;
+    max-width: 82% !important;
+    flex: 0 0 82% !important;
+  }
+
+  .fpt-track-container {
+    margin: 0;
+    padding-left: 15px;
+    width: 100%;
+  }
 }
 
 /* phần style cho nút đăng ký, trang đăng ký*/
@@ -1222,7 +1499,7 @@
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -1241,7 +1518,8 @@
 .register-info-side h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #f57020; /* Màu cam FPT */
+  color: #f57020;
+  /* Màu cam FPT */
 }
 
 .benefit-list {
@@ -1322,6 +1600,7 @@
   .register-wrapper {
     flex-direction: column;
   }
+
   .register-info-side {
     padding: 30px;
   }
@@ -1334,6 +1613,7 @@
   padding: 50px 0 10px;
   text-align: center;
 }
+
 .discovery-title {
   font-size: 28px;
   font-weight: 800;
@@ -1341,13 +1621,17 @@
   margin: 0 0 28px;
   line-height: 1.4;
 }
+
 .discovery-region {
   color: var(--fpt-orange);
   cursor: pointer;
   border-bottom: 2px dashed var(--fpt-orange);
   transition: opacity 0.2s;
 }
-.discovery-region:hover { opacity: 0.7; }
+
+.discovery-region:hover {
+  opacity: 0.7;
+}
 
 /* TABS */
 .discovery-tabs {
@@ -1360,7 +1644,10 @@
   -ms-overflow-style: none;
   padding: 0 20px;
 }
-.discovery-tabs::-webkit-scrollbar { display: none; }
+
+.discovery-tabs::-webkit-scrollbar {
+  display: none;
+}
 
 .discovery-tab {
   position: relative;
@@ -1375,6 +1662,7 @@
   transition: color 0.25s;
   font-family: inherit;
 }
+
 .discovery-tab::after {
   content: '';
   position: absolute;
@@ -1386,21 +1674,35 @@
   border-radius: 3px 3px 0 0;
   transition: width 0.3s ease;
 }
+
 .discovery-tab:hover {
   color: var(--fpt-orange);
 }
+
 .discovery-tab.active {
   color: var(--fpt-orange);
   font-weight: 700;
 }
+
 .discovery-tab.active::after {
   width: 100%;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .discovery-title { font-size: 22px; padding: 0 15px; }
-  .discovery-tabs { justify-content: flex-start; padding: 0 15px; gap: 0; }
-  .discovery-tab { padding: 10px 16px; font-size: 13px; }
-}
+  .discovery-title {
+    font-size: 22px;
+    padding: 0 15px;
+  }
 
+  .discovery-tabs {
+    justify-content: flex-start;
+    padding: 0 15px;
+    gap: 0;
+  }
+
+  .discovery-tab {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}

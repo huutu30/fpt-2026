@@ -10,7 +10,6 @@ import GiaDinh from './pages/internet/GiaDinh';
 import GameThu from './pages/internet/GameThu';
 import DoanhNghiep from './pages/internet/DoanhNghiep';
 import FptPlay from './pages/giai-tri/FptPlay';
-import NgoaiHangAnh from './pages/giai-tri/NgoaiHangAnh';
 import Camera from './pages/smart-device/Camera';
 import Register from './pages/register/Register';
 import NewsPage from './pages/news/NewsPage';
@@ -24,7 +23,7 @@ function App() {
       <div className="app-container">
         {/* Truyền biến region và hàm setRegion xuống Navbar để người dùng có thể click đổi */}
         <Navbar region={region} setRegion={setRegion} />
-        
+
         <Routes>
           {/* TRANG CHỦ: Nhận region để hiển thị giá các Slider tương ứng */}
           <Route path="/" element={<Home region={region} />} />
@@ -39,7 +38,6 @@ function App() {
 
           {/* NHÓM GIẢI TRÍ */}
           <Route path="/giai-tri/fpt-play" element={<FptPlay region={region} />} />
-          <Route path="/giai-tri/ngoai-hang-anh" element={<NgoaiHangAnh region={region} />} />
 
           {/* NHÓM THIẾT BỊ */}
           <Route path="/thiet-bi/camera" element={<Camera region={region} />} />

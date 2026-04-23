@@ -18,12 +18,17 @@ const autoOptimizeSEO = (products) => {
 export const BANNER_DATA = [
   {
     id: 1,
-    image: "https://fpt.vn/v2/images/banner-home.jpg", 
+    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-16/69e041bf8f173_1_1920x717%20%283%29.jpg",
     link: "/khuyen-mai-1"
   },
   {
     id: 2,
-    image: "https://shop.fpt.vn/static/images/files/banner/Banner_Web_PC.jpg",
+    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-01/69ccc6c8c484f_Banner%20hero%20homepage%20web%201920x717%20%288%29.jpg",
+    link: "/wifi-7"
+  },
+  {
+    id: 3,
+    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-03-18/69ba4a9c3c1ed_1920x717px%20%28sz%201440x500px%29.jpg",
     link: "/wifi-7"
   }
 ];
@@ -92,7 +97,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 40,
       image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6915e660eff1b_Internet%20Giga.jpg ",
-      price: {"hcm":235000,"tinh":195000},
+      price: { "hcm": 235000, "tinh": 195000 },
       features: [
         "Modem Wifi 6",
         "Kết nối trên 10 thiết bị",
@@ -108,7 +113,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 80,
       image: "https://hi-fpt.vn/wp-content/uploads/2025/10/internet-sky-fpt.jpg",
-      price: {"hcm":245000,"tinh":205000},
+      price: { "hcm": 245000, "tinh": 205000 },
       features: [
         "Modem Wifi 6",
         "Kết nối trên 15 thiết bị",
@@ -124,7 +129,7 @@ export const PRODUCT_DATA = {
       ul: "1 Gbps",
       speedPercent: 92,
       image: "https://vn-fpt.com/wp-content/uploads/2024/12/Internet-META-496x400.jpg",
-      price: {"hcm":325000,"tinh":300000},
+      price: { "hcm": 325000, "tinh": 300000 },
       features: [
         "Modem Wifi 6",
         "Kết nối trên 25 thiết bị",
@@ -140,7 +145,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 45,
       image: "https://fptwifi.com.vn/wp-content/uploads/goi-cuoc-giga-f1.png",
-      price: {"hcm":255000,"tinh":215000},
+      price: { "hcm": 255000, "tinh": 215000 },
       features: [
         "Modem Wifi 6 & 1 Access Point",
         "Kết nối trên 10 thiết bị",
@@ -159,7 +164,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 83,
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-06-29/1751211910_5-internet-sky-f1-ket-noi-on-dinh.jpg",
-      price: {"hcm":265000,"tinh":225000},
+      price: { "hcm": 265000, "tinh": 225000 },
       features: [
         "Modem Wifi 6 & 1 Access Point",
         "Kết nối trên 15 thiết bị",
@@ -178,7 +183,7 @@ export const PRODUCT_DATA = {
       ul: "1 Gbps",
       speedPercent: 94,
       image: "https://ifpt.vn/wp-content/uploads/internet-meta-f1.webp ",
-      price: {"hcm":345000,"tinh":320000},
+      price: { "hcm": 345000, "tinh": 320000 },
       features: [
         "Modem Wifi 6 & 1 Access Point",
         "Kết nối trên 25 thiết bị",
@@ -197,7 +202,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 42,
       image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6915eebe593b4_FPT%20an%20t%C3%A2m.jpg",
-      price: {"hcm":250000,"tinh":230000},
+      price: { "hcm": 250000, "tinh": 230000 },
       features: [
         "Modem Wifi 6",
         "Bảo mật an toàn F-Safe cho gia đình",
@@ -215,7 +220,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 85,
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-06-29/1751211940_8-internet-sky-f2-ho-tro-toc-do-download.jpg",
-      price: {"hcm":285000,"tinh":225000},
+      price: { "hcm": 285000, "tinh": 225000 },
       features: [
         "Modem Wifi 6 và 2 Access Point",
         "Kết nối lên đến 15 thiết bị",
@@ -232,7 +237,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 87,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGAtfMlHx84BUPz50xp0DDEvsRTkRxlnfTTA&s",
-      price: {"hcm":305000,"tinh":255000},
+      price: { "hcm": 305000, "tinh": 255000 },
       features: [
         "Modem Wifi 6 và 3 Access Point",
         "Kết nối lên đến 15 thiết bị",
@@ -249,7 +254,7 @@ export const PRODUCT_DATA = {
       ul: "1 Gbps",
       speedPercent: 96,
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec5884a259_Internet%20Meta%20F2%20%281%29.jpg",
-      price: {"hcm":365000,"tinh":340000},
+      price: { "hcm": 365000, "tinh": 340000 },
       features: [
         "Modem Wifi 6 & 2 Access Point",
         "Kết nối trên 25 thiết bị",
@@ -266,7 +271,7 @@ export const PRODUCT_DATA = {
       ul: "1 Gbps",
       speedPercent: 98,
       image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6915f4726f49c_Internet%20Meta%20F3.jpg",
-      price: {"hcm":385000,"tinh":360000},
+      price: { "hcm": 385000, "tinh": 360000 },
       features: [
         "Modem Wifi 6 & 3 Access Point",
         "Kết nối trên 25 thiết bị",
@@ -281,7 +286,7 @@ export const PRODUCT_DATA = {
     {
       id: "giga-f1",
       name: "Internet Giga F1",
-      price: {"hcm":255000,"tinh":255000},
+      price: { "hcm": 255000, "tinh": 255000 },
       dl: "300 Mbps",
       ul: "300 Mbps",
       speedPercent: 60,
@@ -298,7 +303,7 @@ export const PRODUCT_DATA = {
     {
       id: "sky-f1",
       name: "Internet Sky F1",
-      price: {"hcm":265000,"tinh":265000},
+      price: { "hcm": 265000, "tinh": 265000 },
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 85,
@@ -315,7 +320,7 @@ export const PRODUCT_DATA = {
     {
       id: "sky-f2",
       name: "Internet Sky F2",
-      price: {"hcm":285000,"tinh":285000},
+      price: { "hcm": 285000, "tinh": 285000 },
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 85,
@@ -332,7 +337,7 @@ export const PRODUCT_DATA = {
     {
       id: "an-tam",
       name: "FPT An Tâm",
-      price: {"hcm":250000,"tinh":230000},
+      price: { "hcm": 250000, "tinh": 230000 },
       dl: "300 Mbps",
       ul: "300 Mbps",
       speedPercent: 60,
@@ -350,7 +355,7 @@ export const PRODUCT_DATA = {
     {
       id: "combo-giga-f1",
       name: "Combo Giga F1",
-      price: {"hcm":265000,"tinh":265000},
+      price: { "hcm": 265000, "tinh": 265000 },
       dl: "300 Mbps",
       ul: "300 Mbps",
       speedPercent: 60,
@@ -367,7 +372,7 @@ export const PRODUCT_DATA = {
     {
       id: "combo-sky-f1",
       name: "Combo Sky F1",
-      price: {"hcm":275000,"tinh":275000},
+      price: { "hcm": 275000, "tinh": 275000 },
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 85,
@@ -384,7 +389,7 @@ export const PRODUCT_DATA = {
     {
       id: "fgame-f1",
       name: "F-Game F1",
-      price: {"hcm":315000,"tinh":315000},
+      price: { "hcm": 315000, "tinh": 315000 },
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 90,
@@ -401,7 +406,7 @@ export const PRODUCT_DATA = {
     {
       id: "meta",
       name: "Internet Meta",
-      price: {"hcm":325000,"tinh":325000},
+      price: { "hcm": 325000, "tinh": 325000 },
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 100,
@@ -418,7 +423,7 @@ export const PRODUCT_DATA = {
     {
       id: "meta-f1",
       name: "Internet Meta F1",
-      price: {"hcm":345000,"tinh":345000},
+      price: { "hcm": 345000, "tinh": 345000 },
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 100,
@@ -435,7 +440,7 @@ export const PRODUCT_DATA = {
     {
       id: "meta-f2",
       name: "Internet Meta F2",
-      price: {"hcm":365000,"tinh":365000},
+      price: { "hcm": 365000, "tinh": 365000 },
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 100,
@@ -452,7 +457,7 @@ export const PRODUCT_DATA = {
     {
       id: "meta-f3",
       name: "Internet Meta 3",
-      price: {"hcm":385000,"tinh":385000},
+      price: { "hcm": 385000, "tinh": 385000 },
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 100,
@@ -474,7 +479,7 @@ export const PRODUCT_DATA = {
         "Kết nối trên 25 thiết bị",
         "Phủ sóng ổn định cho gia đình nhiều tầng, diện tích rộng",
       ],
-      price: {"hcm":385000,"tinh":360000},
+      price: { "hcm": 385000, "tinh": 360000 },
       dl: "1 Gbps",
       ul: "1 Gbps",
     },
@@ -487,7 +492,7 @@ export const PRODUCT_DATA = {
       dl: "500 Mbps",
       ul: "500 Mbps",
       hardware: "Modem Wifi 6 & 1 Access Point",
-      image: "https://vn-fpt.com/wp-content/uploads/2024/12/Internet-LUX500.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-14/69161534e6eb7_internet-lux-500-fpt.jpg",
       price: 800000,
       features: [
         "Kết nối ổn định đến 125 thiết bị",
@@ -700,18 +705,6 @@ export const PRODUCT_DATA = {
       path: "/dang-ky?product=SUPER%20800%20BIZ%20PLUS",
       btnTitle: "Đăng ký tư vấn SUPER 800 BIZ PLUS ngay",
     },
-    {
-      id: "internet-meta-3",
-      name: "Internet Meta 3",
-      features: [
-        "Modem Wifi 6 & 3 Access Point",
-        "Kết nối trên 25 thiết bị",
-        "Phủ sóng tối đa cho gia đình nhiều tầng",
-      ],
-      price: {"hcm":385000,"tinh":385000},
-      dl: "1 Gbps",
-      ul: "1 Gbps",
-    },
   ]),
   wifi_7: [
     {
@@ -719,7 +712,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX2",
       dl: "2 Gbps",
       ul: "2 Gbps",
-      price: {"hcm":999000,"tinh":999000},
+      price: { "hcm": 999000, "tinh": 999000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d755f5b2a9_Combo%20th%E1%BB%83%20thao%20Speedx2%20%281%29.jpg",
       hardware: "Modem Wifi 7 + 1 Mesh Wifi 7",
       features: [
@@ -736,7 +729,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX2 Pro",
       dl: "2 Gbps",
       ul: "2 Gbps",
-      price: {"hcm":1099000,"tinh":1099000},
+      price: { "hcm": 1099000, "tinh": 1099000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765095073_CombothethaoSpeedx10.png",
       hardware: "Modem Wifi 7 Pro (XGS-PON)",
       features: [
@@ -753,7 +746,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX10",
       dl: "10 Gbps",
       ul: "10 Gbps",
-      price: {"hcm":1599000,"tinh":1599000},
+      price: { "hcm": 1599000, "tinh": 1599000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
       hardware: "Modem Wifi 7 + 1 Mesh Wifi 7",
       features: [
@@ -770,10 +763,10 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX10 Pro",
       dl: "10 Gbps",
       ul: "10 Gbps",
-      price: {"hcm":1599000,"tinh":1599000},
+      price: { "hcm": 1599000, "tinh": 1599000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765095073_CombothethaoSpeedx10.png",
       hardware: "Wifi 7 Ultimate (XGS-PON)",
-      details: ["Tốc độ 10Gbps nhanh nhất Việt Nam","Wifi 7 tăng khả năng tải gấp 4 lần","Đẳng cấp kết nối cho tương lai","Xử lý sự cố ưu tiên trong 2 giờ"],
+      details: ["Tốc độ 10Gbps nhanh nhất Việt Nam", "Wifi 7 tăng khả năng tải gấp 4 lần", "Đẳng cấp kết nối cho tương lai", "Xử lý sự cố ưu tiên trong 2 giờ"],
     },
     {
       id: "super-800-biz-plus",
@@ -796,7 +789,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 80,
-      price: {"hcm":299000,"tinh":269000},
+      price: { "hcm": 299000, "tinh": 269000 },
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1uWiouFDjpMnDKq19_KEtNitMrQxwyHJniQ&s",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -815,7 +808,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 92,
-      price: {"hcm":399000,"tinh":369000},
+      price: { "hcm": 399000, "tinh": 369000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765106517_thumb-meta.jpg",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -834,7 +827,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 82,
-      price: {"hcm":319000,"tinh":289000},
+      price: { "hcm": 319000, "tinh": 289000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765092546_CombothethaoSkyF1.png",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -854,7 +847,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 94,
-      price: {"hcm":419000,"tinh":389000},
+      price: { "hcm": 419000, "tinh": 389000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765093360_CombothethaoMetaF1.png",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -874,7 +867,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 84,
-      price: {"hcm":339000,"tinh":309000},
+      price: { "hcm": 339000, "tinh": 309000 },
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Ihp1qaU4umemzvNNRffOLN1-S-sAC_tXiA&s",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -894,7 +887,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 95,
-      price: {"hcm":439000,"tinh":409000},
+      price: { "hcm": 439000, "tinh": 409000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765093530_CombothethaoMetaF2.png",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -914,7 +907,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 86,
-      price: {"hcm":359000,"tinh":329000},
+      price: { "hcm": 359000, "tinh": 329000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d750155792_Combo%20th%E1%BB%83%20thao%20Sky%20F3%20%281%29.jpg",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -934,7 +927,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 97,
-      price: {"hcm":459000,"tinh":429000},
+      price: { "hcm": 459000, "tinh": 429000 },
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5J2-MC8vbF7VXZcFcifOJxRjyCuBVjWgnHQ&s",
       features: [
         "Modem wifi 6 & Fpt Play Box",
@@ -954,7 +947,7 @@ export const PRODUCT_DATA = {
       dl: "500 Mbps",
       ul: "500 Mbps",
       speedPercent: 65,
-      price: {"hcm":885000,"tinh":885000},
+      price: { "hcm": 885000, "tinh": 885000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765095973_CombothethaoLux500.png",
       features: [
         "Modem wifi 6 & 1 Access Point",
@@ -974,7 +967,7 @@ export const PRODUCT_DATA = {
       dl: "800 Mbps",
       ul: "800 Mbps",
       speedPercent: 80,
-      price: {"hcm":1085000,"tinh":1085000},
+      price: { "hcm": 1085000, "tinh": 1085000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765096146_CombothethaoLux800.png",
       features: [
         "Modem wifi 6 & 1 Access Point",
@@ -994,7 +987,7 @@ export const PRODUCT_DATA = {
       dl: "2 Gbps",
       ul: "2 Gbps",
       speedPercent: 99,
-      price: {"hcm":1084000,"tinh":1084000},
+      price: { "hcm": 1084000, "tinh": 1084000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d755f5b2a9_Combo%20th%E1%BB%83%20thao%20Speedx2%20%281%29.jpg",
       features: [
         "Wifi7 khả năng tải gấp 4 lần",
@@ -1015,7 +1008,7 @@ export const PRODUCT_DATA = {
       dl: "2 Gbps",
       ul: "2 Gbps",
       speedPercent: 100,
-      price: {"hcm":1184000,"tinh":1184000},
+      price: { "hcm": 1184000, "tinh": 1184000 },
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmXmCGY9D7oxeKm4hApky-5j27w7-lDsjR2g&s",
       features: [
         "Wifi7 khả năng tải gấp 4 lần",
@@ -1037,7 +1030,7 @@ export const PRODUCT_DATA = {
       dl: "10 Gbps",
       ul: "10 Gbps",
       speedPercent: 100,
-      price: {"hcm":1684000,"tinh":1684000},
+      price: { "hcm": 1684000, "tinh": 1684000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765095073_CombothethaoSpeedx10.png",
       features: [
         "Wifi7 khả năng tải gấp 4 lần",
@@ -1058,7 +1051,7 @@ export const PRODUCT_DATA = {
       dl: "10 Gbps",
       ul: "10 Gbps",
       speedPercent: 100,
-      price: {"hcm":1784000,"tinh":1784000},
+      price: { "hcm": 1784000, "tinh": 1784000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
       features: [
         "Wifi7 khả năng tải gấp 4 lần",
@@ -1080,7 +1073,7 @@ export const PRODUCT_DATA = {
         "Tích hợp FPT Play Box & Gói FPT Play VIP",
         "Phủ sóng xuyên mọi vật cản",
       ],
-      price: {"hcm":1599000,"tinh":1599000},
+      price: { "hcm": 1599000, "tinh": 1599000 },
       dl: "10 Gbps",
       ul: "10 Gbps",
     },
@@ -1114,22 +1107,6 @@ export const PRODUCT_DATA = {
         "Chất lượng Full 1080p, hỗ trợ 4K(thử nghiệm)",
       ],
     },
-    {
-      id: "combo-th-thao-speedx10-pro",
-      name: "Combo thể thao SpeedX10 Pro",
-      features: [
-        "Wifi7 khả năng tải gấp 4 lần",
-        "Xem trọn vẹn ngoại hạng Anh",
-        "Công nghệ XGS-PON tốc độ 10 Gbps",
-        "Tặng 1 Mesh Wifi 7 mở rộng vùng phủ",
-        "Kết nối đến 100 thiết bị",
-        "Tặng 12 tháng icloud 3D khi khách hàng mua thêm Camera lẻ",
-        "Các giải đấu hàng đầu The Emirates FA Cup, LPBank V.League 1",
-      ],
-      price: {"hcm":1784000,"tinh":1784000},
-      dl: "10 Gbps",
-      ul: "10 Gbps",
-    },
   ],
   wifi7_plans: autoOptimizeSEO([
     {
@@ -1137,7 +1114,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX2",
       dl: "2 Gbps",
       ul: "2 Gbps",
-      price: {"hcm":999000,"tinh":999000},
+      price: { "hcm": 999000, "tinh": 999000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d755f5b2a9_Combo%20th%E1%BB%83%20thao%20Speedx2%20%281%29.jpg",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1156,7 +1133,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX2 Pro",
       dl: "2 Gbps",
       ul: "2 Gbps",
-      price: {"hcm":1099000,"tinh":1099000},
+      price: { "hcm": 1099000, "tinh": 1099000 },
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmXmCGY9D7oxeKm4hApky-5j27w7-lDsjR2g&s",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1175,7 +1152,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX2 - IQ4S",
       dl: "2 Gbps",
       ul: "2 Gbps",
-      price: {"hcm":1039000,"tinh":1039000},
+      price: { "hcm": 1039000, "tinh": 1039000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d755f5b2a9_Combo%20th%E1%BB%83%20thao%20Speedx2%20%281%29.jpg",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1195,7 +1172,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX2 Eyes3 IQ4S",
       dl: "2 Gbps",
       ul: "2 Gbps",
-      price: {"hcm":1049000,"tinh":1049000},
+      price: { "hcm": 1049000, "tinh": 1049000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d755f5b2a9_Combo%20th%E1%BB%83%20thao%20Speedx2%20%281%29.jpg",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1215,7 +1192,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX2 Pro - IQ4S",
       dl: "2 Gbps",
       ul: "2 Gbps",
-      price: {"hcm":1099000,"tinh":1099000},
+      price: { "hcm": 1099000, "tinh": 1099000 },
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmXmCGY9D7oxeKm4hApky-5j27w7-lDsjR2g&s",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1235,7 +1212,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX10",
       dl: "10 Gbps",
       ul: "10 Gbps",
-      price: {"hcm":1599000,"tinh":1599000},
+      price: { "hcm": 1599000, "tinh": 1599000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765095073_CombothethaoSpeedx10.png",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1254,7 +1231,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX10 Pro",
       dl: "10 Gbps",
       ul: "10 Gbps",
-      price: {"hcm":1599000,"tinh":1599000},
+      price: { "hcm": 1599000, "tinh": 1599000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1273,7 +1250,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX10 - IQ4S",
       dl: "10 Gbps",
       ul: "10 Gbps",
-      price: {"hcm":1639000,"tinh":1639000},
+      price: { "hcm": 1639000, "tinh": 1639000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765095073_CombothethaoSpeedx10.png",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1293,7 +1270,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX10 Eyes3 IQ4S",
       dl: "10 Gbps",
       ul: "10 Gbps",
-      price: {"hcm":1649000,"tinh":1649000},
+      price: { "hcm": 1649000, "tinh": 1649000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2025-12-07/1765095073_CombothethaoSpeedx10.png",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1313,7 +1290,7 @@ export const PRODUCT_DATA = {
       name: "FPT SpeedX10 Pro - IQ4S",
       dl: "10 Gbps",
       ul: "10 Gbps",
-      price: {"hcm":1699000,"tinh":1699000},
+      price: { "hcm": 1699000, "tinh": 1699000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
       features: [
         "Wifi 7 tăng khả năng tải gấp 4 lần",
@@ -1348,7 +1325,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 90,
-      price: {"hcm":295000,"tinh":265000},
+      price: { "hcm": 295000, "tinh": 265000 },
       image: "https://vn-fpt.com/wp-content/uploads/2025/05/F-Game-1Gbps-300Mbps-991x800.jpg",
       features: [
         "Modem Wifi 6",
@@ -1365,7 +1342,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 90,
-      price: {"hcm":315000,"tinh":285000},
+      price: { "hcm": 315000, "tinh": 285000 },
       image: "https://mangfpt.vn/wp-content/uploads/2025/11/Combo-Fgame.jpg",
       features: [
         "Modem Wifi 6 & Fpt Play Box",
@@ -1382,7 +1359,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 92,
-      price: {"hcm":315000,"tinh":285000},
+      price: { "hcm": 315000, "tinh": 285000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6915f4e925e2a_Internet%20F-Game%20F1.jpg",
       features: [
         "Modem Wifi 6 & 1 Access Point",
@@ -1400,7 +1377,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 92,
-      price: {"hcm":335000,"tinh":305000},
+      price: { "hcm": 335000, "tinh": 305000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-14/69160e909d6da_Combo%20FGame%20F1.jpg",
       features: [
         "Modem Wifi 6 & Fpt Play Box",
@@ -1419,7 +1396,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 90,
-      price: {"hcm":315000,"tinh":285000},
+      price: { "hcm": 315000, "tinh": 285000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-13/6965aeaba2b7b_Combo%20FGame.jpg",
       features: [
         "Modem Wifi 6",
@@ -1436,7 +1413,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 92,
-      price: {"hcm":335000,"tinh":305000},
+      price: { "hcm": 335000, "tinh": 305000 },
       image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-13/6965af70f0ae4_Combo%20FGame%20F1.jpg",
       features: [
         "Modem Wifi 6 & 1 Mesh",
@@ -1454,7 +1431,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 93,
-      price: {"hcm":355000,"tinh":325000},
+      price: { "hcm": 355000, "tinh": 325000 },
       image: "https://s3-api.fpt.vn/fptvn-storage/2026-01-13/1768298151_ComboFGameF2.jpg",
       features: [
         "Modem Wifi 6 & 2 Mesh",
@@ -1477,7 +1454,7 @@ export const PRODUCT_DATA = {
         "Tích hợp FPT Play Box & gói FPT Play VIP",
         "Phủ sóng xuyên mọi vật cản",
       ],
-      price: {"hcm":1699000,"tinh":1699000},
+      price: { "hcm": 1699000, "tinh": 1699000 },
       dl: "10 Gbps",
       ul: "10 Gbps",
     },
@@ -1522,7 +1499,7 @@ export const PRODUCT_DATA = {
         "Gần 120 kênh truyền hình độc quyền và kho phim 4k",
         "Tặng 2 access point và 2 wifi Mesh",
       ],
-      price: {"hcm":355000,"tinh":325000},
+      price: { "hcm": 355000, "tinh": 325000 },
       dl: "1 Gbps",
       ul: "300 Mbps",
     },

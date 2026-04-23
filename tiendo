@@ -1,0 +1,23 @@
+# TÓM TẮT TIẾN ĐỘ DỰ ÁN FPT 2026
+
+### 1. Logo & Branding
+- Đã thay thế Logo dạng text bằng Logo SVG chính thức của FPT Telecom.
+- Điều chỉnh CSS trong `index.css` để logo hiển thị đúng tỷ lệ, không bị kéo giãn (`object-fit: contain`).
+
+### 2. Xử lý Hình ảnh (Hotlink Protection)
+- Vấn đề: Các link ảnh từ server đại lý (`vn-fpt.com`, `mangfpt.vn`) bị chặn hiển thị trên localhost.
+- Giải pháp: Đã thử nghiệm thêm `referrerPolicy="no-referrer"` vào các thẻ `<img>`.
+- Lưu ý: Hiện tại bạn đã gỡ bỏ thuộc tính này. Nếu sau này dùng lại link ảnh ngoài mà bị lỗi "Broken Image", hãy thêm lại thuộc tính này vào các component `ProductCardSlider.jsx` và `ProductCategorySection.jsx`.
+
+### 3. Trang Doanh nghiệp (Enterprise Page)
+- Kết nối dữ liệu: Đã thay thế Mock Data nội bộ bằng dữ liệu chuẩn từ `src/data/productData.js`.
+- Cấu trúc: Đã chuẩn hóa danh sách gói cước (LUX 500, LUX 800 và các dòng Super Biz).
+- Giao diện hiện tại: Đang sử dụng tông màu Slate/Blue Gradient với ảnh nền Unsplash và layout 4 cột cho phần tính năng.
+
+### 4. Dữ liệu Sản phẩm (productData.js)
+- Đã hợp nhất và dọn dẹp các mảng dữ liệu.
+- Cập nhật các link ảnh chính chủ từ `hi-static.fpt.vn` để đảm bảo độ ổn định cao nhất.
+
+### 5. Hướng phát triển tiếp theo
+- Kiểm tra tính nhất quán của `index.css` khi áp dụng cho cả trang chủ và các trang con.
+- Đảm bảo responsive trên mobile cho thanh điều hướng (Navbar) và các thẻ sản phẩm.
