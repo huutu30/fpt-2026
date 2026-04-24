@@ -772,7 +772,7 @@ body {
 .combo-card-banner {
   position: relative;
   width: 100%;
-  height: 180px;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
@@ -780,7 +780,15 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #f5f7fa;
+  object-position: top center;
+  background: transparent;
+}
+
+/* Fix riêng cho card Camera (ảnh ngang dài bị cắt mất chữ) */
+.combo-card-banner img[alt*="camera" i],
+.combo-card-banner img[alt*="Camera" i] {
+  object-fit: contain;
+  object-position: center;
 }
 
 .combo-card-overlay {
@@ -1034,7 +1042,7 @@ body {
   }
 
   .combo-card-banner {
-    height: 150px;
+    height: auto;
   }
 
   .combo-card-body {
@@ -1160,14 +1168,13 @@ body {
 
 .fpt-card-img {
   width: 100%;
-  height: 180px;
-  /* Hoặc chiều cao mày thấy vừa mắt */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8f9fa;
-  /* Nền nhẹ để nếu ảnh trong suốt nhìn vẫn đẹp */
+  background: transparent;
+  /* Nền trong suốt để hòa vào card */
   border-radius: 12px 12px 0 0;
 }
 
@@ -1175,7 +1182,15 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.3s ease;
+}
+
+/* Fix riêng cho card Camera (ảnh ngang dài bị cắt mất chữ) */
+.fpt-card-img img[alt*="camera" i],
+.fpt-card-img img[alt*="Camera" i] {
+  object-fit: contain;
+  object-position: center;
 }
 
 .fpt-card-content {
