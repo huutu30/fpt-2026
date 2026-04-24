@@ -45,12 +45,10 @@ export default function CaNhan({ region }) {
     document.title = "Bảng giá gói cước internet FPT cá nhân gia đình | FPT Telecom";
   }, []);
 
-  // Lấy danh sách toàn bộ sản phẩm từ tất cả các mảng trong PRODUCT_DATA
-  const allProducts = Object.values(PRODUCT_DATA).flat();
-
-  // Helper function để lấy product theo ID
-  const getProductsByIds = (idList) => {
-    return idList.map(id => allProducts.find(p => p.id === id)).filter(Boolean);
+  // Lấy sản phẩm theo ID từ một danh sách cụ thể
+  const getProductsByIds = (sourceArrays, idList) => {
+    const pool = sourceArrays.flat();
+    return idList.map(id => pool.find(p => p.id === id)).filter(Boolean);
   };
 
   const CA_NHAN_DISPLAY_IDS = {
@@ -58,16 +56,23 @@ export default function CaNhan({ region }) {
       "giga", "sky", "giga-f1", "sky-f1", "meta-f1", "fpt-an-tam", "sky-f2", "sky-f3", "meta-f2", "meta-f3"
     ],
     combo: [
-      "c-the-thao-sky", "combo-giga", "c-the-thao-meta", "combo-giga-f1", "combo-sky-f1", "c-the-thao-meta-f1", 
-      "c-the-thao-meta-f2", "c-the-thao-meta-f3", "combo-an-tam", "combo-giga-lite", "combo-giga-f1-lite", 
-      "combo-giga-f2-lite", "combo-sky-lite", "combo-sky-f1-lite", "combo-sky-f2-lite", "combo-sky-f3-lite", 
+      "combo-sky", "combo-giga", "combo-meta", "combo-giga-f1", "combo-sky-f1", "combo-meta-f1", 
+      "combo-meta-f2", "combo-meta-f3", "combo-an-tam", "combo-giga-lite", "combo-giga-f1-lite", 
+      "combo-giga-f2-lite", "combo-giga-f3-lite", "combo-sky-lite", "combo-sky-f1-lite", "combo-sky-f2-lite", "combo-sky-f3-lite", 
       "combo-meta-lite", "combo-meta-f1-lite", "combo-meta-f2-lite", "combo-meta-f3-lite", "combo-fgame-lite", 
       "combo-fgame-f1-lite", "combo-fgame-f2-lite", "combo-fgame-f3-lite", "fpt-speedx2-pro-lite", "fpt-speedx10-pro-lite"
     ]
   };
 
+  // Tab internet: chỉ lấy từ ca_nhan (gói Internet thuần)
+  // Tab combo: chỉ lấy từ additional_home_packages + f_game (gói Combo truyền hình, KHÔNG phải thể thao)
+  const DATA_SOURCES = {
+    internet: [PRODUCT_DATA.ca_nhan || []],
+    combo: [PRODUCT_DATA.additional_home_packages || [], PRODUCT_DATA.f_game || []],
+  };
+
   const currentTab = TAB_CONFIG[activeTab];
-  const currentData = getProductsByIds(CA_NHAN_DISPLAY_IDS[activeTab] || []);
+  const currentData = getProductsByIds(DATA_SOURCES[activeTab] || [], CA_NHAN_DISPLAY_IDS[activeTab] || []);
 
   return (
     <div className={styles.caNhanPage}>

@@ -30,14 +30,7 @@ export default function Home({ region }) {
       "f-game", "meta", "combo-fgame", "c-the-thao-meta", "f-game-f1", "combo-fgame-f1"
     ],
     combo_camera: PRODUCT_DATA.camera_combos.map(p => p.id),
-    combo_truyen_hinh: [
-      "c-the-thao-sky", "combo-giga", "c-the-thao-meta", "combo-giga-f1", "combo-sky-f1", "c-the-thao-meta-f1", 
-      "c-the-thao-meta-f2", "c-the-thao-meta-f3", "combo-an-tam", "combo-giga-lite", "combo-giga-f1-lite", 
-      "combo-giga-f2-lite", "combo-giga-f3-lite", "combo-sky-lite", "combo-sky-f1-lite", "combo-sky-f2-lite", 
-      "combo-sky-f3-lite", "combo-meta-lite", "combo-meta-f1-lite", "combo-meta-f2-lite", "combo-meta-f3-lite", 
-      "combo-fgame-lite", "combo-fgame-f1-lite", "combo-fgame-f2-lite", "combo-fgame-f3-lite", "combo-fgame-f2", 
-      "combo-fgame-f3", "fpt-speedx2-pro-lite", "fpt-speedx10-lite"
-    ]
+    combo_truyen_hinh: PRODUCT_DATA.additional_home_packages.map(p => p.id)
   };
 
   const tabDataMap = {
@@ -80,7 +73,11 @@ export default function Home({ region }) {
         <ProductCardSlider
           title="Combo Internet – Truyền hình – Ngoại Hạng Anh"
           subtitle="Xem trọn vẹn Ngoại hạng Anh, La Liga, Champions League cùng Internet tốc độ cao"
-          data={PRODUCT_DATA.the_thao}
+          data={(PRODUCT_DATA.the_thao || []).filter(item => [
+            'c-the-thao-sky', 'c-the-thao-sky-f1', 'c-the-thao-sky-f2',
+            'c-the-thao-meta', 'c-the-thao-meta-f1', 'c-the-thao-meta-f2',
+            'c-the-thao-speedx2', 'c-the-thao-speedx2-pro'
+          ].includes(item.id))}
           region={region}
           badgeSub="Internet – Truyền hình – Ngoại hạng Anh"
         />

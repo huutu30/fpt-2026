@@ -733,6 +733,7 @@ body {
 /* TRACK */
 .combo-sport-track {
   display: flex;
+  align-items: stretch; /* Đảm bảo các card giãn bằng nhau */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -752,14 +753,15 @@ body {
   flex: 0 0 calc(25% - 15px);
   min-width: 280px;
   max-width: 320px;
+  height: auto; /* Để flex container tự stretch */
   background: #fff;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--fpt-border);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.3s, border-color 0.3s;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: max-content 1fr;
   scroll-snap-align: start;
 }
 
