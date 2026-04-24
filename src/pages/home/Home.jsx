@@ -10,13 +10,42 @@ import NewsSection from "../../components/home/NewsSection";
 export default function Home({ region }) {
   const [activeCategory, setActiveCategory] = useState("ca_nhan");
 
-  // Mapping tab → PRODUCT_DATA key (hiện TOÀN BỘ sản phẩm)
+  // Lấy danh sách toàn bộ sản phẩm từ tất cả các mảng trong PRODUCT_DATA
+  const allProducts = Object.values(PRODUCT_DATA).flat();
+
+  // Helper function để lấy product theo ID
+  const getProductsByIds = (idList) => {
+    return idList.map(id => allProducts.find(p => p.id === id)).filter(Boolean);
+  };
+
+  // Định nghĩa danh sách ID hiển thị ngoài trang chủ theo đúng yêu cầu
+  const HOME_DISPLAY_IDS = {
+    ca_nhan: [
+      "giga", "sky", "giga-f1", "sky-f1", "sky-f2", "sky-f3"
+    ],
+    gia_dinh: [
+      "giga-f1", "sky-f1", "sky-f2", "combo-giga-f1", "combo-sky-f1", "meta", "meta-f1", "meta-f2", "meta-f3"
+    ],
+    game_thu: [
+      "f-game", "meta", "combo-fgame", "c-the-thao-meta", "f-game-f1", "combo-fgame-f1"
+    ],
+    combo_camera: PRODUCT_DATA.camera_combos.map(p => p.id),
+    combo_truyen_hinh: [
+      "c-the-thao-sky", "combo-giga", "c-the-thao-meta", "combo-giga-f1", "combo-sky-f1", "c-the-thao-meta-f1", 
+      "c-the-thao-meta-f2", "c-the-thao-meta-f3", "combo-an-tam", "combo-giga-lite", "combo-giga-f1-lite", 
+      "combo-giga-f2-lite", "combo-giga-f3-lite", "combo-sky-lite", "combo-sky-f1-lite", "combo-sky-f2-lite", 
+      "combo-sky-f3-lite", "combo-meta-lite", "combo-meta-f1-lite", "combo-meta-f2-lite", "combo-meta-f3-lite", 
+      "combo-fgame-lite", "combo-fgame-f1-lite", "combo-fgame-f2-lite", "combo-fgame-f3-lite", "combo-fgame-f2", 
+      "combo-fgame-f3", "fpt-speedx2-pro-lite", "fpt-speedx10-lite"
+    ]
+  };
+
   const tabDataMap = {
-    ca_nhan: PRODUCT_DATA.ca_nhan || [],
-    gia_dinh: PRODUCT_DATA.gia_dinh || [],
-    game_thu: PRODUCT_DATA.f_game || [],
-    combo_camera: PRODUCT_DATA.camera_combos || [],
-    combo_truyen_hinh: PRODUCT_DATA.the_thao || [],
+    ca_nhan: getProductsByIds(HOME_DISPLAY_IDS.ca_nhan),
+    gia_dinh: getProductsByIds(HOME_DISPLAY_IDS.gia_dinh),
+    game_thu: getProductsByIds(HOME_DISPLAY_IDS.game_thu),
+    combo_camera: getProductsByIds(HOME_DISPLAY_IDS.combo_camera),
+    combo_truyen_hinh: getProductsByIds(HOME_DISPLAY_IDS.combo_truyen_hinh),
   };
 
   const categoryNames = {
@@ -32,14 +61,6 @@ export default function Home({ region }) {
       <Hero />
 
       <div className="container">
-        {/* SECTION 1: COMBO THỂ THAO */}
-        <ProductCardSlider
-          title="Combo Internet – Truyền hình – Ngoại Hạng Anh"
-          subtitle="Xem trọn vẹn Ngoại hạng Anh, La Liga, Champions League cùng Internet tốc độ cao"
-          data={PRODUCT_DATA.the_thao}
-          region={region}
-          badgeSub="Internet – Truyền hình – Ngoại hạng Anh"
-        />
 
         {/* SECTION 2: KHÁM PHÁ SẢN PHẨM NỔI BẬT */}
         <DiscoverySection
@@ -54,6 +75,14 @@ export default function Home({ region }) {
           title={`Gói cước cho ${categoryNames[activeCategory] || "bạn"}`}
           data={tabDataMap[activeCategory]}
           region={region}
+        />
+        {/* SECTION 1: COMBO THỂ THAO */}
+        <ProductCardSlider
+          title="Combo Internet – Truyền hình – Ngoại Hạng Anh"
+          subtitle="Xem trọn vẹn Ngoại hạng Anh, La Liga, Champions League cùng Internet tốc độ cao"
+          data={PRODUCT_DATA.the_thao}
+          region={region}
+          badgeSub="Internet – Truyền hình – Ngoại hạng Anh"
         />
 
         {/* SECTION 3: THIẾT BỊ CÔNG NGHỆ */}

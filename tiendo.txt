@@ -1,26 +1,5 @@
-🎯 Các tính năng đã hoàn thành (Done)
-Section Danh mục sản phẩm (Trang chủ)
-
-Cấu trúc lại thành layout 5 cột cân đối.
-Sử dụng ảnh full-cover (bo góc đẹp mắt), loại bỏ các đoạn text/button thừa để hiển thị giống hệt bản mẫu trên fpt.vn.
-Cập nhật Mega Menu (menuConfig.js & App.jsx)
-
-Xóa bỏ các gói cước truyền hình cũ.
-Thêm menu "Combo Ngoại hạng Anh" và thiết lập routing tới trang /giai-tri/ngoai-hang-anh.
-Xây dựng Landing Page "Ngoại Hạng Anh" (NgoaiHangAnh.jsx & CSS Module)
-
-Tái tạo thành công 100% cấu trúc layout theo đúng thứ tự của trang FPT gốc:
-Hero Banner (VinFast) trên cùng với nút "Đăng ký ngay".
-Bảng so sánh chi tiết giữa COMBO THỂ THAO SKY và V.VIP 2.
-Thẻ gói cước V.VIP 1 & V.VIP 2 (có gắn anchor #section_item_sub_breadcrumb_73).
-Khối Feature (Tính năng) 4 ô kèm icon.
-Xử lý UI/UX an toàn: Đã thêm các lớp màu nền Gradient (Đen - Tím - Cam) cực kỳ sang trọng làm fallback. Dù ảnh có bị lỗi không tải được, trang web vẫn đẹp, chữ vẫn hiển thị rõ ràng.
-Modal Đăng Ký: Đã làm xong popup mờ hiển thị 2 lựa chọn (Combo SKY & V.VIP 2) khi bấm "Đăng ký ngay".
-🚀 Công việc tiếp theo cho ngày mai (To-do)
-Cập nhật lại đường dẫn hình ảnh (Image URLs):
-Các ảnh như Banner VinFast, Cầu thủ, TV, Sân vận động hiện đang dùng link tạm hoặc link từ fpt.vn (có thể bị lỗi do chặn CORS/hotlink). Mai bạn chỉ cần thay thuộc tính src trong NgoaiHangAnh.jsx bằng link ảnh thật (từ S3 hoặc máy local) là giao diện sẽ hoàn hảo.
-Xử lý logic Modal Đăng ký:
-Hiện tại click chọn gói trong Modal mới chỉ in ra console.log. Mai bạn có thể gắn nó vào form điền thông tin hoặc chuyển hướng sang trang thanh toán/API thực tế.
-Kiểm tra Responsive:
-Review lại một lần cuối trên thiết bị di động (Mobile/Tablet) xem các khoảng cách chữ, bảng so sánh đã vừa vặn 100% ý bạn chưa.
-Bạn cứ lưu đoạn này lại nhé. Chúc bạn ngủ ngon và ngày mai code thật mượt! Khi nào cần, cứ mở chat mới và dán lại đoạn này cho tôi là chúng ta có thể làm tiếp ngay.
+http://localhost:5173/internet/gia-dinh
+page này bỏ phần combo thể thao NHA, giữ lại internet gia đình, combo truyền hình và Internet & camera
+internet gia đình hiển thị: internet giga f1, internet sky f1, internet sky f2, combo giga f1, combo sky f1, internet meta, internet meta f1, internet meta f2, internet meta f3.
+combo truyền hình hiển thị: combo sky, combo giga, combo meta, combo giga f1, combo sky f1, combo meta f1, combo f-game.
+internet & camera hiển thị: camera_gia_dinh: autoOptimizeSEO 

@@ -11,19 +11,7 @@ export default function GameThu({ region }) {
     document.title = "Gói cước Internet game thủ FPT | Ping thấp, giảm lag | FPT Telecom";
   }, []);
 
-  // Filter Game packages: Looking for "Meta" or "F-Game" in both ca_nhan and gia_dinh
-  const allPackages = [...(PRODUCT_DATA.ca_nhan || []), ...(PRODUCT_DATA.gia_dinh || [])];
-  
-  // Try to find specific gaming packages, fallback to Meta packages
-  let gamePackages = allPackages.filter(pkg => 
-    pkg.name.toLowerCase().includes('game') || 
-    pkg.name.toLowerCase().includes('meta')
-  );
-
-  // Fallback if not found
-  if (gamePackages.length === 0) {
-    gamePackages = allPackages.slice(2, 6); // Just grab some high tier ones
-  }
+  const gamePackages = PRODUCT_DATA.f_game || [];
 
   return (
     <div className={styles.gameThuPage}>

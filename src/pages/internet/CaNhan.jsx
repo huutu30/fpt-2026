@@ -9,34 +9,18 @@ import styles from './CaNhan.module.css';
 const TABS = [
   { id: 'internet', label: 'Internet Cá Nhân', icon: <Wifi size={18} /> },
   { id: 'combo', label: 'Combo Truyền Hình', icon: <MonitorPlay size={18} /> },
-  { id: 'thethao', label: 'Combo Thể Thao NHA', icon: <Trophy size={18} /> },
-  { id: 'gamethu', label: 'Game Thủ', icon: <Gamepad2 size={18} /> },
 ];
 
 const TAB_CONFIG = {
   internet: {
     title: 'Gói cước Internet Tốc độ cao',
     desc: 'Khám phá các gói cước Internet FPT dành cho cá nhân với mức giá rõ ràng, tốc độ cao, dễ chọn theo nhu cầu học tập, làm việc, giải trí và sử dụng nhiều thiết bị.',
-    dataKey: 'ca_nhan',
     badgeSub: 'INTERNET CÁ NHÂN',
   },
   combo: {
     title: 'Combo Internet & Truyền hình',
     desc: 'Cập nhật bảng giá gói cước FPT tích hợp Internet và truyền hình với chi phí tiết kiệm, phù hợp gia đình cần vừa lắp mạng ổn định vừa xem giải trí trên FPT Play.',
-    dataKey: 'gia_dinh',
     badgeSub: 'COMBO INTERNET & TRUYỀN HÌNH',
-  },
-  thethao: {
-    title: 'Combo Internet Ngoại Hạng Anh',
-    desc: 'Khám phá các gói cước FPT xem Ngoại Hạng Anh với nhiều lựa chọn băng thông, thiết bị đi kèm và ưu đãi đăng ký mới, phù hợp gia đình yêu thể thao.',
-    dataKey: 'the_thao',
-    badgeSub: 'COMBO THỂ THAO NHA',
-  },
-  gamethu: {
-    title: 'Gói cước dành cho Game Thủ',
-    desc: 'Khám phá các gói cước FPT dành cho game thủ với tốc độ cao, đường truyền ổn định và cấu hình phù hợp nhu cầu chơi game online, livestream, giải trí tại nhà.',
-    dataKey: 'f_game',
-    badgeSub: 'GAME THỦ',
   },
 };
 
@@ -61,7 +45,29 @@ export default function CaNhan({ region }) {
     document.title = "Bảng giá gói cước internet FPT cá nhân gia đình | FPT Telecom";
   }, []);
 
+  // Lấy danh sách toàn bộ sản phẩm từ tất cả các mảng trong PRODUCT_DATA
+  const allProducts = Object.values(PRODUCT_DATA).flat();
+
+  // Helper function để lấy product theo ID
+  const getProductsByIds = (idList) => {
+    return idList.map(id => allProducts.find(p => p.id === id)).filter(Boolean);
+  };
+
+  const CA_NHAN_DISPLAY_IDS = {
+    internet: [
+      "giga", "sky", "giga-f1", "sky-f1", "meta-f1", "fpt-an-tam", "sky-f2", "sky-f3", "meta-f2", "meta-f3"
+    ],
+    combo: [
+      "c-the-thao-sky", "combo-giga", "c-the-thao-meta", "combo-giga-f1", "combo-sky-f1", "c-the-thao-meta-f1", 
+      "c-the-thao-meta-f2", "c-the-thao-meta-f3", "combo-an-tam", "combo-giga-lite", "combo-giga-f1-lite", 
+      "combo-giga-f2-lite", "combo-sky-lite", "combo-sky-f1-lite", "combo-sky-f2-lite", "combo-sky-f3-lite", 
+      "combo-meta-lite", "combo-meta-f1-lite", "combo-meta-f2-lite", "combo-meta-f3-lite", "combo-fgame-lite", 
+      "combo-fgame-f1-lite", "combo-fgame-f2-lite", "combo-fgame-f3-lite", "fpt-speedx2-pro-lite", "fpt-speedx10-pro-lite"
+    ]
+  };
+
   const currentTab = TAB_CONFIG[activeTab];
+  const currentData = getProductsByIds(CA_NHAN_DISPLAY_IDS[activeTab] || []);
 
   return (
     <div className={styles.caNhanPage}>
@@ -104,7 +110,7 @@ export default function CaNhan({ region }) {
           </div>
           
           <ProductCardSlider 
-            data={PRODUCT_DATA[currentTab.dataKey]} 
+            data={currentData} 
             region={region} 
             badgeSub={currentTab.badgeSub}
           />

@@ -11,6 +11,7 @@ import GameThu from './pages/internet/GameThu';
 import DoanhNghiep from './pages/internet/DoanhNghiep';
 import FptPlay from './pages/giai-tri/FptPlay';
 import Camera from './pages/smart-device/Camera';
+import SmartHome from './pages/smart-device/SmartHome';
 import Register from './pages/register/Register';
 import NewsPage from './pages/news/NewsPage';
 import ArticlePage from './pages/news/ArticlePage';
@@ -41,6 +42,7 @@ function App() {
 
           {/* NHÓM THIẾT BỊ */}
           <Route path="/thiet-bi/camera" element={<Camera region={region} />} />
+          <Route path="/thiet-bi/smarthome" element={<SmartHome region={region} />} />
 
           {/* TIN TỨC & HỖ TRỢ */}
           <Route path="/tin-tuc" element={<NewsPage />} />

@@ -9,7 +9,6 @@ import styles from './GiaDinh.module.css';
 const TABS = [
   { id: 'internet', label: 'Internet Gia Đình', icon: <Home size={18} /> },
   { id: 'combo', label: 'Combo Truyền Hình', icon: <MonitorPlay size={18} /> },
-  { id: 'thethao', label: 'Combo Thể Thao NHA', icon: <Trophy size={18} /> },
   { id: 'camera', label: 'Internet & Camera', icon: <Camera size={18} /> },
 ];
 
@@ -17,26 +16,16 @@ const TAB_CONFIG = {
   internet: {
     title: 'Gói cước Internet Gia Đình mở rộng vùng phủ',
     desc: 'Các gói cước được trang bị thêm Access Point / Wi-Fi Mesh, phủ sóng mạnh mẽ cho nhà nhiều tầng, chung cư diện tích rộng.',
-    dataKey: 'gia_dinh',
     badgeSub: 'INTERNET GIA ĐÌNH',
-    sliceEnd: 4,
   },
   combo: {
     title: 'Combo Internet & Truyền hình FPT Play',
     desc: 'Phù hợp mọi nhu cầu cho gia đình giải trí với hàng trăm kênh truyền hình đặc sắc, thể thao độc quyền và kho phim 4K.',
-    dataKey: 'gia_dinh',
     badgeSub: 'COMBO INTERNET & TRUYỀN HÌNH',
-  },
-  thethao: {
-    title: 'Combo Thể Thao - Xem Ngoại Hạng Anh',
-    desc: 'Đăng ký Combo Thể thao xem Ngoại Hạng Anh trọn vẹn cùng gia đình với nhiều lựa chọn băng thông và thiết bị đi kèm.',
-    dataKey: 'the_thao',
-    badgeSub: 'COMBO THỂ THAO NHA',
   },
   camera: {
     title: 'Combo Internet Camera thông minh cho gia đình an tâm',
     desc: 'Giải pháp kết nối và giám sát giúp bảo vệ ngôi nhà dù ở bất cứ đâu, tích hợp lưu trữ Cloud và camera AI thông minh.',
-    dataKey: 'camera_gia_dinh',
     badgeSub: 'INTERNET & CAMERA',
   },
 };
@@ -59,9 +48,25 @@ export default function GiaDinh({ region }) {
     document.title = "Gói cước Internet cho hộ gia đình | Khuyến mãi HOT 04/2026 | FPT Telecom";
   }, []);
 
+  const allProducts = Object.values(PRODUCT_DATA).flat();
+
+  const getProductsByIds = (idList) => {
+    return idList.map(id => allProducts.find(p => p.id === id)).filter(Boolean);
+  };
+
+  const GIA_DINH_DISPLAY_IDS = {
+    internet: [
+      "giga-f1", "sky-f1", "sky-f2", "combo-giga-f1", "combo-sky-f1", "meta", "meta-f1", "meta-f2", "meta-f3"
+    ],
+    combo: [
+      "c-the-thao-sky", "combo-giga", "c-the-thao-meta", "combo-giga-f1", "combo-sky-f1", "c-the-thao-meta-f1", "combo-fgame"
+    ],
+    camera: PRODUCT_DATA.camera_gia_dinh.map(p => p.id)
+  };
+
   const currentTab = TAB_CONFIG[activeTab];
   const getSliderData = () => {
-    return PRODUCT_DATA[currentTab.dataKey] || [];
+    return getProductsByIds(GIA_DINH_DISPLAY_IDS[activeTab] || []);
   };
 
   return (
