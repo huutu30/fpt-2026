@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRegisterModal } from '../../context/RegisterContext';
 import { Link } from 'react-router-dom';
 import { Shield, Cloud, Eye, Cpu, Check, Sun, Moon } from 'lucide-react';
 import { PRODUCT_DATA } from '../../data/productData';
@@ -7,6 +8,7 @@ import NewsSection from '../../components/home/NewsSection';
 import styles from './Camera.module.css';
 
 export default function Camera({ region }) {
+  const { openModal } = useRegisterModal();
   const [comboTab, setComboTab] = useState('all');
 
   useEffect(() => {
@@ -111,13 +113,9 @@ export default function Camera({ region }) {
                       <li key={i}><Check size={14} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <Link
-                    to={`/dang-ky?product=${encodeURIComponent(cam.name)}`}
-                    className={styles.productBtn}
-                    title={`Đăng ký tư vấn ${cam.name}`}
-                  >
+                  <button onClick={() => openModal(cam.name)} className={styles.btnSecondary}>
                     Đăng ký tư vấn
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}
@@ -175,13 +173,9 @@ export default function Camera({ region }) {
                       <li key={i}><Check size={13} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <Link
-                    to={`/dang-ky?product=${encodeURIComponent(combo.name)}`}
-                    className={styles.comboBtn}
-                    title={`Đăng ký ${combo.name}`}
-                  >
+                  <button onClick={() => openModal(combo.name)} className={styles.btnSecondary}>
                     Đăng ký ngay
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}

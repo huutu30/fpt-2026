@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import { useRegisterModal } from '../../context/RegisterContext';
 import { Link } from 'react-router-dom';
 import { Home, Cpu, Shield, Zap, Check } from 'lucide-react';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './SmartHome.module.css';
 
 export default function SmartHome({ region }) {
+  const { openModal } = useRegisterModal();
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "FPT Smart Home - Thiết bị thông minh | FPT Telecom";
@@ -158,12 +160,9 @@ export default function SmartHome({ region }) {
                       <li key={i}><Check size={14} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <Link
-                    to={`/dang-ky?product=${encodeURIComponent(prod.name)}`}
-                    className={styles.productBtn}
-                  >
+                  <button onClick={() => openModal(prod.name)} className={styles.btnSecondary}>
                     Đăng ký mua
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}

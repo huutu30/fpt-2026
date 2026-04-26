@@ -1,27 +1,92 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Video, PhoneCall } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 import styles from './Footer.module.css';
-import { HOTLINE } from '../../data/menuConfig';
+
+const YoutubeIcon = ({ size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
+
+const InstagramIcon = ({ size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+  </svg>
+);
+
+const FacebookIcon = ({ size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-1.125 0-2.511.236-2.511 1.41v1.56h3.804l-.318 3.667h-3.485v7.98H9.101z"/>
+  </svg>
+);
 
 export default function Footer() {
   return (
     <footer className={styles.siteFooter} role="contentinfo">
-      <div className="container">
-        <div className={styles.footerTop}>
+      <div className={styles.container}>
+        
+        {/* Top section: Logo, Social, Hotline */}
+        <div className={styles.footerTopRow}>
+          <div className={styles.logo}>
+            <Link to="/trang-chu" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+              <img src="https://fpt.vn/frontend_layout_2025_vibecode/assets/images/logo-ftel.svg" alt="FPT Telecom Logo" style={{ height: '40px', width: '160px', objectFit: 'contain', display: 'block' }} />
+            </Link>
+          </div>
+          
+          <div className={styles.topRight}>
+            <div className={styles.socialBox}>
+              <a href="#" className={`${styles.socialIcon} ${styles.hiLogo}`} aria-label="Hi FPT">Hi</a>
+              <a href="#" className={`${styles.socialIcon} ${styles.ytIcon}`} aria-label="YouTube"><YoutubeIcon size={24} /></a>
+              <a href="#" className={`${styles.socialIcon} ${styles.igIcon}`} aria-label="Instagram"><InstagramIcon size={22} /></a>
+              <a href="#" className={`${styles.socialIcon} ${styles.zaloLogo}`} aria-label="Zalo">Zalo</a>
+              <a href="#" className={`${styles.socialIcon} ${styles.fbIcon}`} aria-label="Facebook"><FacebookIcon size={22} /></a>
+            </div>
+            
+            <a href="tel:19006600" className={styles.hotlineBlock}>
+              <Phone size={24} fill="currentColor" strokeWidth={0} />
+              1900 6600
+            </a>
+          </div>
+        </div>
+
+        {/* Main section: Columns */}
+        <div className={styles.footerMain}>
+          
           {/* Column 1: Company Info */}
           <div className={styles.footerCol}>
-            <h3>Công ty Cổ phần Viễn thông FPT</h3>
             <div className={styles.companyInfo}>
-              <p>Tầng 9, Block A, tòa nhà FPT Cầu Giấy, số 10 Phạm Văn Bạch, quận Cầu Giấy, TP. Hà Nội</p>
-              <p><strong>Hotline:</strong> <a href={`tel:${HOTLINE.replace(/\s/g, '')}`} className={styles.contactLink}>{HOTLINE}</a></p>
-              <p><strong>Email:</strong> hotrokhachhang@fpt.com</p>
               <p>Giấy chứng nhận ĐKDN số 0101778163 do Sở Kế hoạch Đầu tư Thành phố Hà Nội cấp ngày 28/07/2005</p>
-            </div>
-            <div className={styles.socialBox}>
-              <a href="#" className={styles.socialIcon} aria-label="Facebook"><Globe size={18} /></a>
-              <a href="#" className={styles.socialIcon} aria-label="YouTube"><Video size={18} /></a>
-              <a href={`tel:${HOTLINE.replace(/\s/g, '')}`} className={styles.socialIcon} aria-label="Zalo/Hotline"><PhoneCall size={18} /></a>
+              <p>Giấy phép cung cấp dịch vụ viễn thông số 255/GP-CVT do Cục Viễn thông cấp ngày 07/11/2022</p>
+              
+              <p className={styles.companyName}>Công ty Cổ phần Viễn thông FPT</p>
+              
+              <div className={styles.infoRow}>
+                <MapPin size={16} />
+                <span>Tầng 9, Block A, tòa nhà FPT Cầu Giấy, số 10 Phạm Văn Bạch, quận Cầu Giấy, TP. Hà Nội</span>
+              </div>
+              <div className={styles.infoRow}>
+                <Mail size={16} />
+                <a href="mailto:hotrokhachhang@fpt.com" style={{color: 'inherit', textDecoration: 'none'}}>hotrokhachhang@fpt.com</a>
+              </div>
+              <div className={styles.infoRow}>
+                <Phone size={16} />
+                <a href="tel:02473002222" style={{color: 'inherit', textDecoration: 'none'}}>024 7300 2222</a>
+              </div>
+              
+              <p style={{marginTop: '15px'}}>Người đại diện: Ông Hoàng Việt Anh</p>
+              
+              <img 
+                src="https://fpt.vn/assets/frontend/img/bct.png" 
+                alt="Đã thông báo Bộ Công Thương" 
+                className={styles.bctLogo}
+                onError={(e) => {
+                  e.target.onerror = null; 
+                  e.target.src="http://online.gov.vn/Content/EndUser/LogoCCDVSaleNoti/logoCCDV.png";
+                }}
+              />
             </div>
           </div>
 
@@ -29,25 +94,23 @@ export default function Footer() {
           <div className={styles.footerCol}>
             <h3>Về FPT Telecom</h3>
             <ul className={styles.footerLinks}>
-              <li><Link to="#">Giới thiệu chung</Link></li>
-              <li><Link to="#">Liên kết - Thành viên</Link></li>
-              <li><Link to="#">Khách hàng - Đối tác</Link></li>
-              <li><Link to="#">Quan hệ cổ đông</Link></li>
-              <li><Link to="#">Tuyển dụng</Link></li>
-              <li><Link to="#">Tin tức</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Giới thiệu chung</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Liên kết - Thành viên</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Khách hàng - Đối tác</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Quan hệ cổ đông</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tập đoàn FPT</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tuyển dụng</Link></li>
+              <li><Link to="/tin-tuc" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tin tức</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Khách hàng FPT */}
+          {/* Column 3: Khách hàng FPT Telecom */}
           <div className={styles.footerCol}>
-            <h3>Khách hàng FPT</h3>
+            <h3>Khách hàng FPT Telecom</h3>
             <ul className={styles.footerLinks}>
-              <li><Link to="#">Hướng dẫn sử dụng dịch vụ</Link></li>
-              <li><Link to="#">Thanh toán hóa đơn</Link></li>
-              <li><Link to="#">Hướng dẫn cài đặt</Link></li>
-              <li><Link to="#">Điều khoản sử dụng</Link></li>
-              <li><Link to="#">Chính sách & Quy trình</Link></li>
-              <li><Link to="#">Góp ý khách hàng</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Hướng dẫn sử dụng dịch vụ</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Thanh toán hóa đơn</Link></li>
+              <li><Link to="/ho-tro" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Góp ý khách hàng</Link></li>
             </ul>
           </div>
 
@@ -55,20 +118,16 @@ export default function Footer() {
           <div className={styles.footerCol}>
             <h3>Sản phẩm dịch vụ</h3>
             <ul className={styles.footerLinks}>
-              <li><Link to="/internet/ca-nhan">Lắp đặt WiFi Internet</Link></li>
-              <li><Link to="/internet/combo">Internet - Truyền hình FPT Play</Link></li>
-              <li><Link to="/internet/wifi-7">Internet Wi-Fi 7 (SpeedX)</Link></li>
-              <li><Link to="/thiet-bi/camera">FPT Camera</Link></li>
-              <li><Link to="#">Khuyến mãi mới nhất</Link></li>
-              <li><Link to="#">Tìm điểm giao dịch</Link></li>
+              <li><Link to="/internet/ca-nhan" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Lắp đặt WiFi Internet</Link></li>
+              <li><Link to="/internet/combo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Internet - Truyền hình FPT Play</Link></li>
+              <li><Link to="/internet/wifi-7" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Internet Wi-Fi 7 (SpeedX)</Link></li>
+              <li><Link to="/thiet-bi/camera" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>FPT Camera</Link></li>
+              <li><Link to="/thiet-bi/smarthome" className={styles.highlightLink} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>FPT Smart Home</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Khuyến mãi mới nhất</Link></li>
+              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tìm điểm giao dịch</Link></li>
             </ul>
           </div>
-        </div>
-      </div>
-
-      <div className={styles.footerBottom}>
-        <div className="container">
-          <p>© {new Date().getFullYear()} Công ty Cổ phần Viễn thông FPT. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>

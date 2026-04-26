@@ -27,7 +27,7 @@ export default function Home({ region }) {
       "giga-f1", "sky-f1", "sky-f2", "combo-giga-f1", "combo-sky-f1", "meta", "meta-f1", "meta-f2", "meta-f3"
     ],
     game_thu: [
-      "f-game", "meta", "combo-fgame", "c-the-thao-meta", "f-game-f1", "combo-fgame-f1"
+      "f-game", "meta", "combo-fgame", "combo-meta", "f-game-f1", "combo-fgame-f1"
     ],
     combo_camera: PRODUCT_DATA.camera_combos.map(p => p.id),
     combo_truyen_hinh: PRODUCT_DATA.additional_home_packages.map(p => p.id)

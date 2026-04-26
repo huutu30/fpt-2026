@@ -17,7 +17,7 @@ export const NAV_MENU = [
   { 
     title: 'Trang chủ', 
     seoTitle: 'Trang chủ FPT Telecom - Đăng ký Internet, Truyền hình, Camera',
-    path: '/',
+    path: '/trang-chu',
   },
   { 
     title: 'Sản phẩm dịch vụ', 
@@ -70,4 +70,4 @@ export const NAV_MENU = [
 ];
 
 /** Số điện thoại hotline hiển thị trên navbar */
-export const HOTLINE = '1900 6600';
+export const HOTLINE = '0387498332';

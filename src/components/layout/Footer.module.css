@@ -1,43 +1,137 @@
 .siteFooter {
-  background-color: #0f172a;
-  color: #94a3b8;
-  padding: 60px 0 0 0;
+  background-color: #ffffff;
+  color: #4b5563;
   font-family: inherit;
+  font-size: 14px;
+  border-top: 1px solid #e5e7eb;
 }
 
-.footerTop {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
   gap: 40px;
-  padding-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.socialBox {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+}
+
+.hiLogo {
+  color: #0056D2;
+  font-size: 22px;
+  letter-spacing: -1px;
+}
+
+.ytIcon {
+  color: #FF0000;
+}
+
+.igIcon {
+  color: #E1306C; /* Simplified IG color */
+}
+
+.zaloLogo {
+  color: #0068FF;
+  font-size: 18px;
+}
+
+.fbIcon {
+  color: #1877F2;
+}
+
+.hotlineBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00A651;
+  font-weight: 700;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.footerMain {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 40px 0;
 }
 
 .footerCol h3 {
-  color: #fff;
+  color: #1f2937;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 20px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .companyInfo p {
   margin-bottom: 12px;
   line-height: 1.6;
-  font-size: 14px;
 }
 
-.companyInfo strong {
-  color: #e2e8f0;
+.companyName {
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 20px;
+  margin-bottom: 15px !important;
+  font-size: 15px;
 }
 
-.contactLink {
-  color: #f57020;
-  text-decoration: none;
-  font-weight: 600;
+.infoRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
 }
 
-.contactLink:hover {
-  text-decoration: underline;
+.infoRow svg {
+  min-width: 16px;
+  margin-top: 4px;
+  color: #6b7280;
+}
+
+.bctLogo {
+  margin-top: 20px;
+  height: 40px;
 }
 
 .footerLinks {
@@ -47,56 +141,39 @@
 }
 
 .footerLinks li {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .footerLinks a {
-  color: #94a3b8;
+  color: #4b5563;
   text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-  display: inline-block;
+  transition: color 0.2s ease;
 }
 
 .footerLinks a:hover {
   color: #f57020;
-  transform: translateX(4px);
 }
 
-.socialBox {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-}
-
-.socialIcon {
-  width: 36px;
-  height: 36px;
-  background-color: #1e293b;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.socialIcon:hover {
-  background-color: #f57020;
-  transform: translateY(-3px);
+.highlightLink {
+  color: #0068FF !important;
 }
 
 .footerBottom {
-  background-color: #020617;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 13px;
-  color: #64748b;
-  border-top: 1px solid #1e293b;
+  display: none;
 }
 
-@media (max-width: 768px) {
-  .footerTop {
+@media (max-width: 992px) {
+  .footerMain {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .footerTopRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footerMain {
     grid-template-columns: 1fr;
   }
 }

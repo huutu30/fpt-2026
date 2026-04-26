@@ -72,7 +72,7 @@ export default function Navbar({ region, setRegion }) {
         <div className="container navbar-inner">
 
           {/* LOGO */}
-          <Link to="/" className="site-logo" aria-label="Trang chủ FPT Telecom" title="Về trang chủ" id="site-logo" itemProp="url">
+          <Link to="/trang-chu" className="site-logo" aria-label="Trang chủ FPT Telecom" title="Về trang chủ" id="site-logo" itemProp="url" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <img 
               src="https://fpt.vn/frontend_layout_2025_vibecode/assets/images/logo-ftel.svg" 
               alt="FPT Telecom Logo" 
@@ -132,7 +132,7 @@ export default function Navbar({ region, setRegion }) {
                       role="menuitem"
                       id={`nav-item-${i}`}
                       title={menu.seoTitle}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={() => { setMobileOpen(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}
                     >
                       {menu.title}
                     </Link>
@@ -153,7 +153,7 @@ export default function Navbar({ region, setRegion }) {
                               <ul className="mega-col-list" role="menu">
                                 {cat.items.map((sub, sIdx) => (
                                   <li key={sIdx} role="none">
-                                    <Link to={sub.path} role="menuitem" title={sub.seoTitle || sub.name} onClick={() => { setMobileOpen(false); setActiveMega(null); }}>
+                                    <Link to={sub.path} role="menuitem" title={sub.seoTitle || sub.name} onClick={() => { setMobileOpen(false); setActiveMega(null); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
                                       {sub.name}
                                       {sub.badge && <span className="mega-badge" aria-label={`Nhãn: ${sub.badge}`}>{sub.badge}</span>}
                                     </Link>
@@ -193,19 +193,19 @@ export default function Navbar({ region, setRegion }) {
 
       {/* ===== MOBILE BOTTOM NAV ===== */}
       <nav className="bottom-nav" role="navigation" aria-label="Menu nhanh" id="mobile-bottom-nav">
-        <Link to="/" className="bottom-nav-item center-item" id="bnav-home" title="Trang chủ">
+        <Link to="/trang-chu" className="bottom-nav-item center-item" id="bnav-home" title="Trang chủ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Wifi size={22} aria-hidden="true" />
           <span>Internet</span>
         </Link>
-        <Link to="/giai-tri/fpt-play" className="bottom-nav-item" id="bnav-tv" title="Truyền hình FPT Play">
+        <Link to="/giai-tri/fpt-play" className="bottom-nav-item" id="bnav-tv" title="Truyền hình FPT Play" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Tv size={20} aria-hidden="true" />
           <span>Truyền hình</span>
         </Link>
-        <Link to="/thiet-bi/camera" className="bottom-nav-item" id="bnav-device" title="Thiết bị thông minh">
+        <Link to="/thiet-bi/camera" className="bottom-nav-item" id="bnav-device" title="Thiết bị thông minh" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Monitor size={20} aria-hidden="true" />
           <span>Thiết bị</span>
         </Link>
-        <Link to="/ho-tro" className="bottom-nav-item" id="bnav-support" title="Liên hệ hỗ trợ">
+        <Link to="/ho-tro" className="bottom-nav-item" id="bnav-support" title="Liên hệ hỗ trợ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Headphones size={20} aria-hidden="true" />
           <span>Hỗ trợ</span>
         </Link>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRegisterModal } from '../../context/RegisterContext';
 import { ShieldCheck, Wifi, Activity, MonitorPlay, CheckCircle, ChevronRight, ChevronDown, Download, Upload, Monitor, Gamepad2, Trophy } from 'lucide-react';
 import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
@@ -37,6 +38,7 @@ const FAQ_DATA = [
 ];
 
 export default function CaNhan({ region }) {
+  const { openModal } = useRegisterModal();
   const [activeTab, setActiveTab] = useState('internet');
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -233,37 +235,37 @@ export default function CaNhan({ region }) {
                   <tr>
                     <td><strong>Giga</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>195,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Internet%20Giga" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Internet%20Giga'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6</td>
                   </tr>
                   <tr>
                     <td><strong>Sky</strong> (1Gb - 300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>195,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Internet%20Sky" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Internet%20Sky'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6</td>
                   </tr>
                   <tr>
                     <td><strong>Giga F1</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>205,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Internet%20Giga%20F1" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Internet%20Giga%20F1'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, Access Point</td>
                   </tr>
                   <tr>
                     <td><strong>Sky F1</strong> (1Gb - 300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>210,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Internet%20Sky%20F1" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Internet%20Sky%20F1'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, Access Point</td>
                   </tr>
                   <tr>
                     <td><strong>Giga F2</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>225,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Internet%20Giga%20F2" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Internet%20Giga%20F2'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, 2 Access Point</td>
                   </tr>
                   <tr>
                     <td><strong>Sky F2</strong> (1Gb - 300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>230,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Internet%20Sky%20F2" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Internet%20Sky%20F2'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, 2 Access Point</td>
                   </tr>
                 </tbody>
@@ -291,25 +293,25 @@ export default function CaNhan({ region }) {
                   <tr>
                     <td><strong>Combo Giải trí</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>200,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Combo%20Giai%20Tri" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Combo%20Giai%20Tri'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, FPT Play Box</td>
                   </tr>
                   <tr>
                     <td><strong>Combo Truyền hình</strong> (1Gbps)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>210,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Combo%20Truyen%20Hinh" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Combo%20Truyen%20Hinh'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, FPT Play Box</td>
                   </tr>
                   <tr>
                     <td><strong>Combo Giga F1</strong> (300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>220,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Combo%20Giga%20F1" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Combo%20Giga%20F1'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, FPT Play Box</td>
                   </tr>
                   <tr>
                     <td><strong>Combo Sky F1</strong> (1Gb - 300Mb)</td>
                     <td style={{ color: '#ea580c', fontWeight: 'bold' }}>239,000 ₫</td>
-                    <td><Link to="/dang-ky?product=Combo%20Sky%20F1" className={styles.tableCta}>Đăng ký</Link></td>
+                    <td><button onClick={() => openModal(decodeURIComponent('Combo%20Sky%20F1'))} className={styles.tableCta}>Đăng ký</button></td>
                     <td>Modem Wi-Fi 6, FPT Play Box</td>
                   </tr>
                 </tbody>
