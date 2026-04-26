@@ -160,7 +160,7 @@ export default function SmartHome({ region }) {
                       <li key={i}><Check size={14} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <button onClick={() => openModal(prod.name)} className={styles.btnSecondary}>
+                  <button onClick={() => openModal(prod.name)} className={styles.productBtn}>
                     Đăng ký mua
                   </button>
                 </div>

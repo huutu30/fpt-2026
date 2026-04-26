@@ -113,7 +113,7 @@ export default function Camera({ region }) {
                       <li key={i}><Check size={14} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <button onClick={() => openModal(cam.name)} className={styles.btnSecondary}>
+                  <button onClick={() => openModal(cam.name)} className={styles.productBtn}>
                     Đăng ký tư vấn
                   </button>
                 </div>
@@ -173,7 +173,7 @@ export default function Camera({ region }) {
                       <li key={i}><Check size={13} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <button onClick={() => openModal(combo.name)} className={styles.btnSecondary}>
+                  <button onClick={() => openModal(combo.name)} className={styles.comboBtn}>
                     Đăng ký ngay
                   </button>
                 </div>

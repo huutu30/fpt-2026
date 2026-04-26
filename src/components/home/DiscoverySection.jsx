@@ -6,11 +6,11 @@ import React from 'react';
  */
 export default function DiscoverySection({ activeTab, onTabChange, region }) {
   const tabs = [
-    { id: 'ca_nhan', label: 'Internet cá nhân' },
-    { id: 'gia_dinh', label: 'Internet gia đình' },
+    { id: 'ca_nhan_gia_dinh', label: 'Internet cá nhân & gia đình' },
     { id: 'game_thu', label: 'Internet game thủ' },
-    { id: 'combo_camera', label: 'Combo Internet Camera' },
     { id: 'combo_truyen_hinh', label: 'Combo Internet Truyền hình' },
+    { id: 'doanh_nghiep', label: 'Internet doanh nghiệp' },
+    { id: 'combo_camera', label: 'Combo Internet Camera' },
   ];
 
   const regionLabel = (() => {

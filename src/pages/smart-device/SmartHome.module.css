@@ -111,12 +111,12 @@
   flex: 1 1 calc(50% - 8px);
   max-width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   object-fit: cover;
 }
 
 .solutionImages img:first-child:nth-last-child(3),
-.solutionImages img:first-child:nth-last-child(3) ~ img {
+.solutionImages img:first-child:nth-last-child(3)~img {
   flex: 1 1 calc(33.333% - 11px);
 }
 
@@ -195,6 +195,26 @@
   margin: 0 0 20px;
   padding: 0;
   flex: 1;
+  max-height: 110px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.productFeatures::-webkit-scrollbar {
+  width: 5px;
+}
+
+.productFeatures::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.productFeatures::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.productFeatures::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
 }
 
 .productFeatures li {
@@ -226,6 +246,7 @@
   transition: all 0.3s;
   border: none;
   cursor: pointer;
+  margin-top: auto;
 }
 
 .productBtn:hover {
@@ -336,27 +357,31 @@
   .section {
     padding: 50px 0;
   }
+
   .sectionTitle {
     font-size: 26px;
   }
+
   .productGrid {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 0 16px;
   }
+
   .productImgWrap {
     height: 180px;
   }
-  
-  .solutionRow, .rowReverse {
+
+  .solutionRow,
+  .rowReverse {
     flex-direction: column;
     gap: 24px;
   }
-  
+
   .solutionsList {
     gap: 48px;
   }
-  
+
   .solutionTitle {
     font-size: 24px;
     margin-bottom: 16px;

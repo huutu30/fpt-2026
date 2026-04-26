@@ -376,7 +376,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 85,
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-12-01/692d0fd72d650_Combo%20Sky%20%281%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6915fa003b6d8_Combo%20Sky%20F1.jpg",
       features: [
         "Modem Wifi 6 & Fpt Play Box",
         "Kết nối trên 15 thiết bị",
