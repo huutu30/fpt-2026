@@ -187,7 +187,7 @@ export default function Camera({ region }) {
       <section className={styles.section} style={{ background: '#fff' }}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Combo Internet + Camera <span>trả góp hàng tháng</span></h2>
+            <h2 className={styles.sectionTitle}>Combo Internet + Camera <span>thông minh</span></h2>
             <p className={styles.sectionDesc}>
               Vừa có Internet tốc độ cao, vừa có Camera AI giám sát an ninh. Chỉ từ 250.000đ/tháng, trọn gói không lo chi phí phát sinh.
             </p>
