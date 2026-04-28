@@ -814,11 +814,11 @@ body {
   }
 }
 
-/* Hiệu ứng chạm (Tap) dành cho điện thoại */
-.combo-card:active {
-  transform: translateY(-2px) scale(0.98);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.1s;
+/* TRÊN MOBILE: Tắt transition của card để không chặn thao tác cuộn */
+@media (hover: none) and (pointer: coarse) {
+  .combo-card {
+    transition: none;
+  }
 }
 
 /* BANNER */
