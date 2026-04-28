@@ -8,7 +8,7 @@ import ProductCategorySection from "../../components/home/ProductCategorySection
 import NewsSection from "../../components/home/NewsSection";
 
 export default function Home({ region }) {
-  const [activeCategory, setActiveCategory] = useState("ca_nhan");
+  const [activeCategory, setActiveCategory] = useState("ca_nhan_gia_dinh");
 
   // Lấy danh sách toàn bộ sản phẩm từ tất cả các mảng trong PRODUCT_DATA
   const allProducts = Object.values(PRODUCT_DATA).flat();
@@ -20,33 +20,41 @@ export default function Home({ region }) {
 
   // Định nghĩa danh sách ID hiển thị ngoài trang chủ theo đúng yêu cầu
   const HOME_DISPLAY_IDS = {
-    ca_nhan: [
-      "giga", "sky", "giga-f1", "sky-f1", "sky-f2", "sky-f3"
-    ],
-    gia_dinh: [
-      "giga-f1", "sky-f1", "sky-f2", "combo-giga-f1", "combo-sky-f1", "meta", "meta-f1", "meta-f2", "meta-f3"
+    ca_nhan_gia_dinh: [
+      "giga", "sky", "meta", "f-game", "giga-f1", "sky-f1","meta-f1", "combo-giga-f1", "combo-sky-f1","combo-meta-f1"
     ],
     game_thu: [
       "f-game", "meta", "combo-fgame", "combo-meta", "f-game-f1", "combo-fgame-f1"
+    ],
+    doanh_nghiep: [
+      "lux500", "lux800", "s300-biz", "s300-biz-plus", "s500-biz", "s500-biz-plus"
     ],
     combo_camera: PRODUCT_DATA.camera_combos.map(p => p.id),
     combo_truyen_hinh: PRODUCT_DATA.additional_home_packages.map(p => p.id)
   };
 
   const tabDataMap = {
-    ca_nhan: getProductsByIds(HOME_DISPLAY_IDS.ca_nhan),
-    gia_dinh: getProductsByIds(HOME_DISPLAY_IDS.gia_dinh),
+    ca_nhan_gia_dinh: getProductsByIds(HOME_DISPLAY_IDS.ca_nhan_gia_dinh),
     game_thu: getProductsByIds(HOME_DISPLAY_IDS.game_thu),
+    doanh_nghiep: getProductsByIds(HOME_DISPLAY_IDS.doanh_nghiep),
     combo_camera: getProductsByIds(HOME_DISPLAY_IDS.combo_camera),
     combo_truyen_hinh: getProductsByIds(HOME_DISPLAY_IDS.combo_truyen_hinh),
   };
 
   const categoryNames = {
-    ca_nhan: "Cá nhân",
-    gia_dinh: "Gia đình",
+    ca_nhan_gia_dinh: "Cá nhân & Gia đình",
     game_thu: "Game thủ",
+    doanh_nghiep: "Doanh nghiệp",
     combo_camera: "Combo Internet Camera",
     combo_truyen_hinh: "Combo Internet Truyền hình",
+  };
+
+  const categoryDescriptions = {
+    ca_nhan_gia_dinh: "Đáp ứng mọi nhu cầu học tập, làm việc và giải trí cơ bản cho gia đình bạn",
+    game_thu: "Đường truyền tối ưu Ping, không giật lag, dành riêng cho game thủ chuyên nghiệp",
+    doanh_nghiep: "Băng thông cực lớn, độ ổn định cao, đáp ứng số lượng thiết bị truy cập lớn",
+    combo_camera: "Trang bị internet tốc độ cao kết hợp camera an ninh bảo vệ toàn diện",
+    combo_truyen_hinh: "Tận hưởng kho giải trí bất tận cùng internet siêu tốc độ",
   };
 
   return (
@@ -66,6 +74,7 @@ export default function Home({ region }) {
         <ProductCardSlider
           key={activeCategory}
           title={`Gói cước cho ${categoryNames[activeCategory] || "bạn"}`}
+          subtitle={categoryDescriptions[activeCategory]}
           data={tabDataMap[activeCategory]}
           region={region}
         />
@@ -87,6 +96,7 @@ export default function Home({ region }) {
           title="Thiết bị công nghệ bán chạy nhất"
           data={PRODUCT_DATA.camera_combos}
           region={region}
+          customCardClass="camera-card-special"
         />
 
         {/* SECTION 4: FPT PLAY - GÓI XEM TRUYỀN HÌNH */}

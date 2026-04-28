@@ -376,7 +376,7 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 85,
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-12-01/692d0fd72d650_Combo%20Sky%20%281%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6915fa003b6d8_Combo%20Sky%20F1.jpg",
       features: [
         "Modem Wifi 6 & Fpt Play Box",
         "Kết nối trên 15 thiết bị",
@@ -1632,7 +1632,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 80,
       price: { "hcm": 285000, "tinh": 265000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec64f5e1a3_SkyEyes3%20Play4%20%281%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d86fb618701_SkyEyes3%20-%20Play4%20%281%29.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera Play4",
         "Tốc độ Download lên đến 1 Gbps",
@@ -1646,7 +1646,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 80,
       price: { "hcm": 285000, "tinh": 265000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6605e1a4_SkyEyes3%20IQ4S%20%281%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d86f9719b39_SkyEyes3%20-%20IQ4S%20%281%29.jpg",
       features: [
         "Modem Wi-Fi 6",
         "Camera IQ4S giám sát ngoài trời",
@@ -1660,7 +1660,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 45,
       price: { "hcm": 275000, "tinh": 255000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6705e1a5_GigaEyes3%20Play4%20%281%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d86f7e8b81f_GigaEyes3%20-%20Play%204.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera Play 4",
         "Tốc độ lên đến 300 Mbps",
@@ -1674,7 +1674,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 45,
       price: { "hcm": 275000, "tinh": 255000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6805e1a6_GigaEyes3%20IQ4S%20%281%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d86f27cf644_GigaEyes3%20-%20IQ4S.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera IQ4S",
         "Gói lưu trữ Cloud 3 ngày",
@@ -1687,7 +1687,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 50,
       price: { "hcm": 295000, "tinh": 275000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6905e1a7_GigaEyes7%20Play4%20%281%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d86f5f4ffb8_GigaEyes7%20-%20Play%204.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera Play4",
         "Tốc độ lên đến 300 Mbps",
@@ -1701,7 +1701,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 50,
       price: { "hcm": 295000, "tinh": 275000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6a05e1a8_GigaEyes7%20IQ4S%20%281%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d86efe4c83d_GigaEyes7%20-%20IQ4S.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera IQ4S",
         "Gói lưu trữ Cloud 7 ngày",
@@ -1715,7 +1715,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 82,
       price: { "hcm": 295000, "tinh": 275000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6b05e1a9_SkyEyes3%20Play4%20%282-5%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d870ca9fe85_SkyEyes3%20-%20Play4%20%282%29.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera Play4",
         "Tốc độ Download lên đến 1 Gbps",
@@ -1730,7 +1730,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 82,
       price: { "hcm": 295000, "tinh": 275000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6c05e1aa_SkyEyes3%20IQ4S%20%282-5%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d8713e7f170_SkyEyes3%20-%20IQ4S%20%282%29.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera IQ4S",
         "Gói lưu trữ Cloud 3 ngày",
@@ -1744,7 +1744,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 48,
       price: { "hcm": 285000, "tinh": 265000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6d05e1ab_GigaEyes3%20Play4%20%282-5%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d8716905718_GigaEyes3%20-%20Play%204%20%281%29.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera Play 4",
         "Tốc độ lên đến 300 Mbps",
@@ -1759,7 +1759,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 48,
       price: { "hcm": 285000, "tinh": 265000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6e05e1ac_GigaEyes3%20IQ4S%20%282-5%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d8718a43676_GigaEyes3%20-%20IQ4S%20%282%29.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera IQ4S",
         "Gói lưu trữ Cloud 3 ngày",
@@ -1773,7 +1773,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 55,
       price: { "hcm": 335000, "tinh": 315000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec6f05e1ad_GigaEyes7%20Play4%20%282-5%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d871cf23654_GigaEyes7%20-%20Play%204%20%281%29.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera Play4",
         "Tốc độ lên đến 300 Mbps",
@@ -1788,7 +1788,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 55,
       price: { "hcm": 335000, "tinh": 315000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7005e1ae_GigaEyes7%20IQ4S%20%282-5%20cam%29.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-10/69d871f1c09a1_GigaEyes7%20-%20IQ4S%20%281%29.jpg",
       features: [
         "Modem Wi-Fi 6 & Camera IQ4S",
         "Gói lưu trữ Cloud 7 ngày",
@@ -1803,7 +1803,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 50,
       price: { "hcm": 285000, "tinh": 265000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7105e1af_Triple%20GigaEyes3%20Play4%20FPT%20Play.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-06/695c77644f57f_Triple%20GigaEyes3%20Play4%20-%20FPT%20Play.jpg",
       features: [
         "Modem Wi-Fi 6 & FPT Play Box",
         "Gần 120 kênh truyền hình giải trí",
@@ -1817,7 +1817,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 50,
       price: { "hcm": 285000, "tinh": 265000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7205e1b0_Triple%20GigaEyes3%20IQ4S%20FPT%20Play.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6915f991627c9_Triple%20GigaEyes3%20IQ4S%20-%20FPT%20Play.jpg",
       features: [
         "Modem Wi-Fi 6 & FPT Play Box",
         "Gần 120 kênh truyền hình giải trí",
@@ -1831,7 +1831,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 82,
       price: { "hcm": 270000, "tinh": 250000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7305e1b1_Triple%20SkyEyes3%20Play4%20FPT%20Play.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-06/695c88546cf65_Triple-SkyEyes3-Play3-Max%20%281%29.jpg",
       features: [
         "Modem Wi-Fi 6 & FPT Play Box",
         "Gần 120 kênh truyền hình giải trí",
@@ -1845,7 +1845,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 85,
       price: { "hcm": 295000, "tinh": 275000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7405e1b2_Triple%20SkyEyes3%20IQ4S%20FPT%20Play.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-20/691e83525af0b_Triple-SkyEyes3-Play3-Max%20copy.jpg",
       features: [
         "Modem Wi-Fi 6 & FPT Play Box",
         "Tốc độ lên đến 1000 Mbps",
@@ -1861,7 +1861,7 @@ export const PRODUCT_DATA = {
       ul: "2 Gbps",
       speedPercent: 100,
       price: { "hcm": 1049000, "tinh": 1049000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7505e1b3_SpeedX2%20Eyes3%20Play3.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-20/691e8a66012a0_FPT%20SpeedX2%20Eyes3%20Play3.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 2 Gbps",
@@ -1878,7 +1878,7 @@ export const PRODUCT_DATA = {
       ul: "2 Gbps",
       speedPercent: 100,
       price: { "hcm": 1099000, "tinh": 1099000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7605e1b4_SpeedX2%20Pro%20IQ4S.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/691605061ff7f_FPT%20SPEEDX2%20PRO%20IQ4S.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 2 Gbps",
@@ -1895,7 +1895,7 @@ export const PRODUCT_DATA = {
       ul: "2 Gbps",
       speedPercent: 100,
       price: { "hcm": 1049000, "tinh": 1049000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7705e1b5_SpeedX2%20Eyes3%20IQ4S.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/6916045a8840a_FPT%20SpeedX2%20Eyes3%20IQ4S.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 2 Gbps",
@@ -1912,7 +1912,7 @@ export const PRODUCT_DATA = {
       ul: "2 Gbps",
       speedPercent: 100,
       price: { "hcm": 1049000, "tinh": 1049000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7805e1b6_SpeedX2%20Eyes3%20Play4.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-06/695cbdbd564ca_FPT%20SpeedX2%20Eyes3%20Play4_.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 2 Gbps",
@@ -1930,7 +1930,7 @@ export const PRODUCT_DATA = {
       ul: "2 Gbps",
       speedPercent: 100,
       price: { "hcm": 1049000, "tinh": 1049000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7905e1b7_SpeedX2%20Play4.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-06/695cbbbf4a0d9_FPT%20SPEEDX2%20PLAY%204.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 2 Gbps",
@@ -1947,8 +1947,8 @@ export const PRODUCT_DATA = {
       dl: "10 Gbps",
       ul: "10 Gbps",
       speedPercent: 100,
-      price: { "hcm": 1149000, "tinh": 1149000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
+      price: { "hcm": 1639900, "tinh": 1639000 },
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-06/695cbbf2ecb01_FPT%20SpeedX10%20Play4.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 10 Gbps",
@@ -1964,8 +1964,8 @@ export const PRODUCT_DATA = {
       dl: "10 Gbps",
       ul: "10 Gbps",
       speedPercent: 100,
-      price: { "hcm": 1199000, "tinh": 1199000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
+      price: { "hcm": 1649000, "tinh": 1649000 },
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/691600e3eab15_FPT%20SpeedX10%20Eyes3%20IQ4S.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 10 Gbps",
@@ -1981,8 +1981,8 @@ export const PRODUCT_DATA = {
       dl: "10 Gbps",
       ul: "10 Gbps",
       speedPercent: 100,
-      price: { "hcm": 1199000, "tinh": 1199000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
+      price: { "hcm": 1649000, "tinh": 1649000 },
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-01-06/695cbe00a9c43_FPT%20SpeedX10%20Eyes3%20Play4.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 10 Gbps",
@@ -1998,8 +1998,8 @@ export const PRODUCT_DATA = {
       dl: "10 Gbps",
       ul: "10 Gbps",
       speedPercent: 100,
-      price: { "hcm": 1149000, "tinh": 1149000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-24/699d75a4ccc87_Combo%20th%E1%BB%83%20thao%20Speedx10%20Pro%20%281%29.jpg",
+      price: { "hcm": 1639000, "tinh": 1639000 },
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-11-13/691603cc18e0f_FPT%20SpeedX10%20IQ4S.jpg",
       features: [
         "Wi-Fi 7 tăng khả năng tải gấp 4 lần",
         "Công nghệ XGS-PON tốc độ 10 Gbps",
@@ -2016,8 +2016,8 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 80,
-      price: { "hcm": 250000, "tinh": 250000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7a05e1b8_SkyEyes3%20F1%20Play4.jpg",
+      price: { "hcm": 305000, "tinh": 305000 },
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-03-20/69bcf2cc2715e_SkyEyes3%20F1%20-%20Play%204%20%281%29.jpg",
       features: [
         "Áp dụng cho khu vực Tây Nam Bộ",
         "Modem Wi-Fi 6 & 01 Access Point",
@@ -2031,8 +2031,8 @@ export const PRODUCT_DATA = {
       dl: "1 Gbps",
       ul: "300 Mbps",
       speedPercent: 80,
-      price: { "hcm": 250000, "tinh": 250000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7b05e1b9_SkyEyes3%20F1%20IQ4S.jpg",
+      price: { "hcm": 305000, "tinh": 305000 },
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-03-20/69bcf0adbc239_SkyEyes3%20F1%20-%20IQ4S.jpg",
       features: [
         "Áp dụng cho khu vực Tây Nam Bộ",
         "Modem Wi-Fi 6 & 01 Access Point",
@@ -2047,7 +2047,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 82,
       price: { "hcm": 260000, "tinh": 260000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7c05e1ba_SkyEyes3%20F2%20Play4.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-03-20/69bcf20478f72_SkyEyes3%20F2%20-%20Play%204-1.jpg",
       features: [
         "Áp dụng cho khu vực Tây Nam Bộ",
         "Modem Wi-Fi 6 & 02 Access Point",
@@ -2062,7 +2062,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 84,
       price: { "hcm": 290000, "tinh": 290000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7d05e1bb_SkyEyes3%20F3%20Play4.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-03-20/69bcf3e82115d_SkyEyes3%20F3%20-%20Play%204.jpg",
       features: [
         "Áp dụng cho khu vực Tây Nam Bộ",
         "Modem Wi-Fi 6 & 03 Access Point",
@@ -2077,7 +2077,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 82,
       price: { "hcm": 260000, "tinh": 260000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7e05e1bc_SkyEyes3%20F2%20IQ4S.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-03-20/69bcf6c904a79_SkyEyes3%20F2%20-%20IQ4S.jpg",
       features: [
         "Áp dụng cho khu vực Tây Nam Bộ",
         "Modem Wi-Fi 6 & 02 Access Point",
@@ -2092,7 +2092,7 @@ export const PRODUCT_DATA = {
       ul: "300 Mbps",
       speedPercent: 84,
       price: { "hcm": 290000, "tinh": 290000 },
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-02-25/699ec7f05e1bd_SkyEyes3%20F3%20IQ4S.jpg",
+      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-03-20/69bcc4ff4ab4a_SkyEyes3%20F3%20-%20IQ4S.jpg",
       features: [
         "Áp dụng cho khu vực Tây Nam Bộ",
         "Modem Wi-Fi 6 & 03 Access Point",

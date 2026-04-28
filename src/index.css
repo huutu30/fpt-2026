@@ -704,38 +704,70 @@ body {
   font-weight: 500;
 }
 
-.combo-sport-nav {
-  display: flex;
-  gap: 8px;
-  flex-shrink: 0;
+/* TRACK CONTAINER & NAVIGATION BUTTONS */
+.combo-sport-track-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50px;
+  /* Tạo hẳn không gian riêng 50px ở 2 bên cho nút bấm */
 }
 
-.combo-nav-btn {
-  width: 40px;
-  height: 40px;
+.combo-sport-track-container .combo-nav-btn {
+  position: absolute;
+  top: 50%;
+  /* Trả về chính giữa vì giờ không còn sợ đè nội dung */
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  /* Tăng nhẹ kích thước cho dễ bấm và sang trọng hơn */
+  height: 48px;
   border-radius: 50%;
-  border: 1.5px solid #e2e8f0;
   background: #fff;
-  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #475569;
+  cursor: pointer;
   transition: all 0.25s;
 }
 
-.combo-nav-btn:hover {
+.combo-sport-track-container .combo-nav-btn.prev {
+  left: 0;
+  /* Nằm gọn gàng sát mép trái (bên trong vùng padding) */
+}
+
+.combo-sport-track-container .combo-nav-btn.next {
+  right: 0;
+  /* Nằm gọn gàng sát mép phải (bên trong vùng padding) */
+}
+
+.combo-sport-track-container .combo-nav-btn:hover {
   background: var(--fpt-orange);
   color: #fff;
   border-color: var(--fpt-orange);
-  transform: scale(1.08);
-  box-shadow: 0 4px 14px rgba(242, 111, 33, 0.3);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(242, 111, 33, 0.3);
+}
+
+/* Ẩn nút điều hướng và vùng đệm trên điện thoại */
+@media (max-width: 768px) {
+  .combo-sport-track-container {
+    padding: 0;
+  }
+
+  .combo-sport-track-container .combo-nav-btn {
+    display: none;
+  }
 }
 
 /* TRACK */
 .combo-sport-track {
   display: flex;
-  align-items: stretch; /* Đảm bảo các card giãn bằng nhau */
+  align-items: stretch;
+  /* Đảm bảo các card giãn bằng nhau */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -755,21 +787,38 @@ body {
   flex: 0 0 calc(25% - 15px);
   min-width: 280px;
   max-width: 320px;
-  height: auto; /* Để flex container tự stretch */
+  height: auto;
+  /* Để flex container tự stretch */
   background: #fff;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--fpt-border);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s, border-color 0.3s;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Hiệu ứng mượt mà */
   display: grid;
   grid-template-rows: max-content 1fr;
   scroll-snap-align: start;
 }
 
-.combo-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--fpt-orange);
+/* Chỉ áp dụng hiệu ứng hover trên máy tính (có chuột chính xác), CẤM tuyệt đối trên màn hình cảm ứng để sửa dứt điểm lỗi dính hover */
+@media (hover: hover) and (pointer: fine) {
+  .combo-card:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--fpt-orange);
+    transform: translateY(-8px);
+  }
+
+  .combo-card:hover .combo-card-banner img {
+    transform: scale(1.05);
+  }
+}
+
+/* Hiệu ứng chạm (Tap) dành cho điện thoại */
+.combo-card:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.1s;
 }
 
 /* BANNER */
@@ -786,6 +835,7 @@ body {
   object-fit: cover;
   object-position: top center;
   background: transparent;
+  transition: transform 0.5s ease;
 }
 
 /* Fix riêng cho card Camera (ảnh ngang dài bị cắt mất chữ) */
@@ -1699,8 +1749,10 @@ body {
   transition: width 0.3s ease;
 }
 
-.discovery-tab:hover {
-  color: var(--fpt-orange);
+@media (hover: hover) {
+  .discovery-tab:hover {
+    color: var(--fpt-orange);
+  }
 }
 
 .discovery-tab.active {
@@ -1720,13 +1772,64 @@ body {
   }
 
   .discovery-tabs {
-    justify-content: flex-start;
-    padding: 0 15px;
-    gap: 0;
+    justify-content: center;
+    padding: 0 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: none;
   }
 
   .discovery-tab {
-    padding: 10px 16px;
-    font-size: 13px;
+    padding: 6px 4px;
+    font-size: 12px;
+    flex: 0 0 calc(33.33% - 6px);
+    white-space: normal;
+    line-height: 1.3;
+    border-bottom: none;
+    background: #f8fafc;
+    /* Xám cực nhạt, phẳng */
+    border-radius: 6px;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    /* Viền xám mảnh */
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
   }
+
+  .discovery-tab:nth-child(n+4) {
+    flex: 0 0 calc(50% - 4px);
+  }
+
+  .discovery-tab::after {
+    display: none;
+  }
+
+  .discovery-tab.active {
+    background: #fff;
+    color: var(--fpt-orange);
+    border: 1px solid var(--fpt-orange);
+    font-weight: 600;
+    /* Đã lược bỏ hoàn toàn đổ bóng và hiệu ứng nhấc lên */
+  }
+
+/* ========================================= */
+/* FIX RIÊNG CHO CARD CAMERA (YÊU CẦU ĐẶC BIỆT) */
+/* ========================================= */
+.camera-card-special .combo-card-name {
+  height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+
+.camera-card-special .combo-card-price {
+  height: 28px;
+}
+
+.camera-card-special .combo-features {
+  max-height: 85px; /* Ép card gọn lại vì tính năng camera ít */
+}}

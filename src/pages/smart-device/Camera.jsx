@@ -113,7 +113,7 @@ export default function Camera({ region }) {
                       <li key={i}><Check size={14} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <button onClick={() => openModal(cam.name)} className={styles.btnSecondary}>
+                  <button onClick={() => openModal(cam.name)} className={styles.productBtn}>
                     Đăng ký tư vấn
                   </button>
                 </div>
@@ -173,7 +173,7 @@ export default function Camera({ region }) {
                       <li key={i}><Check size={13} /><span>{f}</span></li>
                     ))}
                   </ul>
-                  <button onClick={() => openModal(combo.name)} className={styles.btnSecondary}>
+                  <button onClick={() => openModal(combo.name)} className={styles.comboBtn}>
                     Đăng ký ngay
                   </button>
                 </div>
@@ -187,7 +187,7 @@ export default function Camera({ region }) {
       <section className={styles.section} style={{ background: '#fff' }}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Combo Internet + Camera <span>trả góp hàng tháng</span></h2>
+            <h2 className={styles.sectionTitle}>Combo Internet + Camera <span>thông minh</span></h2>
             <p className={styles.sectionDesc}>
               Vừa có Internet tốc độ cao, vừa có Camera AI giám sát an ninh. Chỉ từ 250.000đ/tháng, trọn gói không lo chi phí phát sinh.
             </p>
