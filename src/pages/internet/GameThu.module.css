@@ -9,7 +9,7 @@
 .hero {
   position: relative;
   background: radial-gradient(circle at center, #1e1b4b 0%, #020617 100%);
-  padding: 100px 0 80px;
+  padding: 70px 0 50px;
   text-align: center;
   overflow: hidden;
 }
@@ -51,12 +51,12 @@
 
 /* SECTION COMMON */
 .section {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 28px;
 }
 
 .sectionTitle {
