@@ -29,7 +29,7 @@ export default function Hero() {
   return (
     <section style={styles.heroContainer}>
       {/* 1. SLIDER ẢNH TRÀN VIỀN */}
-      <div style={styles.slider}>
+      <div className="hero-slider" style={styles.slider}>
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -83,7 +83,6 @@ const styles = {
   heroContainer: { width: '100%', position: 'relative', background: '#fff' },
   slider: { 
     width: '100%', 
-    height: '550px', // Chiều cao chuẩn cho màn hình Laptop
     position: 'relative', 
     overflow: 'hidden' 
   },
