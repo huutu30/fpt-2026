@@ -930,24 +930,35 @@ body {
   /* Đủ chỗ cho khoảng 3-4 dòng */
   overflow-y: auto;
   padding-right: 6px;
+  /* Đảm bảo vuốt mượt trên thiết bị cảm ứng */
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Tùy chỉnh thanh cuộn cho danh sách tính năng */
-.combo-features::-webkit-scrollbar {
-  width: 5px;
+/* Chỉ chặn cuộn lan ra ngoài trên thiết bị cảm ứng (mobile), tránh bị "kẹt" scroll trên PC */
+@media (hover: none) and (pointer: coarse) {
+  .combo-features {
+    overscroll-behavior-y: contain;
+  }
 }
 
-.combo-features::-webkit-scrollbar-track {
-  background: transparent;
-}
+/* Chỉ tùy chỉnh thanh cuộn trên Desktop. Trên điện thoại (iOS/Android) dùng thanh cuộn mặc định để tránh bị ẩn */
+@media (hover: hover) and (pointer: fine) {
+  .combo-features::-webkit-scrollbar {
+    width: 5px;
+  }
 
-.combo-features::-webkit-scrollbar-thumb {
-  background: #e2e8f0;
-  border-radius: 10px;
-}
+  .combo-features::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-.combo-features::-webkit-scrollbar-thumb:hover {
-  background: #cbd5e1;
+  .combo-features::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+  }
+
+  .combo-features::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
 }
 
 .combo-features li {
