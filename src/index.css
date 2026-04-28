@@ -769,7 +769,7 @@ body {
   align-items: stretch;
   /* Đảm bảo các card giãn bằng nhau */
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
   -ms-overflow-style: none;
   gap: 20px;
