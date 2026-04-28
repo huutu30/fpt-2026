@@ -988,27 +988,28 @@ body {
 @media (hover: none) and (pointer: coarse) {
   .combo-features {
     overscroll-behavior-y: contain;
+    /* Báo cho trình duyệt: vuốt dọc ở đây = cuộn danh sách, KHÔNG phải kéo card ngang */
+    touch-action: pan-y;
   }
 }
 
-/* Chỉ tùy chỉnh thanh cuộn trên Desktop. Trên điện thoại (iOS/Android) dùng thanh cuộn mặc định để tránh bị ẩn */
-@media (hover: hover) and (pointer: fine) {
-  .combo-features::-webkit-scrollbar {
-    width: 5px;
-  }
+/* Thanh cuộn custom — áp dụng cho MỌI thiết bị (cả PC và Mobile) */
+.combo-features::-webkit-scrollbar {
+  width: 5px;
+}
 
-  .combo-features::-webkit-scrollbar-track {
-    background: transparent;
-  }
+.combo-features::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
 
-  .combo-features::-webkit-scrollbar-thumb {
-    background: #e2e8f0;
-    border-radius: 10px;
-  }
+.combo-features::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
 
-  .combo-features::-webkit-scrollbar-thumb:hover {
-    background: #cbd5e1;
-  }
+.combo-features::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .combo-features li {
@@ -1116,6 +1117,15 @@ body {
 
   .combo-price-value {
     font-size: 22px;
+  }
+
+  /* Thanh cuộn rõ hơn trên mobile */
+  .combo-features::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .combo-features::-webkit-scrollbar-thumb {
+    background: #94a3b8;
   }
 }
 
