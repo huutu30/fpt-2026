@@ -988,8 +988,8 @@ body {
 @media (hover: none) and (pointer: coarse) {
   .combo-features {
     overscroll-behavior-y: contain;
-    /* Báo cho trình duyệt: vuốt dọc ở đây = cuộn danh sách, KHÔNG phải kéo card ngang */
-    touch-action: pan-y;
+    /* Cho phép cả vuốt ngang (chuyển card) và vuốt dọc (cuộn mô tả) — trình duyệt tự nhận diện hướng */
+    touch-action: manipulation;
   }
 }
 
