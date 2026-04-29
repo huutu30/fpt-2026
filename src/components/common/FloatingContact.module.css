@@ -118,7 +118,7 @@
 
 @media (max-width: 768px) {
   .floatingContainer {
-    bottom: 25px;
+    bottom: 90px;
     right: 20px;
     gap: 20px;
   }

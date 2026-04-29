@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ChevronDown, Phone, Menu, X, Wifi, Tv, Monitor, Headphones } from 'lucide-react';
+import { Search, ChevronDown, Phone, Menu, X, Wifi, Tv, Monitor, Headphones, Home } from 'lucide-react';
 import { NAV_MENU, HOTLINE, iconMap } from '../../data/menuConfig';
 
 /**
@@ -84,7 +84,7 @@ export default function Navbar({ region, setRegion }) {
 
           {/* HAMBURGER */}
           <button className="hamburger-btn" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? 'Đóng menu' : 'Mở menu'} aria-expanded={mobileOpen} aria-controls="main-nav-menu" id="btn-hamburger">
-            {mobileOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+            <Menu size={24} aria-hidden="true" />
           </button>
 
           {/* MOBILE LOCATION PILL */}
@@ -101,6 +101,12 @@ export default function Navbar({ region, setRegion }) {
 
           {/* MENU */}
           <div className={`nav-menu ${mobileOpen ? 'mobile-open' : ''}`} id="main-nav-menu">
+            <div className="mobile-menu-header mobile-only">
+              <span className="mobile-menu-title">Menu</span>
+              <button className="close-menu-btn" onClick={() => setMobileOpen(false)} aria-label="Đóng menu">
+                <X size={24} aria-hidden="true" />
+              </button>
+            </div>
             <ul className="nav-links" role="menubar">
               {NAV_MENU.map((menu, i) => (
                 <li
@@ -193,7 +199,11 @@ export default function Navbar({ region, setRegion }) {
 
       {/* ===== MOBILE BOTTOM NAV ===== */}
       <nav className="bottom-nav" role="navigation" aria-label="Menu nhanh" id="mobile-bottom-nav">
-        <Link to="/trang-chu" className="bottom-nav-item center-item" id="bnav-home" title="Trang chủ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+        <Link to="/trang-chu" className="bottom-nav-item" id="bnav-trangchu" title="Trang chủ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          <Home size={20} aria-hidden="true" />
+          <span>Trang chủ</span>
+        </Link>
+        <Link to="/internet" className="bottom-nav-item center-item" id="bnav-internet" title="Internet" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Wifi size={22} aria-hidden="true" />
           <span>Internet</span>
         </Link>
