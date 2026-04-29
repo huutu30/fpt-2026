@@ -57,6 +57,52 @@
   height: 550px;
 }
 
+/* HERO QUICK LINKS */
+.hero-quicklink-wrapper {
+  position: relative;
+  margin-top: -50px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-quicklink-bar {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 15px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.hero-quicklink-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 12px;
+  flex: 1;
+}
+
+.hero-quicklink-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #fff5ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-quicklink-label {
+  font-weight: 700;
+  font-size: 15px;
+  color: #333;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .hero-slider {
     height: 280px;
@@ -731,6 +777,39 @@ body {
   .app-container {
     padding-bottom: 60px;
     /* Cho bottom nav */
+  }
+
+  /* HERO QUICK LINKS MOBILE */
+  .hero-quicklink-wrapper {
+    margin-top: -30px;
+    padding: 0 15px;
+  }
+
+  .hero-quicklink-bar {
+    padding: 15px 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    gap: 8px;
+  }
+
+  .hero-quicklink-item {
+    gap: 8px;
+  }
+
+  .hero-quicklink-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .hero-quicklink-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .hero-quicklink-label {
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 600;
   }
 }
 

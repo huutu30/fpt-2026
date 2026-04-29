@@ -59,18 +59,18 @@ export default function Hero() {
       </div>
 
       {/* 2. THANH QUICK LINKS ĐÈ LÊN CHÂN BANNER */}
-      <div className="container" style={styles.quickLinkWrapper}>
-        <div style={styles.quickLinkBar}>
+      <div className="container hero-quicklink-wrapper">
+        <div className="hero-quicklink-bar">
           {QUICK_LINKS.map((item) => (
             <motion.div 
               key={item.id} 
               whileHover={{ y: -5 }} 
-              style={styles.linkItem}
+              className="hero-quicklink-item"
             >
-              <div style={styles.iconCircle}>
+              <div className="hero-quicklink-icon">
                 {iconMap[item.id] || <Globe size={24} color="#f57020" />}
               </div>
-              <span style={styles.label}>{item.label}</span>
+              <span className="hero-quicklink-label">{item.label}</span>
             </motion.div>
           ))}
         </div>
@@ -102,35 +102,5 @@ const styles = {
     position: 'absolute', bottom: '80px', right: '50px',
     background: 'rgba(0,0,0,0.5)', color: '#fff', padding: '5px 15px',
     borderRadius: '20px', fontSize: '14px', zIndex: 10, fontWeight: 'bold'
-  },
-  quickLinkWrapper: {
-    position: 'relative', 
-    marginTop: '-50px', // Đẩy thanh menu đè lên chân banner
-    zIndex: 20, 
-    display: 'flex', 
-    justifyContent: 'center'
-  },
-  quickLinkBar: {
-    width: '100%', 
-    maxWidth: '1000px', 
-    background: '#fff',
-    display: 'flex', 
-    justifyContent: 'space-around', 
-    padding: '25px 15px',
-    borderRadius: '20px', 
-    boxShadow: '0 15px 35px rgba(0,0,0,0.1)' // Bóng đổ cực mượt
-  },
-  linkItem: { 
-    display: 'flex', 
-    flexDirection: 'column', 
-    alignItems: 'center', 
-    cursor: 'pointer', 
-    gap: '12px',
-    flex: 1 
-  },
-  iconCircle: {
-    width: '55px', height: '55px', borderRadius: '50%', background: '#fff5ef',
-    display: 'flex', alignItems: 'center', justifyContent: 'center'
-  },
-  label: { fontWeight: '700', fontSize: '15px', color: '#333' }
+  }
 };
