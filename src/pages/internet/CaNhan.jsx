@@ -347,7 +347,7 @@ export default function CaNhan({ region }) {
             <h3 className={styles.seoTitle} style={{fontSize: '20px', marginTop: '20px'}}>Các hình thức đăng ký lắp đặt Internet FPT</h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '20px', marginBottom: '20px', color: '#334155', lineHeight: '1.8' }}>
               <li><strong>Đăng ký online:</strong> Điền form tại https://fpt.vn/ hoặc các trang liên kết chính thức.</li>
-              <li><strong>Đăng ký qua tổng đài:</strong> Gọi số 1900 6600 (tư vấn toàn quốc, phục vụ 24/7).</li>
+              <li><strong>Đăng ký qua tổng đài:</strong> Gọi số 0387498332 (tư vấn toàn quốc, phục vụ 24/7).</li>
               <li><strong>Đăng ký trực tiếp:</strong> Đến bất kỳ phòng giao dịch hoặc chi nhánh FPT gần nhất trên toàn quốc để được hỗ trợ nhanh chóng.</li>
             </ul>
 
