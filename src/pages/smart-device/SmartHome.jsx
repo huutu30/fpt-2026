@@ -317,9 +317,7 @@ export default function SmartHome({ region }) {
         </div>
       </section>
 
-      {/* ===== NEWS ===== */}
-      <NewsSection />
-
+      
     </div>
   );
 }

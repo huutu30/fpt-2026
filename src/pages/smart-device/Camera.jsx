@@ -323,8 +323,7 @@ export default function Camera({ region }) {
         </div>
       </section>
 
-      {/* ===== NEWS ===== */}
-      <NewsSection />
+      
 
     </div>
   );

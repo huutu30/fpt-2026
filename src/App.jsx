@@ -19,6 +19,7 @@ import { RegisterProvider } from './context/RegisterContext';
 import RegisterModal from './components/common/RegisterModal';
 import FloatingContact from './components/common/FloatingContact';
 import ScrollToTop from './components/common/ScrollToTop';
+import SupportCTA from './components/common/SupportCTA';
 
 function App() {
   const [region, setRegion] = useState('hcm');
@@ -49,6 +50,7 @@ function App() {
             <Route path="/tin-tuc/:id" element={<ArticlePage />} />
             <Route path="/ho-tro" element={<Support />} />
           </Routes>
+          <SupportCTA />
           <Footer />
         </div>
       </Router>

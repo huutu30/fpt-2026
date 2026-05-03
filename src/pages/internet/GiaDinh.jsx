@@ -5,6 +5,7 @@ import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import NewsSection from '../../components/home/NewsSection';
 import { Link } from 'react-router-dom';
+import Hero from '../../components/home/Hero';
 import styles from './GiaDinh.module.css';
 
 const TABS = [
@@ -32,12 +33,11 @@ const TAB_CONFIG = {
 };
 
 const FAQ_DATA = [
-  { q: "Tốc độ bao nhiêu là đủ cho gia đình tôi?", a: "Tốc độ cần thiết phụ thuộc vào số lượng người dùng và thói quen sử dụng. Gia đình nhỏ (2-4 người) sử dụng cơ bản (lướt web, xem phim HD) có thể chọn gói 300 Mbps như GIGA, GIGA F1. Gia đình đông người hơn, thường xuyên streaming 4K, chơi game, làm việc online nên cân nhắc các gói từ 300 Mbps đến 1 Gbps." },
-  { q: "Nhà tôi rộng/nhiều tầng thì nên chọn gói nào để Wi-Fi phủ sóng tốt?", a: "Với nhà rộng hoặc nhiều tầng, bạn nên ưu tiên các gói cước có tặng kèm thiết bị mở rộng sóng như Access Point. Các gói Internet GIGA F2, SKY F2 hoặc GIGA F3 của FPT là những lựa chọn tốt, giúp tín hiệu Wi-Fi mạnh mẽ khắp nhà." },
-  { q: "Gói combo Internet - Truyền hình FPT có thực sự tiết kiệm?", a: "Gói combo giúp gia đình tiết kiệm chi phí đáng kể so với việc đăng ký riêng lẻ hai dịch vụ. Đồng thời, bạn sẽ được tận hưởng cả đường truyền internet tốc độ cao và kho nội dung giải trí đa dạng từ FPT Play trên cùng một hóa đơn." },
-  { q: "Thủ tục đăng ký lắp đặt gói cước gia đình có phức tạp không?", a: "FPT Telecom có quy trình đăng ký và lắp đặt rất nhanh chóng, đơn giản. Bạn chỉ cần liên hệ hotline hoặc đăng ký trực tuyến, nhân viên FPT sẽ tư vấn và hỗ trợ hoàn tất thủ tục, triển khai lắp đặt trong khoảng 24 - 48 giờ." },
-  { q: "Khi đăng ký gói Combo, tôi có thể xem bóng đá Ngoại Hạng Anh không?", a: "Các gói Combo Thể Thao (Combo Sky, Combo Meta VVIP) đã bao gồm quyền xem trọn vẹn giải Ngoại Hạng Anh, FA Cup, V.League trên nền tảng FPT Play." },
-  { q: "Gói cước nào phù hợp cho nhà phố 3 tầng?", a: "Bạn nên chọn các gói có đuôi F2 hoặc F3 (như Sky F2, Giga F3) vì các gói này được trang bị thêm từ 2-3 thiết bị Access Point (Wi-Fi Mesh) giúp phủ sóng xuyên tầng rất tốt, không bị điểm mù." },
+  { q: "Gói Internet gia đình FPT phù hợp với những ai?", a: "Gói cước Internet gia đình FPT phù hợp với hộ gia đình có nhu cầu sử dụng mạng để học tập, làm việc online, xem phim, giải trí, lướt web và kết nối nhiều thiết bị như điện thoại, TV, laptop hoặc máy tính bảng trong cùng một thời điểm." },
+  { q: "Gia đình đông người, nhiều tầng, nhiều phòng nên chọn gói cước Internet FPT nào?", a: "Với gia đình 2–3 người, nhu cầu chủ yếu là lướt web, học tập, xem YouTube, dùng TV và điện thoại hằng ngày, có thể cân nhắc Internet GIGA tốc độ 300 Mbps, giá 195.000đ/tháng; hoặc Internet Giga F1 giá 205.000đ/tháng nếu muốn thêm 01 Access Point. Nếu gia đình thường xem video chất lượng cao, có thể chọn Internet Sky F1 tốc độ 1 Gbps, giá 210.000đ/tháng." },
+  { q: "Gia đình muốn vừa có Internet vừa có truyền hình thì nên chọn gói nào?", a: "Có thể cân nhắc Combo Giga F1 giá 220.000đ/tháng; Combo Sky F1 giá 239.000đ/tháng; hoặc Combo Meta tốc độ 1 Gbps / 1 Gbps, giá 320.000đ/tháng nếu nhu cầu giải trí và kết nối cao hơn hoặc Combo Thể Thao VVIP cho gia đình cần trải nghiệm bóng đá, giải trí cùng nhau." },
+  { q: "Gia đình cần Internet để học tập và làm việc online hằng ngày thì nên lắp gói nào?", a: "Với nhu cầu học online, họp video, gửi file, làm việc từ xa, có thể tư vấn Giga F1 nếu gia đình ít người; Sky F1 nếu có nhiều người học và làm việc cùng lúc; hoặc Giga F2 nếu không gian có nhiều phòng và cần thêm điểm phát để giữ kết nối ổn định." },
+  { q: "Nhà có nhiều phòng, nhiều vật cản thì nên chọn gói nào để Wi-Fi ổn định hơn?", a: "Nếu nhà có nhiều phòng ngủ, tường dày hoặc nhiều vật cản khiến sóng Wi-Fi dễ yếu, nên ưu tiên gói có thêm thiết bị phủ sóng. Có thể chọn Giga F2 với 02 Access Point, Sky F2 với 02 Access Point, hoặc Giga F3 / Sky F3 với 03 Access Point." },
 ];
 
 export default function GiaDinh({ region }) {
@@ -73,25 +73,13 @@ export default function GiaDinh({ region }) {
 
   return (
     <div className={styles.giaDinhPage}>
-      <div className="container">
+      {/* HERO SECTION */}
+      <Hero hideQuickLinks />
 
-        {/* HERO SECTION */}
-        <section className={styles.hero}>
-          <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>
-              Gói cước Internet <span>Cho Hộ Gia Đình</span>
-            </h1>
-            <p className={styles.heroDesc}>
-              Các gói cước Internet FPT gia đình đảm bảo tốc độ cực cao, kết nối ổn định cho các hoạt động học tập, làm việc và giải trí với vùng phủ sóng rộng khắp ngôi nhà.
-            </p>
-            <a href="#packages" className={styles.heroBtn}>
-              Xem gói cước <ChevronRight size={20} />
-            </a>
-          </div>
-        </section>
+      <div className="container" style={{ marginTop: '15px' }}>
 
         {/* TABS NAVIGATION */}
-        <div className={styles.tabsNav} id="packages">
+        <div className={styles.tabsNav} id="packages" style={{ marginBottom: '10px' }}>
           {TABS.map(tab => (
             <button
               key={tab.id}
@@ -105,18 +93,18 @@ export default function GiaDinh({ region }) {
         </div>
 
         {/* PRODUCT CARDS - Dynamic based on active tab */}
-        <section className={styles.section} style={{ paddingTop: '0' }}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>{currentTab.title}</h2>
-            <p className={styles.sectionDesc}>{currentTab.desc}</p>
-          </div>
-          
+        <div className={styles.sectionHeader} style={{ marginBottom: '0', textAlign: 'center' }}>
+          <h2 className={styles.sectionTitle} style={{ marginBottom: '8px' }}>{currentTab.title}</h2>
+          <p className={styles.sectionDesc}>{currentTab.desc}</p>
+        </div>
+        
+        <div style={{ marginTop: '-30px' }}>
           <ProductCardSlider 
             data={getSliderData()} 
             region={region} 
             badgeSub={currentTab.badgeSub}
           />
-        </section>
+        </div>
 
         {/* HIGHLIGHTS - 4 điểm nổi bật */}
         <section className={styles.section}>
@@ -207,9 +195,14 @@ export default function GiaDinh({ region }) {
         {/* SEO CONTENT & PRICING TABLES */}
         <section className={styles.section} style={{ paddingTop: '0' }}>
           <div className={styles.seoContent}>
-            <h2 className={styles.seoTitle}>Bảng giá mạng FPT dành cho Gia đình (Có trang bị Mesh)</h2>
+            <h1 className={styles.seoTitle} style={{ fontSize: '28px', color: '#f57020', marginBottom: '20px' }}>Đăng ký lắp mạng Internet gia đình FPT | Lắp WiFi nhanh, ổn định</h1>
             <p className={styles.seoText}>
-              Tham khảo bảng giá các gói Internet gia đình FPT với thiết bị Access Point phủ sóng mạnh, phù hợp cho nhà nhiều tầng, chung cư diện tích rộng.
+              Từ những giờ học trực tuyến bổ ích của con trẻ, những phút giây thư giãn xem phim cùng cả nhà, đến việc ông bà kết nối với con cháu phương xa, một đường truyền internet tốc độ cao, ổn định và phủ sóng rộng khắp là điều mà mọi gia đình đều mong muốn. FPT thấu hiểu sâu sắc những nhu cầu đó và mang đến các gói cước internet gia đình tốc độ vượt trội cho gia đình đông người, nhà nhiều tầng hoặc có không gian rộng; và các gói combo internet - truyền hình giúp cả nhà giải trí thả ga mà vẫn tiết kiệm chi phí.
+            </p>
+
+            <h2 className={styles.seoTitle}>Bảng giá gói cước Internet gia đình theo nhu cầu tại FPT</h2>
+            <p className={styles.seoText}>
+              Gói cước Internet cho gia đình sử dụng nhiều thiết bị, smart home, stream 4K
             </p>
             <div style={{ overflowX: 'auto', marginBottom: '40px' }}>
               <table className={styles.priceTable}>
@@ -272,7 +265,7 @@ export default function GiaDinh({ region }) {
               * Lưu ý: giá gói cước Internet gia đình FPT có thể thay đổi theo khu vực, thời điểm đăng ký và chính sách hiện hành. Nhấn Đăng ký hoặc gọi 1900.6600 để được tư vấn chính xác.
             </p>
 
-            <h2 className={styles.seoTitle}>Bảng giá các gói Combo Internet & Truyền hình FPT Play</h2>
+            <h2 className={styles.seoTitle}>Gói cước Internet + truyền hình cho gia đình</h2>
             <p className={styles.seoText}>
               Bảng giá các gói combo Internet và truyền hình FPT Play dành cho gia đình cần vừa lắp mạng ổn định vừa xem giải trí, thể thao:
             </p>
@@ -320,18 +313,38 @@ export default function GiaDinh({ region }) {
               </table>
             </div>
             <p style={{ fontSize: '14px', color: '#94a3b8', fontStyle: 'italic', marginTop: '15px', marginBottom: '40px' }}>
-              * Lưu ý: giá gói combo có thể thay đổi theo khu vực và chính sách hiện hành. Nhấn Đăng ký hoặc gọi 1900.6600 để được tư vấn chi tiết.
+              * Nhấn ngay vào gói cước phù hợp, điền thông tin để nhân viên tư vấn thông tin đến bạn giá gói cước, chương trình khuyến mãi chính xác nhất tại khu vực của bạn nhé.
             </p>
 
-            <h2 className={styles.seoTitle} style={{marginTop: '20px'}}>Vì sao FPT nên là sự lựa chọn Internet cho gia đình bạn?</h2>
+            <h2 className={styles.seoTitle} style={{marginTop: '40px'}}>Câu hỏi thường gặp khi lắp mạng FPT cho gia đình</h2>
+            <p className={styles.seoText}>Các câu hỏi thường gặp nhất khi chọn dịch vụ internet cho gia đình</p>
+            <figure style={{ margin: '30px 0', textAlign: 'center' }}>
+              <img src="https://s3-api.fpt.vn/fptvn-storage/2025-06-30/1751298777_internet-gia-dinh-2.jpg" alt="FPT tư vấn Internet cho gia đình" style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <figcaption style={{ fontSize: '14px', color: '#64748b', marginTop: '10px', fontStyle: 'italic' }}>FPT luôn sẵn sàng tư vấn, giúp gia đình bạn đưa ra lựa chọn Internet thông thái.</figcaption>
+            </figure>
+
+            <h2 className={styles.seoTitle} style={{marginTop: '40px'}}>Vì sao FPT nên là sự lựa chọn dịch vụ internet cho gia đình bạn?</h2>
+            <figure style={{ margin: '30px 0', textAlign: 'center' }}>
+              <img src="https://s3-api.fpt.vn/fptvn-storage/2025-06-30/1751298818_internet-gia-dinh-1.jpg" alt="Chọn FPT cho trải nghiệm Internet ưu việt" style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <figcaption style={{ fontSize: '14px', color: '#64748b', marginTop: '10px', fontStyle: 'italic' }}>Chọn FPT, chọn trải nghiệm Internet ưu việt cho cả gia đình.</figcaption>
+            </figure>
             <p className={styles.seoText}>
-              FPT tự hào sở hữu hạ tầng cáp quang hiện đại, phủ sóng rộng khắp, đảm bảo tốc độ đường truyền luôn ổn định và nhanh chóng, ngay cả trong giờ cao điểm. Điều này cực kỳ quan trọng đối với các gia đình có nhiều thành viên cùng sử dụng internet cho các mục đích khác nhau như học tập, làm việc trực tuyến, xem video chất lượng cao hay chơi game online.
+              Khi tìm kiếm một nhà cung cấp dịch vụ internet cho gia đình, tốc độ cao, ổn định, kết nối cùng lúc nhiều thiết bị không gây giật lag sẽ là các yếu tố hàng đầu mà bạn nên cân nhắc. FPT tự hào là đơn vị cung cấp dịch vụ chất lượng, đa dạng gói cước phù hợp với cá nhân và gia đình. Cụ thể hơn:
             </p>
+            <ul style={{ listStyleType: 'none', padding: 0, marginBottom: '20px', color: '#334155', lineHeight: '1.8' }}>
+              <li style={{marginBottom: '10px'}}><CheckCircle color="#f57020" size={16} style={{marginRight: '8px', verticalAlign: 'middle'}}/> FPT tự hào sở hữu hạ tầng cáp quang hiện đại, phủ sóng rộng khắp, đảm bảo tốc độ đường truyền luôn ổn định và nhanh chóng, ngay cả trong giờ cao điểm.</li>
+              <li style={{marginBottom: '10px'}}><CheckCircle color="#f57020" size={16} style={{marginRight: '8px', verticalAlign: 'middle'}}/> FPT liên tục cập nhật và ứng dụng những công nghệ mới nhất, điển hình là Modem Wi-Fi 6, mang đến khả năng kết nối vượt trội, vùng phủ sóng rộng hơn và giảm thiểu độ trễ.</li>
+              <li style={{marginBottom: '10px'}}><CheckCircle color="#f57020" size={16} style={{marginRight: '8px', verticalAlign: 'middle'}}/> Dịch vụ chăm sóc khách hàng của FPT luôn được đánh giá cao với đội ngũ kỹ thuật viên chuyên nghiệp, hỗ trợ nhanh chóng 24/7.</li>
+              <li style={{marginBottom: '10px'}}><CheckCircle color="#f57020" size={16} style={{marginRight: '8px', verticalAlign: 'middle'}}/> Với các gói cước đa dạng, linh hoạt và nhiều chương trình ưu đãi hấp dẫn, FPT mang đến giải pháp internet chất lượng cao với chi phí hợp lý.</li>
+            </ul>
+
+            <h2 className={styles.seoTitle}>Đăng ký ngay các gói mạng Wi-Fi 6 FPT - Cho giây phút bên gia đình luôn trọn vẹn nhất</h2>
+            <figure style={{ margin: '30px 0', textAlign: 'center' }}>
+              <img src="https://s3-api.fpt.vn/fptvn-storage/2025-06-30/1751298846_internet-gia-dinh.jpeg" alt="Wi-Fi 6 FPT cho gia đình" style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <figcaption style={{ fontSize: '14px', color: '#64748b', marginTop: '10px', fontStyle: 'italic' }}>Đừng để Internet chậm làm gián đoạn khoảnh khắc yêu thương. Chọn Wi-Fi 6 FPT cho gia đình trọn vẹn.</figcaption>
+            </figure>
             <p className={styles.seoText}>
-              FPT liên tục cập nhật và ứng dụng những công nghệ mới nhất, điển hình là Modem Wi-Fi 6, mang đến khả năng kết nối vượt trội, vùng phủ sóng rộng hơn và giảm thiểu độ trễ. Đặc biệt, các giải pháp mở rộng sóng như Access Point và Wi-Fi Mesh giúp tín hiệu Wi-Fi mạnh mẽ đến từng ngóc ngách trong ngôi nhà.
-            </p>
-            <p className={styles.seoText}>
-              Với các gói cước đa dạng, linh hoạt và nhiều chương trình ưu đãi hấp dẫn, FPT mang đến giải pháp internet chất lượng cao với chi phí hợp lý, phù hợp với mọi nhu cầu và ngân sách của các gia đình Việt. Bạn có thể chọn gói phù hợp ngay trên website, nhấn <strong>ĐĂNG KÝ</strong> hoặc <strong>TƯ VẤN NGAY</strong> để nhận báo giá theo khu vực.
+              Đừng để những trải nghiệm internet chậm chạp, giật lag làm ảnh hưởng đến cuộc sống số của gia đình bạn. Với công nghệ Wi-Fi 6 tiên tiến nhất, các gói cước internet FPT mang đến một cuộc cách mạng về tốc độ, sự ổn định và khả năng kết nối. Wi-Fi 6 không chỉ cung cấp băng thông rộng hơn, cho phép nhiều thiết bị cùng lúc truy cập mạng mà không làm giảm hiệu suất, mà còn tối ưu hóa việc sử dụng năng lượng, giúp kéo dài tuổi thọ pin cho các thiết bị di động của bạn.
             </p>
           </div>
         </section>
@@ -361,8 +374,7 @@ export default function GiaDinh({ region }) {
         </section>
 
       </div>
-      {/* NEWS SECTION */}
-      <NewsSection />
+      
     </div>
   );
 }

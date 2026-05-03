@@ -142,8 +142,7 @@ export default function Wifi7({ region }) {
         </div>
       </section>
 
-      {/* NEWS SECTION */}
-      <NewsSection />
+      
     </div>
   );
 }

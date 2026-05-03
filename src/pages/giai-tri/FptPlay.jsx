@@ -210,7 +210,7 @@ export default function FptPlay({ region }) {
         </div>
       </section>
 
-      <NewsSection />
+      
     </div>
   );
 }

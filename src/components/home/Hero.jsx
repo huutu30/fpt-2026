@@ -11,7 +11,7 @@ const iconMap = {
   smarthome: <HomeIcon size={24} color="#f57020" />
 };
 
-export default function Hero() {
+export default function Hero({ hideQuickLinks = false }) {
   const [index, setIndex] = useState(0);
 
   // Logic chuyển slide
@@ -59,22 +59,24 @@ export default function Hero() {
       </div>
 
       {/* 2. THANH QUICK LINKS ĐÈ LÊN CHÂN BANNER */}
-      <div className="container hero-quicklink-wrapper">
-        <div className="hero-quicklink-bar">
-          {QUICK_LINKS.map((item) => (
-            <motion.div 
-              key={item.id} 
-              whileHover={{ y: -5 }} 
-              className="hero-quicklink-item"
-            >
-              <div className="hero-quicklink-icon">
-                {iconMap[item.id] || <Globe size={24} color="#f57020" />}
-              </div>
-              <span className="hero-quicklink-label">{item.label}</span>
-            </motion.div>
-          ))}
+      {!hideQuickLinks && (
+        <div className="container hero-quicklink-wrapper">
+          <div className="hero-quicklink-bar">
+            {QUICK_LINKS.map((item) => (
+              <motion.div 
+                key={item.id} 
+                whileHover={{ y: -5 }} 
+                className="hero-quicklink-item"
+              >
+                <div className="hero-quicklink-icon">
+                  {iconMap[item.id] || <Globe size={24} color="#f57020" />}
+                </div>
+                <span className="hero-quicklink-label">{item.label}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
