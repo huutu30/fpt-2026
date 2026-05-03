@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRegisterModal } from '../../context/RegisterContext';
-import { Wifi, Zap, Clock, Gift, MonitorPlay, Home, Camera, Trophy, ChevronRight, ChevronDown, CheckCircle, Monitor } from 'lucide-react';
+import { Wifi, Zap, Clock, Gift, MonitorPlay, Home, Camera, Trophy, ChevronRight, ChevronDown, ChevronUp, CheckCircle, Monitor } from 'lucide-react';
 import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import NewsSection from '../../components/home/NewsSection';
@@ -44,6 +44,7 @@ export default function GiaDinh({ region }) {
   const { openModal } = useRegisterModal();
   const [activeTab, setActiveTab] = useState('internet');
   const [openFaq, setOpenFaq] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -194,7 +195,7 @@ export default function GiaDinh({ region }) {
 
         {/* SEO CONTENT & PRICING TABLES */}
         <section className={styles.section} style={{ paddingTop: '0' }}>
-          <div className={styles.seoContent}>
+          <div className={`${styles.seoContent} ${showMore ? styles.expanded : styles.collapsed}`}>
             <h1 className={styles.seoTitle} style={{ fontSize: '28px', color: '#f57020', marginBottom: '20px' }}>Đăng ký lắp mạng Internet gia đình FPT | Lắp WiFi nhanh, ổn định</h1>
             <p className={styles.seoText}>
               Từ những giờ học trực tuyến bổ ích của con trẻ, những phút giây thư giãn xem phim cùng cả nhà, đến việc ông bà kết nối với con cháu phương xa, một đường truyền internet tốc độ cao, ổn định và phủ sóng rộng khắp là điều mà mọi gia đình đều mong muốn. FPT thấu hiểu sâu sắc những nhu cầu đó và mang đến các gói cước internet gia đình tốc độ vượt trội cho gia đình đông người, nhà nhiều tầng hoặc có không gian rộng; và các gói combo internet - truyền hình giúp cả nhà giải trí thả ga mà vẫn tiết kiệm chi phí.
@@ -346,6 +347,15 @@ export default function GiaDinh({ region }) {
             <p className={styles.seoText}>
               Đừng để những trải nghiệm internet chậm chạp, giật lag làm ảnh hưởng đến cuộc sống số của gia đình bạn. Với công nghệ Wi-Fi 6 tiên tiến nhất, các gói cước internet FPT mang đến một cuộc cách mạng về tốc độ, sự ổn định và khả năng kết nối. Wi-Fi 6 không chỉ cung cấp băng thông rộng hơn, cho phép nhiều thiết bị cùng lúc truy cập mạng mà không làm giảm hiệu suất, mà còn tối ưu hóa việc sử dụng năng lượng, giúp kéo dài tuổi thọ pin cho các thiết bị di động của bạn.
             </p>
+          </div>
+          <div className={styles.showMoreWrapper}>
+            <button className={styles.showMoreBtn} onClick={() => setShowMore(!showMore)}>
+              {showMore ? (
+                <>Thu gọn <ChevronUp size={20} /></>
+              ) : (
+                <>Xem thêm <ChevronDown size={20} /></>
+              )}
+            </button>
           </div>
         </section>
 

@@ -75,7 +75,7 @@
   justify-content: space-around;
   padding: 25px 15px;
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .hero-quicklink-item {
@@ -145,6 +145,7 @@ body {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
+/** xxx/
 /* ===== TOP BAR: Hotline + Vùng miền ===== */
 .site-topbar {
   background: var(--color-surface-raised);
@@ -574,7 +575,8 @@ body {
     z-index: 1050;
     box-shadow: 5px 0 30px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
-    padding-bottom: 80px; /* space for bottom nav */
+    padding-bottom: 80px;
+    /* space for bottom nav */
   }
 
   .nav-menu.mobile-open {
@@ -631,12 +633,29 @@ body {
     transform: translateX(-15px);
   }
 
-  .nav-menu.mobile-open .nav-li:nth-child(1) { animation-delay: 0.05s; }
-  .nav-menu.mobile-open .nav-li:nth-child(2) { animation-delay: 0.1s; }
-  .nav-menu.mobile-open .nav-li:nth-child(3) { animation-delay: 0.15s; }
-  .nav-menu.mobile-open .nav-li:nth-child(4) { animation-delay: 0.2s; }
-  .nav-menu.mobile-open .nav-li:nth-child(5) { animation-delay: 0.25s; }
-  .nav-menu.mobile-open .nav-li:nth-child(6) { animation-delay: 0.3s; }
+  .nav-menu.mobile-open .nav-li:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+
+  .nav-menu.mobile-open .nav-li:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .nav-menu.mobile-open .nav-li:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+
+  .nav-menu.mobile-open .nav-li:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+
+  .nav-menu.mobile-open .nav-li:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+
+  .nav-menu.mobile-open .nav-li:nth-child(6) {
+    animation-delay: 0.3s;
+  }
 
   @keyframes mobileMenuItemFadeIn {
     to {
@@ -648,7 +667,7 @@ body {
   /* Hiệu ứng khi bấm (touch) vào link trên mobile */
   .nav-link:active,
   .mega-col-list li a:active {
-    background-color: rgba(0,0,0,0.03);
+    background-color: rgba(0, 0, 0, 0.03);
     transform: scale(0.98);
     transition: all 0.1s;
   }
@@ -789,7 +808,7 @@ body {
   .hero-quicklink-bar {
     padding: 15px 10px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     gap: 8px;
   }
 
@@ -801,7 +820,7 @@ body {
     width: 45px;
     height: 45px;
   }
-  
+
   .hero-quicklink-icon svg {
     width: 20px !important;
     height: 20px !important;
@@ -1990,21 +2009,23 @@ body {
     /* Đã lược bỏ hoàn toàn đổ bóng và hiệu ứng nhấc lên */
   }
 
-/* ========================================= */
-/* FIX RIÊNG CHO CARD CAMERA (YÊU CẦU ĐẶC BIỆT) */
-/* ========================================= */
-.camera-card-special .combo-card-name {
-  height: 48px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  /* ========================================= */
+  /* FIX RIÊNG CHO CARD CAMERA (YÊU CẦU ĐẶC BIỆT) */
+  /* ========================================= */
+  .camera-card-special .combo-card-name {
+    height: 48px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-.camera-card-special .combo-card-price {
-  height: 28px;
-}
+  .camera-card-special .combo-card-price {
+    height: 28px;
+  }
 
-.camera-card-special .combo-features {
-  max-height: 85px; /* Ép card gọn lại vì tính năng camera ít */
-}}
+  .camera-card-special .combo-features {
+    max-height: 85px;
+    /* Ép card gọn lại vì tính năng camera ít */
+  }
+}

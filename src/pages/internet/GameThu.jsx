@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import { useRegisterModal } from '../../context/RegisterContext';
@@ -27,6 +27,7 @@ const FAQ_DATA = [
 export default function GameThu({ region }) {
   const { openModal } = useRegisterModal();
   const [openFaq, setOpenFaq] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -157,7 +158,7 @@ export default function GameThu({ region }) {
       {/* SEO CONTENT & PRICING TABLES */}
       <section className={styles.section} style={{ background: '#0f172a' }}>
         <div className="container">
-          <div className={styles.seoContent}>
+          <div className={`${styles.seoContent} ${showMore ? styles.expanded : styles.collapsed}`}>
             <h1 className={styles.seoTitle} style={{ color: '#22d3ee', fontSize: '26px' }}>Đăng ký lắp mạng Internet game thủ FPT | Lắp WiFi chiến game mượt</h1>
             <h2 className={styles.seoTitle}>Gói cước Internet/WiFi FPT dành cho Game thủ - Tốc độ cao, không độ trễ</h2>
             <p className={styles.seoText}>
@@ -239,6 +240,15 @@ export default function GameThu({ region }) {
               <img src="https://s3-api.fpt.vn/fptvn-storage/2025-06-30/1751298653_internet-game-thu-1.jpg" alt="Gói Internet FPT cho game thủ" style={{ maxWidth: '100%', borderRadius: '12px' }} />
               <figcaption style={{ fontSize: '14px', color: '#64748b', marginTop: '10px', fontStyle: 'italic' }}>Gói Internet dành cho game thủ của FPT: Không chỉ là kết nối, đó là lợi thế của bạn trong mọi cuộc chiến.</figcaption>
             </figure>
+          </div>
+          <div className={styles.showMoreWrapper}>
+            <button className={styles.showMoreBtn} onClick={() => setShowMore(!showMore)}>
+              {showMore ? (
+                <>Thu gọn <ChevronUp size={20} /></>
+              ) : (
+                <>Xem thêm <ChevronDown size={20} /></>
+              )}
+            </button>
           </div>
         </div>
       </section>

@@ -166,7 +166,7 @@
 
 /* BENEFITS SECTION */
 .benefitsSection {
-  padding: 60px 20px;
+  padding: 60px 20px 20px;
   background: #fff;
 }
 
@@ -344,8 +344,17 @@
 
 /* PACKAGES SECTION */
 .packagesSection {
-  padding: 60px 0;
+  padding: 0 0 60px;
   background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+}
+
+.packagesSection :global(.discovery-section) {
+  padding-top: 10px;
+}
+
+.packagesSection :global(.combo-sport-section) {
+  padding-top: 10px;
+  background: transparent;
 }
 
 /* FAQ SECTION */

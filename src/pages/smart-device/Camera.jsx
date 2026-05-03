@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRegisterModal } from '../../context/RegisterContext';
 import { Link } from 'react-router-dom';
-import { Shield, Cloud, Eye, Cpu, Check, Sun, Moon } from 'lucide-react';
+import { Shield, Cloud, Eye, Cpu, Check, Sun, Moon, ChevronDown, ChevronUp } from 'lucide-react';
 import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import NewsSection from '../../components/home/NewsSection';
@@ -10,6 +10,7 @@ import styles from './Camera.module.css';
 export default function Camera({ region }) {
   const { openModal } = useRegisterModal();
   const [comboTab, setComboTab] = useState('all');
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -204,7 +205,7 @@ export default function Camera({ region }) {
       {/* ===== SEO CONTENT & PRICING TABLE ===== */}
       <section className={styles.section} style={{ background: '#f8fafc' }}>
         <div className="container">
-          <div className={styles.seoContent}>
+          <div className={`${styles.seoContent} ${showMore ? styles.expanded : styles.collapsed}`}>
             <h2 className={styles.seoTitle}>Camera AI FPT – Giải pháp an ninh thông minh cho gia đình hiện đại</h2>
             <p className={styles.seoText}>
               FPT Camera sử dụng công nghệ AI (Trí tuệ nhân tạo) tiên tiến với khả năng nhận diện khuôn mặt, phát hiện chuyển động người, phân biệt người lạ – người quen. Khi phát hiện bất thường, hệ thống lập tức gửi cảnh báo qua ứng dụng FPT Camera trên điện thoại, giúp bạn an tâm dù ở bất cứ đâu.
@@ -278,6 +279,15 @@ export default function Camera({ region }) {
                 </tbody>
               </table>
             </div>
+          </div>
+          <div className={styles.showMoreWrapper}>
+            <button className={styles.showMoreBtn} onClick={() => setShowMore(!showMore)}>
+              {showMore ? (
+                <>Thu gọn <ChevronUp size={20} /></>
+              ) : (
+                <>Xem thêm <ChevronDown size={20} /></>
+              )}
+            </button>
           </div>
         </div>
       </section>

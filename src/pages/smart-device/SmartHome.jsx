@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRegisterModal } from '../../context/RegisterContext';
 import { Link } from 'react-router-dom';
-import { Home, Cpu, Shield, Zap, Check } from 'lucide-react';
+import { Home, Cpu, Shield, Zap, Check, ChevronDown, ChevronUp } from 'lucide-react';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './SmartHome.module.css';
 
 export default function SmartHome({ region }) {
   const { openModal } = useRegisterModal();
+  const [showMore, setShowMore] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "FPT Smart Home - Thiết bị thông minh | FPT Telecom";
@@ -205,7 +207,7 @@ export default function SmartHome({ region }) {
       {/* ===== SEO CONTENT & PRICING TABLE ===== */}
       <section className={styles.section} style={{ background: '#f8fafc' }}>
         <div className="container">
-          <div className={styles.seoContent}>
+          <div className={`${styles.seoContent} ${showMore ? styles.expanded : styles.collapsed}`}>
             <h2 className={styles.seoTitle}>FPT Smart Home – Nâng tầm không gian sống hiện đại</h2>
             <p className={styles.seoText}>
               FPT Smart Home mang đến giải pháp nhà thông minh toàn diện, giúp bạn điều khiển và quản lý các thiết bị điện trong gia đình dễ dàng bằng giọng nói tiếng Việt hoặc qua ứng dụng trên điện thoại di động. Từ hệ thống chiếu sáng thông minh, điều khiển tivi, máy lạnh, rèm cửa cho đến hệ thống an ninh cảnh báo tức thời, FPT Smart Home đều đáp ứng trọn vẹn nhu cầu của gia đình.
@@ -272,6 +274,15 @@ export default function SmartHome({ region }) {
                 </tbody>
               </table>
             </div>
+          </div>
+          <div className={styles.showMoreWrapper}>
+            <button className={styles.showMoreBtn} onClick={() => setShowMore(!showMore)}>
+              {showMore ? (
+                <>Thu gọn <ChevronUp size={20} /></>
+              ) : (
+                <>Xem thêm <ChevronDown size={20} /></>
+              )}
+            </button>
           </div>
         </div>
       </section>

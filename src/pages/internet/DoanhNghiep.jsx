@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronDown, CheckCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, CheckCircle } from 'lucide-react';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import { PRODUCT_DATA } from '../../data/productData';
 import { useRegisterModal } from '../../context/RegisterContext';
@@ -17,6 +17,7 @@ const FAQ_DATA = [
 export default function DoanhNghiep({ region }) {
   const { openModal } = useRegisterModal();
   const [openFaq, setOpenFaq] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,7 +54,7 @@ export default function DoanhNghiep({ region }) {
       {/* SEO CONTENT */}
       <section className={styles.section} style={{ background: '#fff' }}>
         <div className="container">
-          <div className={styles.seoContent}>
+          <div className={`${styles.seoContent} ${showMore ? styles.expanded : styles.collapsed}`}>
             <h1 className={styles.seoTitle} style={{ color: '#f57020', fontSize: '26px' }}>Đăng ký lắp WiFi doanh nghiệp FPT | IP Tĩnh, bảo mật cao</h1>
             <p className={styles.seoText}>
               Trong môi trường kinh doanh cạnh tranh khốc liệt ngày nay, một hạ tầng internet mạnh mẽ, ổn định và bảo mật không còn là yếu tố cộng thêm, mà đã trở thành nền tảng cốt lõi quyết định sự sống còn và phát triển của mọi doanh nghiệp. FPT, với vị thế là nhà cung cấp dịch vụ viễn thông internet hàng đầu, tự hào mang đến các giải pháp internet cáp quang chuyên biệt, được thiết kế để đáp ứng những yêu cầu khắt khe nhất của khối doanh nghiệp.
@@ -89,6 +90,15 @@ export default function DoanhNghiep({ region }) {
             <p className={styles.seoText}>
               Với các gói mạng Wi-Fi 6 của FPT, điều đó hoàn toàn nằm trong tầm tay. Doanh nghiệp của bạn sẽ được trang bị modem Wi-Fi 6 tiên tiến cùng các giải pháp Access Point chuyên dụng, tạo nên một mạng lưới không dây mạnh mẽ, phủ sóng toàn diện và sẵn sàng đáp ứng mọi yêu cầu về traffic ngày càng tăng. Đừng để hạ tầng mạng lạc hậu cản trở sự phát triển. Hãy chọn Wi-Fi 6 FPT ngay hôm nay!
             </p>
+          </div>
+          <div className={styles.showMoreWrapper}>
+            <button className={styles.showMoreBtn} onClick={() => setShowMore(!showMore)}>
+              {showMore ? (
+                <>Thu gọn <ChevronUp size={20} /></>
+              ) : (
+                <>Xem thêm <ChevronDown size={20} /></>
+              )}
+            </button>
           </div>
         </div>
       </section>

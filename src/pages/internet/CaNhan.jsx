@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRegisterModal } from '../../context/RegisterContext';
-import { ShieldCheck, Wifi, Activity, MonitorPlay, CheckCircle, ChevronRight, ChevronDown, Download, Upload, Monitor, Gamepad2, Trophy } from 'lucide-react';
+import { ShieldCheck, Wifi, Activity, MonitorPlay, CheckCircle, ChevronRight, ChevronDown, ChevronUp, Download, Upload, Monitor, Gamepad2, Trophy } from 'lucide-react';
 import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import NewsSection from '../../components/home/NewsSection';
@@ -39,6 +39,7 @@ export default function CaNhan({ region }) {
   const { openModal } = useRegisterModal();
   const [activeTab, setActiveTab] = useState('internet');
   const [openFaq, setOpenFaq] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -197,7 +198,7 @@ export default function CaNhan({ region }) {
 
         {/* SEO CONTENT & PRICING TABLES */}
         <section className={styles.section} style={{ paddingTop: '0' }}>
-          <div className={styles.seoContent}>
+          <div className={`${styles.seoContent} ${showMore ? styles.expanded : styles.collapsed}`}>
             <h1 className={styles.seoTitle} style={{ fontSize: '28px', color: '#f57020', marginBottom: '20px' }}>Đăng ký gói cước Internet dành cho cá nhân - Giá ưu đãi, nhiều tiện ích</h1>
             <p className={styles.seoText}>
               FPT cung cấp đa dạng gói cước Internet cá nhân phù hợp cho người ở một mình, gia đình nhỏ, căn hộ chung cư hoặc nhu cầu sử dụng Internet tại nhà. Với hạ tầng cáp quang phủ rộng, thiết bị Wi-Fi 6 hiện đại và nhiều mức giá linh hoạt, người dùng có thể dễ dàng lựa chọn gói cước phù hợp để học tập, làm việc từ xa, xem phim, lướt web hay kết nối nhiều thiết bị ổn định mỗi ngày. Ngay dưới đây là thông tin chi tiết về các gói cước Internet cá nhân FPT, bảng giá tham khảo, thiết bị đi kèm, thủ tục đăng ký và những câu hỏi thường gặp khi lắp mạng tại nhà.
@@ -387,6 +388,15 @@ export default function CaNhan({ region }) {
               <img src="https://s3-api.fpt.vn/fptvn-storage/2025-06-30/1751298388_goi-cuoc-lap-dat-mang-fpt-3.jpg" alt="Ngoài các gói Internet cá nhân, FPT còn cung cấp thêm gói combo truyền hình" style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
               <figcaption style={{ fontSize: '14px', color: '#64748b', marginTop: '10px', fontStyle: 'italic' }}>Ngoài các gói Internet cá nhân, FPT còn cung cấp thêm gói combo truyền hình và các gói mở rộng khác</figcaption>
             </figure>
+          </div>
+          <div className={styles.showMoreWrapper}>
+            <button className={styles.showMoreBtn} onClick={() => setShowMore(!showMore)}>
+              {showMore ? (
+                <>Thu gọn <ChevronUp size={20} /></>
+              ) : (
+                <>Xem thêm <ChevronDown size={20} /></>
+              )}
+            </button>
           </div>
         </section>
 
