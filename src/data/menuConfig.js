@@ -38,19 +38,11 @@ export const NAV_MENU = [
         ]
       },
       {
-        label: 'Truyền hình & Giải trí',
+        label: 'Giải trí & Thiết bị',
         icon: 'Tv',
         color: '#4e69fd',
         items: [
           { name: 'FPT Play', path: '/giai-tri/fpt-play', seoTitle: 'Truyền hình FPT Play - Xem phim, thể thao trực tuyến' },
-          { name: 'Combo Internet', path: '/internet/combo', badge: 'Hot', seoTitle: 'Gói combo Internet FPT giá tốt nhất' },
-        ]
-      },
-      {
-        label: 'Thiết bị thông minh',
-        icon: 'Camera',
-        color: '#2ecc71',
-        items: [
           { name: 'FPT Camera', path: '/thiet-bi/camera', seoTitle: 'Camera an ninh FPT - Giám sát thông minh' },
           { name: 'FPT Smart Home', path: '/thiet-bi/smarthome', seoTitle: 'Nhà thông minh FPT Smart Home' },
         ]

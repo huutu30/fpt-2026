@@ -24,6 +24,7 @@ export default function FptPlay({ region }) {
 
   const comboPackages = PRODUCT_DATA.the_thao || [];
   const standalonePackages = PRODUCT_DATA.fpt_play_only || [];
+  const additionalPackages = PRODUCT_DATA.additional_home_packages || [];
 
   return (
     <div className={styles.fptPlayPage}>
@@ -56,6 +57,19 @@ export default function FptPlay({ region }) {
           <div className={styles.blueButtonVariant}>
             <ProductCardSlider data={standalonePackages} region={region} />
           </div>
+        </div>
+      </section>
+
+      {/* GÓI COMBO INTERNET & TRUYỀN HÌNH BỔ SUNG */}
+      <section id="additional-packages-section" className={styles.section} style={{ background: '#fff' }}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Gói <span>Combo Internet & Truyền hình</span></h2>
+            <p className={styles.sectionDesc}>
+              Tận hưởng kho giải trí bất tận cùng internet siêu tốc độ. Kết hợp Internet và FPT Play trong một gói cước tiết kiệm.
+            </p>
+          </div>
+          <ProductCardSlider data={additionalPackages} region={region} />
         </div>
       </section>
 

@@ -26,16 +26,16 @@ export default function Wifi7({ region }) {
       a: "Wi-Fi 7 (802.11be) là thế hệ Wi-Fi mới nhất, hỗ trợ tốc độ cao hơn gấp 4 lần, băng thông kênh truyền rộng hơn (lên đến 320MHz), giúp giảm tối đa độ trễ và tăng khả năng chịu tải lên rất nhiều thiết bị cùng lúc."
     },
     {
-      q: "Gói cước SpeedX của FPT sử dụng công nghệ gì?",
-      a: "Gói cước SpeedX hoạt động trên hạ tầng công nghệ XGS-PON tân tiến nhất, hỗ trợ truyền dẫn quang đối xứng với tốc độ lên đến 10Gbps, kết hợp thiết bị đầu cuối chuẩn Wi-Fi 7 để tối đa hóa hiệu năng."
+      q: "Wi-Fi 7 có phù hợp cho nhu cầu gia đình và doanh nghiệp không?",
+      a: "Có. Wi-Fi 7 đáp ứng tốt mọi nhu cầu – từ học tập, giải trí, chơi game, làm việc online trong gia đình đến vận hành văn phòng nhiều thiết bị, camera, IoT cho doanh nghiệp."
     },
     {
-      q: "Thiết bị đời cũ có kết nối được với modem Wi-Fi 7 không?",
-      a: "Hoàn toàn được. Wi-Fi 7 có tính tương thích ngược (backward compatible), nghĩa là các thiết bị điện thoại, máy tính dùng Wi-Fi 6, 5 hoặc cũ hơn vẫn kết nối và sử dụng bình thường với mạng Wi-Fi 7 của FPT."
+      q: "Tôi có cần thiết bị mới để tận hưởng Wi-Fi 7?",
+      a: "Wi-Fi 7 hoàn toàn tương thích ngược với các thiết bị Wi-Fi đời trước, nên điện thoại, laptop hay TV của bạn vẫn kết nối và sử dụng bình thường. Tuy nhiên, để trải nghiệm trọn vẹn sức mạnh của chuẩn mới – bao gồm tốc độ tối đa, băng thông rộng 320 MHz, công nghệ điều chế 4096-QAM và đặc biệt là tính năng Multi-Link Operation (MLO) giúp khai thác đồng thời nhiều băng tần – bạn cần sử dụng những thiết bị thế hệ mới có hỗ trợ Wi-Fi 7. Khi đó, toàn bộ hiệu năng vượt trội của Wi-Fi 7 mới được phát huy tối đa, từ xem phim 8K, chơi game cloud, đến vận hành nhà thông minh nhiều thiết bị."
     },
     {
-      q: "Tôi cần làm gì để đăng ký gói SpeedX?",
-      a: "Bạn chỉ cần để lại số điện thoại trên Form đăng ký hoặc chọn gói cước phù hợp ở phần bảng giá bên dưới và click 'Đăng ký'. Nhân viên FPT sẽ liên hệ hỗ trợ triển khai nhanh chóng trong 24h."
+      q: "Gói cước SpeedX của FPT có những mức băng thông nào?",
+      a: "Gói cước SpeedX2/SpeedX2 Pro có băng thông 2Gbps và SpeedX10/SpeedX10 Pro đạt 10Gbps; tất cả đều đối xứng ở download/upload trên hạ tầng công nghệ XGS-PON."
     }
   ];
 
@@ -43,14 +43,23 @@ export default function Wifi7({ region }) {
     <div className={styles.wifi7Page}>
       {/* HERO SECTION */}
       <section className={styles.heroSection}>
+        {/* Background image - woman with devices */}
+        <div className={styles.heroImageWrapper}>
+          <img 
+            src="https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landing-wifi7/wifi7-wrapper2.png" 
+            alt="FPT Wi-Fi 7 - Thiết bị công nghệ mới nhất" 
+            className={styles.heroImage}
+          />
+        </div>
+
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
-            <div className={styles.heroTag}>SpeedX XGS-PON</div>
-            <h1 className={styles.heroTitle}>FPT Wi-Fi 7<br/><span>Thế hệ mới nhất</span></h1>
-            <p className={styles.heroDesc}>
-              Đăng ký lắp Wi-Fi 7 hạ tầng công nghệ XGS-PON với gói cước SpeedX FPT. 
-              Tốc độ đến 10 Gbps, xử lý đa tác vụ, 3 băng tần kết nối, chịu tải gấp 4 lần công nghệ cũ.
-            </p>
+            <div className={styles.heroTag}>FPT Wi-Fi 7</div>
+            <h1 className={styles.heroTitle}>
+              <span className={styles.heroTitleScript}>WiFi thế hệ</span>
+              <span className={styles.heroTitleScript}>mới nhất</span>
+            </h1>
+            <p className={styles.heroSubtitle}>Công nghệ hàng đầu, thiết bị hiện đại số 1</p>
           </div>
           
           <div className={styles.heroFormBox}>
@@ -62,13 +71,13 @@ export default function Wifi7({ region }) {
               <div className={styles.inputGroup}>
                 <input 
                   type="text" 
-                  placeholder="Nhập số điện thoại của bạn" 
+                  placeholder="Nhập số điện thoại/số hợp đồng" 
                   className={styles.inputField}
                   required 
                 />
               </div>
               <button type="submit" className={styles.submitBtn}>
-                Tiếp tục
+                Đăng ký
               </button>
             </form>
           </div>
@@ -115,6 +124,63 @@ export default function Wifi7({ region }) {
       <section className={styles.packagesSection}>
         <div className="container">
           <Wifi7Section region={region} />
+        </div>
+      </section>
+
+      {/* TECH SECTION */}
+      <section className={styles.techSection}>
+        <div className={styles.techContainer}>
+          <div className={styles.techContentRight}>
+            <div className={styles.techHeader}>
+              <h2 className={styles.techTitle}>Công nghệ nổi bật của WiFi 7</h2>
+            </div>
+            
+            <div className={styles.techGrid}>
+              <div className={styles.techCard}>
+                <div className={styles.techIconWrapper}>
+                  <img src="https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landing-wifi7/mimo-icon.png" alt="16x16 MU-MIMO" className={styles.techIcon} />
+                </div>
+                <div className={styles.techCardContent}>
+                  <h3 className={styles.techCardTitle}>16x16 MU-MIMO</h3>
+                  <p className={styles.techCardDesc}>Cung cấp băng thông lên đến 5.8 Gbps, tăng cường kết nối và giảm độ trễ, hỗ trợ tốt cho VR/AR và làm việc từ xa.</p>
+                </div>
+              </div>
+              
+              <div className={styles.techCard}>
+                <div className={styles.techIconWrapper}>
+                  <img src="https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landing-wifi7/xgs-icon.png" alt="XGS-PON" className={styles.techIcon} />
+                </div>
+                <div className={styles.techCardContent}>
+                  <h3 className={styles.techCardTitle}>XGS-PON</h3>
+                  <p className={styles.techCardDesc}>Công nghệ XGS-PON cho tốc độ cao lên đến 10Gbps ở cả hai chiều: tải phim/game nặng, xem/phát 4K/8K, upload–livestream–backup trong vài giây.</p>
+                </div>
+              </div>
+              
+              <div className={styles.techCard}>
+                <div className={styles.techIconWrapper}>
+                  <img src="https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landing-wifi7/preamble-icon.png" alt="PREAMBLE PUNCTURING" className={styles.techIcon} />
+                </div>
+                <div className={styles.techCardContent}>
+                  <h3 className={styles.techCardTitle}>PREAMBLE PUNCTURING</h3>
+                  <p className={styles.techCardDesc}>Lọc nhiễu hiệu quả, giúp đảm bảo chất lượng dữ liệu khi có tín hiệu nhiễu, lý tưởng khi chơi game online và gọi thoại.</p>
+                </div>
+              </div>
+              
+              <div className={styles.techCard}>
+                <div className={styles.techIconWrapper}>
+                  <img src="https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landing-wifi7/band-icon.png" alt="6 GHZ BAND" className={styles.techIcon} />
+                </div>
+                <div className={styles.techCardContent}>
+                  <h3 className={styles.techCardTitle}>6 GHZ BAND</h3>
+                  <p className={styles.techCardDesc}>Thêm băng tần 6 GHz ít nhiễu hơn so với băng tần Wi-Fi truyền thống, cải thiện hiệu suất truyền tải, hỗ trợ các thiết bị kết nối nhanh chóng và ổn định.</p>
+                </div>
+              </div>
+              
+              <div className={styles.techBtnWrapper}>
+                <button className={styles.techBtn} onClick={() => window.scrollTo(0, 0)}>Đăng ký &rarr;</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
