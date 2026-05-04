@@ -31,16 +31,17 @@ export default function Hero({ hideQuickLinks = false }) {
       {/* 1. SLIDER ẢNH TRÀN VIỀN */}
       <div className="hero-slider" style={styles.slider}>
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion.img
             key={index}
+            src={BANNER_DATA[index].image}
+            alt={`Banner FPT Telecom ${index + 1}`}
             initial={{ opacity: 0.8 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0.8 }}
             transition={{ duration: 0.8 }}
-            style={{ 
-              ...styles.slide, 
-              backgroundImage: `url(${BANNER_DATA[index].image})` 
-            }}
+            style={styles.slide}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            loading={index === 0 ? "eager" : "lazy"}
           />
         </AnimatePresence>
 
@@ -91,9 +92,8 @@ const styles = {
   slide: { 
     width: '100%', 
     height: '100%', 
-    backgroundSize: 'cover', 
-    backgroundPosition: 'center',
-    transition: 'background-image 0.5s ease-in-out'
+    objectFit: 'cover',
+    objectPosition: 'center',
   },
   navBtn: {
     position: 'absolute', top: '50%', transform: 'translateY(-50%)',
