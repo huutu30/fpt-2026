@@ -17,10 +17,14 @@ export default function Hero({ hideQuickLinks = false }) {
   const nextSlide = useCallback(() => setIndex((prev) => (prev === BANNER_DATA.length - 1 ? 0 : prev + 1)), []);
   const prevSlide = useCallback(() => setIndex((prev) => (prev === 0 ? BANNER_DATA.length - 1 : prev - 1)), []);
 
-  // Tự động chạy slide sau 5 giây
+  // Tự động chạy slide — trì hoãn 10s để đảm bảo LCP đo đúng Banner 1
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
-    return () => clearInterval(timer);
+    const delay = setTimeout(() => {
+      const timer = setInterval(nextSlide, 5000);
+      // Cleanup interval khi unmount
+      return () => clearInterval(timer);
+    }, 10000);
+    return () => clearTimeout(delay);
   }, [nextSlide]);
 
   if (!BANNER_DATA || BANNER_DATA.length === 0) return null;
