@@ -42,15 +42,17 @@ export default function Hero({ hideQuickLinks = false }) {
             style={styles.slide}
             fetchPriority={index === 0 ? "high" : "auto"}
             loading={index === 0 ? "eager" : "lazy"}
+            width="1920"
+            height="717"
           />
         </AnimatePresence>
 
         {/* Nút điều hướng Arrow */}
-        <button onClick={prevSlide} style={{ ...styles.navBtn, left: '20px' }}>
-          <ChevronLeft color="#fff" />
+        <button onClick={prevSlide} style={{ ...styles.navBtn, left: '20px' }} aria-label="Slide trước">
+          <ChevronLeft color="#fff" aria-hidden="true" />
         </button>
-        <button onClick={nextSlide} style={{ ...styles.navBtn, right: '20px' }}>
-          <ChevronRight color="#fff" />
+        <button onClick={nextSlide} style={{ ...styles.navBtn, right: '20px' }} aria-label="Slide sau">
+          <ChevronRight color="#fff" aria-hidden="true" />
         </button>
 
         {/* Chỉ số trang 1/4 chuẩn ảnh mẫu */}
