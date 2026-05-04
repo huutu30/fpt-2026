@@ -83,7 +83,7 @@ export default function Footer() {
                 alt="Đã thông báo Bộ Công Thương" 
                 className={styles.bctLogo}
                 width="150"
-                height="57"
+                height="56"
                 loading="lazy"
               />
             </div>

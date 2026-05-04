@@ -36,7 +36,7 @@ function App() {
           <RegisterModal />
           <FloatingContact />
 
-          <main id="main-content" role="main">
+          <main id="main-content" role="main" style={{ minHeight: '100vh' }}>
             <Suspense fallback={
               <div style={{ 
                 display: 'flex', 
@@ -74,9 +74,9 @@ function App() {
                 <Route path="/tin-tuc/:id" element={<ArticlePage />} />
                 <Route path="/ho-tro" element={<Support />} />
               </Routes>
+              <SupportCTA />
             </Suspense>
           </main>
-          <SupportCTA />
           <Footer />
         </div>
       </Router>
