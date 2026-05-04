@@ -16,7 +16,7 @@ export default function NewsSection() {
           {NEWS_DATA.map((news) => (
             <Link to={`/tin-tuc/${news.id}`} key={news.id} className={styles.newsCard}>
               <div className={styles.newsImageWrapper}>
-                <img src={news.image} alt={news.title} className={styles.newsImage} />
+                <img src={news.image} alt={news.title} className={styles.newsImage} loading="lazy" width="400" height="225" />
               </div>
               <div className={styles.newsContent}>
                 <span className={styles.newsDate}>{news.date}</span>

@@ -29,6 +29,8 @@ export default function ProductCategorySection() {
                 alt={`${cat.type} ${cat.name} FPT`}
                 className={styles.cardImg}
                 loading="lazy"
+                width="300"
+                height="200"
               />
             </div>
 

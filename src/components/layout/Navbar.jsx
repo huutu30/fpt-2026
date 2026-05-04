@@ -78,6 +78,8 @@ export default function Navbar({ region, setRegion }) {
               alt="FPT Telecom Logo" 
               className="logo-img"
               itemProp="logo"
+              width="140"
+              height="36"
             />
             <span className="sr-only">FPT Telecom - Trang chủ</span>
           </Link>
