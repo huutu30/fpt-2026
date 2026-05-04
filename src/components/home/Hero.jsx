@@ -33,15 +33,24 @@ export default function Hero({ hideQuickLinks = false }) {
     <section style={styles.heroContainer}>
       {/* 1. SLIDER ẢNH TRÀN VIỀN — dùng CSS transition thay Framer Motion */}
       <div className="hero-slider" style={styles.slider}>
-        <img
-          src={BANNER_DATA[index].image}
-          alt={`Banner FPT Telecom ${index + 1}`}
-          style={styles.slide}
-          fetchPriority="high"
-          loading="eager"
-          width="1920"
-          height="717"
-        />
+        <picture>
+          {BANNER_DATA[index].mobileImage && (
+            <source
+              media="(max-width: 768px)"
+              srcSet={BANNER_DATA[index].mobileImage}
+              type="image/webp"
+            />
+          )}
+          <img
+            src={BANNER_DATA[index].image}
+            alt={`Banner FPT Telecom ${index + 1}`}
+            style={styles.slide}
+            fetchPriority="high"
+            loading="eager"
+            width="1920"
+            height="717"
+          />
+        </picture>
 
         {/* Nút điều hướng Arrow */}
         <button onClick={prevSlide} style={{ ...styles.navBtn, left: '20px' }} aria-label="Slide trước">

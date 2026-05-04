@@ -19,16 +19,19 @@ export const BANNER_DATA = [
   {
     id: 1,
     image: "/images/69e041bf8f173_1_1920_953e52bd.webp",
+    mobileImage: "/images/banner_mobile.webp",
     link: "/khuyen-mai-1"
   },
   {
     id: 2,
     image: "/images/69ccc6c8c484f_Banner_6e642d8a.webp",
+    mobileImage: "/images/69ccc6c8c484f_Banner_6e642d8a_mobile.webp",
     link: "/wifi-7"
   },
   {
     id: 3,
     image: "/images/69ba4a9c3c1ed_1920x7_106b1784.webp",
+    mobileImage: "/images/69ba4a9c3c1ed_1920x7_106b1784_mobile.webp",
     link: "/wifi-7"
   }
 ];
