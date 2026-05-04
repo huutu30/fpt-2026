@@ -33,8 +33,8 @@ export default function Hero({ hideQuickLinks = false }) {
           src={BANNER_DATA[index].image}
           alt={`Banner FPT Telecom ${index + 1}`}
           style={styles.slide}
-          fetchPriority={index === 0 ? "high" : "auto"}
-          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority="high"
+          loading="eager"
           width="1920"
           height="717"
         />

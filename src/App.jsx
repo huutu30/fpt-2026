@@ -74,9 +74,9 @@ function App() {
                 <Route path="/tin-tuc/:id" element={<ArticlePage />} />
                 <Route path="/ho-tro" element={<Support />} />
               </Routes>
-              <SupportCTA />
             </Suspense>
           </main>
+          <SupportCTA />
           <Footer />
         </div>
       </Router>
