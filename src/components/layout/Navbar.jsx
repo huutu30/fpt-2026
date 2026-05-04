@@ -74,7 +74,7 @@ export default function Navbar({ region, setRegion }) {
           {/* LOGO */}
           <Link to="/trang-chu" className="site-logo" aria-label="Trang chủ FPT Telecom" title="Về trang chủ" id="site-logo" itemProp="url" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <img 
-              src="https://fpt.vn/frontend_layout_2025_vibecode/assets/images/logo-ftel.svg" 
+              src="/images/logo-ftel.svg" 
               alt="FPT Telecom Logo" 
               className="logo-img"
               itemProp="logo"

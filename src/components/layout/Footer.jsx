@@ -32,7 +32,7 @@ export default function Footer() {
         <div className={styles.footerTopRow}>
           <div className={styles.logo}>
             <Link to="/trang-chu" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-              <img src="https://fpt.vn/frontend_layout_2025_vibecode/assets/images/logo-ftel.svg" alt="FPT Telecom Logo" width="160" height="40" style={{ objectFit: 'contain', display: 'block' }} />
+              <img src="/images/logo-ftel.svg" alt="FPT Telecom Logo" width="160" height="40" style={{ objectFit: 'contain', display: 'block' }} />
             </Link>
           </div>
           
@@ -79,7 +79,7 @@ export default function Footer() {
               <p style={{marginTop: '15px'}}>Người đại diện: Ông Hoàng Việt Anh</p>
               
               <img 
-                src="https://fpt.vn/assets/frontend/img/bct.png" 
+                src="/images/bct.png" 
                 alt="Đã thông báo Bộ Công Thương" 
                 className={styles.bctLogo}
                 width="150"
