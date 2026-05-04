@@ -22,11 +22,11 @@ export const NEWS_DATA = [
     title: "FPT Telecom chính thức ra mắt gói cước Wi-Fi 7 siêu tốc độ",
     category: "Viễn thông công nghệ",
     date: "15/10/2025",
-    image: "https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landingpage-hifpt-v7.5/thumbnail-80.jpg",
+    image: "/images/thumbnail_80_jpg_7d803649.webp",
     desc: "Khách hàng đăng ký mới gói SpeedX sẽ được trải nghiệm công nghệ Wi-Fi 7 với tốc độ băng thông lên tới 10Gbps cực đỉnh.",
     content: [
       { type: "paragraph", text: "FPT Telecom chính thức ra mắt công nghệ mạng không dây tiên tiến nhất thế giới - Wi-Fi 7. Đây là sự nâng cấp đột phá mang lại trải nghiệm internet siêu tốc dành cho người dùng." },
-      { type: "image", src: "https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landingpage-hifpt-v7.5/thumbnail-80.jpg", caption: "Gói cước SpeedX Wi-Fi 7 mang lại tốc độ đột phá" },
+      { type: "image", src: "/images/thumbnail_80_jpg_7d803649.webp", caption: "Gói cước SpeedX Wi-Fi 7 mang lại tốc độ đột phá" },
       { type: "paragraph", text: "Với công nghệ XGS-PON, băng thông có thể lên đến 10Gbps, kết hợp với độ trễ thấp chưa từng có. Đây là giải pháp hoàn hảo cho các gia đình hiện đại, đáp ứng mọi nhu cầu từ học tập, làm việc trực tuyến đến giải trí 8K." }
     ]
   },
@@ -69,7 +69,7 @@ export const NEWS_DATA = [
     title: "Giải pháp wifi cho nhà 3 tầng: phủ sóng toàn diện, không còn điểm chết",
     category: "Viễn thông công nghệ",
     date: "17/04/2026",
-    image: "https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/landingpage-hifpt-v7.5/thumbnail-80.jpg",
+    image: "/images/thumbnail_80_jpg_7d803649.webp",
     desc: "Nhà 3 tầng hay bị yếu sóng, mất kết nối? Khám phá giải pháp wifi cho nhà 3 tầng với Mesh FPT, phủ sóng đều từ tầng 1 đến tầng 3.",
     content: [
       { type: "paragraph", text: "Giải pháp Mesh Wifi của FPT giúp phủ sóng toàn bộ ngôi nhà nhiều tầng một cách hiệu quả." }
