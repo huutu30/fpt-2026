@@ -1,6 +1,8 @@
 .supportCta {
   background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #1e3a5f 100%);
   padding: 30px 20px;
+  min-height: 120px; /* Prevent CLS */
+  contain: layout style;
 }
 
 .supportInner {

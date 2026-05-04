@@ -1,148 +1,209 @@
+Thông tin chi tiết
+Cải thiện việc phân phối hình ảnh Mức tiết kiệm ước tính: 571 KiB
 Việc giảm thời gian tải hình ảnh xuống có thể cải thiện thời gian tải trang và LCP được cảm nhận. Tìm hiểu thêm về cách tối ưu hoá kích thước hình ảnhLCPFCPKhông được tính
 URL
 Kích thước tài nguyên
 Mức tiết kiệm ước tính
 vercel.app Bên thứ nhất
-499,8 KiB	151,7 KiB
+772,1 KiB	571,3 KiB
 Banner FPT Telecom 1
 <img alt="Banner FPT Telecom 1" fetchpriority="high" loading="eager" width="1920" height="717" src="/images/69e041bf8f173_1_1920_953e52bd.webp" style="width: 100%; height: 100%; object-fit: cover;">
-/images/69e041bf8f173_1_1920_953e52bd.webp(fpt-2026-inky.vercel.app)
-96,6 KiB
-48,6 KiB
+/images/69e041bf8f173_1_1920_953e52bd.webp(fpt-2026-delta.vercel.app)
+188,0 KiB
+153,8 KiB
 Việc tăng hệ số nén của hình ảnh có thể cải thiện kích thước tải xuống của hình ảnh này.
-48,6 KiB
-Đã thông báo Bộ Công Thương
-<img alt="Đã thông báo Bộ Công Thương" class="_bctLogo_18plw_134" width="150" height="57" loading="lazy" src="/images/bct.png">
-/images/bct.png(fpt-2026-inky.vercel.app)
-15,2 KiB
-13,1 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x225) so với kích thước hiển thị (263x70). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-13,1 KiB
+64,9 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (1055x717) so với kích thước hiển thị (750x280). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+135,8 KiB
 Lắp đặt Combo thể thao Meta F1 FPT giá rẻ
 <img alt="Lắp đặt Combo thể thao Meta F1 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699d75173caa3_Combo__56845610.webp">
-/images/699d75173….webp(fpt-2026-inky.vercel.app)
+/images/699d75173….webp(fpt-2026-delta.vercel.app)
 34,7 KiB
-7,1 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-7,1 KiB
+25,7 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+25,7 KiB
 Lắp đặt Combo SKY FPT giá rẻ
 <img alt="Lắp đặt Combo SKY FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699d7450920d9_Combo__35a60e4b.webp">
-/images/699d74509….webp(fpt-2026-inky.vercel.app)
+/images/699d74509….webp(fpt-2026-delta.vercel.app)
 34,4 KiB
-7,0 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-7,0 KiB
+25,5 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+25,5 KiB
 Lắp đặt Combo thể thao Sky F1 FPT giá rẻ
 <img alt="Lắp đặt Combo thể thao Sky F1 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699d748c36ec5_Combo__393c6490.webp">
-/images/699d748c3….webp(fpt-2026-inky.vercel.app)
+/images/699d748c3….webp(fpt-2026-delta.vercel.app)
 34,3 KiB
-7,0 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-7,0 KiB
+25,4 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+25,4 KiB
 Lắp đặt Combo META FPT giá rẻ
 <img alt="Lắp đặt Combo META FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699d746d8ebee_Combo__7420be38.webp">
-/images/699d746d8….webp(fpt-2026-inky.vercel.app)
+/images/699d746d8….webp(fpt-2026-delta.vercel.app)
 34,1 KiB
-6,9 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-6,9 KiB
+25,2 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+25,2 KiB
 Lắp đặt Combo thể thao Meta F2 FPT giá rẻ
 <img alt="Lắp đặt Combo thể thao Meta F2 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699d752e68504_Combo__9277806e.webp">
-/images/699d752e6….webp(fpt-2026-inky.vercel.app)
+/images/699d752e6….webp(fpt-2026-delta.vercel.app)
 33,7 KiB
-6,9 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-6,9 KiB
+24,9 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+24,9 KiB
 Lắp đặt Combo thể thao Sky F2 FPT giá rẻ
 <img alt="Lắp đặt Combo thể thao Sky F2 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699d74a4c6f4d_Combo__04029773.webp">
-/images/699d74a4c….webp(fpt-2026-inky.vercel.app)
+/images/699d74a4c….webp(fpt-2026-delta.vercel.app)
 33,2 KiB
-6,8 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-6,8 KiB
+24,6 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+24,6 KiB
 Lắp đặt Combo thể thao SpeedX2 FPT giá rẻ
 <img alt="Lắp đặt Combo thể thao SpeedX2 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699d755f5b2a9_Combo__2b610630.webp">
-/images/699d755f5….webp(fpt-2026-inky.vercel.app)
+/images/699d755f5….webp(fpt-2026-delta.vercel.app)
 30,9 KiB
-6,3 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-6,3 KiB
+22,9 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+22,9 KiB
+Gói V.VIP 2 FPT Telecom
+<img alt="Gói V.VIP 2 FPT Telecom" loading="lazy" width="300" height="180" src="/images/1765335690_GoiVVIP2__2866d1cd.webp">
+/images/176….webp(fpt-2026-delta.vercel.app)
+31,0 KiB
+22,0 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (579x435) so với kích thước hiển thị (300x242). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+22,0 KiB
+Gói V.VIP 1 FPT Telecom
+<img alt="Gói V.VIP 1 FPT Telecom" loading="lazy" width="300" height="180" src="/images/1765335432_GoiVVIP1__5938832e.webp">
+/images/176….webp(fpt-2026-delta.vercel.app)
+30,4 KiB
+21,6 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (579x435) so với kích thước hiển thị (300x242). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+21,6 KiB
 Lắp đặt Internet Meta F1 FPT giá rẻ
 <img alt="Lắp đặt Internet Meta F1 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/699ec5753be29_Intern_799ce45a.webp">
-/images/699ec5753….webp(fpt-2026-inky.vercel.app)
+/images/699ec5753….webp(fpt-2026-delta.vercel.app)
 29,1 KiB
-5,9 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (546x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-5,9 KiB
+21,5 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (600x450) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+21,5 KiB
+Lắp đặt Internet F-Game FPT giá rẻ
+<img alt="Lắp đặt Internet F-Game FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/F_Game_1Gbps_300Mbps_acbcacb4.webp">
+/images/F_Game_1G….webp(fpt-2026-delta.vercel.app)
+24,1 KiB
+17,2 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (580x435) so với kích thước hiển thị (300x242). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+17,2 KiB
 Combo 3 Camera Trong Nhà FPT Telecom
 <img alt="Combo 3 Camera Trong Nhà FPT Telecom" loading="lazy" width="300" height="180" src="/images/69d5cdab31530_Combo__947015aa.webp">
-/images/69d5cdab3….webp(fpt-2026-inky.vercel.app)
+/images/69d5cdab3….webp(fpt-2026-delta.vercel.app)
 20,1 KiB
-5,9 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (405x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-5,9 KiB
+15,5 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (231x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+15,5 KiB
+Lắp đặt Internet Sky FPT giá rẻ
+<img alt="Lắp đặt Internet Sky FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/6915ea35e64f7_Intern_73dcb8a4.webp">
+/images/6915ea35e….webp(fpt-2026-delta.vercel.app)
+25,3 KiB
+15,1 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x361) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+15,1 KiB
 Combo 3 Camera (2 Trong - 1 Ngoài) FPT Telecom
 <img alt="Combo 3 Camera (2 Trong - 1 Ngoài) FPT Telecom" loading="lazy" width="300" height="180" src="/images/69d5cd9f40d3b_Combo__36adf355.webp">
-/images/69d5cd9f4….webp(fpt-2026-inky.vercel.app)
+/images/69d5cd9f4….webp(fpt-2026-delta.vercel.app)
 19,0 KiB
-5,6 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (405x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-5,6 KiB
+14,6 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (231x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+14,6 KiB
 Combo 3 Camera (1 Trong - 2 Ngoài) FPT Telecom
 <img alt="Combo 3 Camera (1 Trong - 2 Ngoài) FPT Telecom" loading="lazy" width="300" height="180" src="/images/69d5cd9054d18_Combo__22c0d51c.webp">
-/images/69d5cd905….webp(fpt-2026-inky.vercel.app)
+/images/69d5cd905….webp(fpt-2026-delta.vercel.app)
 18,6 KiB
-5,4 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (405x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-5,4 KiB
+14,3 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (231x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+14,3 KiB
+Lắp đặt Internet Giga F1 FPT giá rẻ
+<img alt="Lắp đặt Internet Giga F1 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/691cc7f859200_Giga_2_9292e8e6.webp">
+/images/691cc7f85….webp(fpt-2026-delta.vercel.app)
+23,9 KiB
+14,2 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x360) so với kích thước hiển thị (313x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+14,2 KiB
 Combo 3 Camera Ngoài Trời FPT Telecom
 <img alt="Combo 3 Camera Ngoài Trời FPT Telecom" loading="lazy" width="300" height="180" src="/images/69d5cdb4cdb7e_Combo__4eddf185.webp">
-/images/69d5cdb4c….webp(fpt-2026-inky.vercel.app)
+/images/69d5cdb4c….webp(fpt-2026-delta.vercel.app)
 18,3 KiB
-5,4 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (405x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-5,4 KiB
+14,1 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (231x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+14,1 KiB
+Lắp đặt Internet Sky F1 FPT giá rẻ
+<img alt="Lắp đặt Internet Sky F1 FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/691cc82a43cd3_Sky_20_15d3d587.webp">
+/images/691cc82a4….webp(fpt-2026-delta.vercel.app)
+22,2 KiB
+13,2 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x360) so với kích thước hiển thị (313x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+13,2 KiB
+Lắp đặt Internet Giga FPT giá rẻ
+<img alt="Lắp đặt Internet Giga FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/6915e660eff1b_Intern_66f2d8ad.webp">
+/images/6915e660e….webp(fpt-2026-delta.vercel.app)
+21,1 KiB
+12,6 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x361) so với kích thước hiển thị (312x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+12,6 KiB
 Combo 2 Camera Trong Nhà FPT Telecom
 <img alt="Combo 2 Camera Trong Nhà FPT Telecom" loading="lazy" width="300" height="180" src="/images/69d47e7edad9f_Combo__64e2ee3f.webp">
-/images/69d47e7ed….webp(fpt-2026-inky.vercel.app)
+/images/69d47e7ed….webp(fpt-2026-delta.vercel.app)
 16,2 KiB
-4,7 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (405x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-4,7 KiB
+12,5 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (231x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+12,5 KiB
 Combo 2 Camera Ngoài Trời FPT Telecom
 <img alt="Combo 2 Camera Ngoài Trời FPT Telecom" loading="lazy" width="300" height="180" src="/images/69d47e8e83cdc_Combo__6f5a96b5.webp">
-/images/69d47e8e8….webp(fpt-2026-inky.vercel.app)
+/images/69d47e8e8….webp(fpt-2026-delta.vercel.app)
 16,0 KiB
-4,7 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (405x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-4,7 KiB
+12,3 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (231x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+12,3 KiB
 Combo 2 Camera (Trong - Ngoài) FPT Telecom
 <img alt="Combo 2 Camera (Trong - Ngoài) FPT Telecom" loading="lazy" width="300" height="180" src="/images/69d47e6d5e354_Combo__48f3772f.webp">
-/images/69d47e6d5….webp(fpt-2026-inky.vercel.app)
+/images/69d47e6d5….webp(fpt-2026-delta.vercel.app)
 15,5 KiB
-4,5 KiB
-Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (405x394). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
-4,5 KiB
-    
-
-
+11,9 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (481x468) so với kích thước hiển thị (231x225). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+11,9 KiB
+Lắp đặt Internet Meta FPT giá rẻ
+<img alt="Lắp đặt Internet Meta FPT giá rẻ" loading="lazy" width="300" height="180" src="/images/Internet_META_496x40_2e6f473c.webp">
+/images/Internet_….webp(fpt-2026-delta.vercel.app)
+17,9 KiB
+10,9 KiB
+Tệp hình ảnh này lớn hơn mức cần thiết (496x372) so với kích thước hiển thị (300x242). Hãy sử dụng hình ảnh thích ứng để giảm kích thước tải xuống của hình ảnh.
+10,9 KiB
+Nguyên nhân làm thay đổi bố cục
 Bố cục thay đổi khi phần tử di chuyển mà không có sự tương tác của người dùng. Hãy tìm hiểu nguyên nhân bố cục thay đổi, chẳng hạn như phần tử được thêm, bị xoá hoặc phông chữ của phần tử thay đổi khi trang tải.CLSKhông được tính
 Phần tử
 Điểm số về mức thay đổi bố cục
 Tổng
-0,927
-Hi Zalo 1900 6600 Giấy chứng nhận ĐKDN số 0101778163 do Sở Kế hoạch Đầu tư Thà…
-<footer class="_siteFooter_18plw_1" role="contentinfo">
-0,927
-
-
-
+0,431
+Bạn cần hỗ trợ tư vấn sản phẩm dịch vụ Bằng việc ấn vào Đăng ký Internet bạn đ…
+<section class="_supportCta_1qj39_1">
+0,431
+Buộc chỉnh lại luồng
+Chế độ buộc chỉnh lại luồng diễn ra khi JavaScript truy vấn các thuộc tính hình học (chẳng hạn như offsetWidth) sau khi các kiểu đã bị vô hiệu hoá do trạng thái DOM có thay đổi. Điều này có thể dẫn đến hiệu suất kém. Tìm hiểu thêm về chế độ buộc chỉnh lại luồng và các biện pháp giảm thiểu có thể áp dụng.Không được tính
+Lệnh gọi hàm hàng đầu
+Tổng thời gian chỉnh lại luồng
+/assets/Hero-QnbwYxf1.js:2:3219(fpt-2026-delta.vercel.app)
+85 mili giây
+Nguồn
+Tổng thời gian chỉnh lại luồng
+/assets/Hero-QnbwYxf1.js:1:72897(fpt-2026-delta.vercel.app)
+85 mili giây
+[chưa được phân bổ]
+0 mili giây
+Cây phần phụ thuộc mạng
 Tránh tạo chuỗi các yêu cầu quan trọng bằng cách giảm độ dài chuỗi, giảm kích thước tài nguyên tải xuống hoặc trì hoãn tải xuống các tài nguyên không cần thiết để cải thiện tốc độ tải trang.LCPKhông được tính
-Độ trễ tối đa của đường dẫn quan trọng: 251 mili giây
+Độ trễ tối đa của đường dẫn quan trọng: 452 mili giây
 Điều hướng ban đầu
-https://fpt-2026-inky.vercel.app - 157 mili giây, 1,59 KiB
-/assets/index-DLOCcgTR.css(fpt-2026-inky.vercel.app) - 192 mili giây, 8,98 KiB
-/assets/index-ClwtI3fF.js(fpt-2026-inky.vercel.app) - 251 mili giây, 66,78 KiB
+https://fpt-2026-delta.vercel.app - 90 mili giây, 1,59 KiB
+/assets/index-DWyR-eYj.css(fpt-2026-delta.vercel.app) - 401 mili giây, 9,00 KiB
+/assets/index-DLuGcsA_.js(fpt-2026-delta.vercel.app) - 452 mili giây, 66,79 KiB
 Điểm gốc được kết nối trước
 Gợi ý kết nối trước giúp trình duyệt thiết lập kết nối sớm hơn trong quá trình tải trang, nhờ đó tiết kiệm thời gian khi gửi yêu cầu đầu tiên đối với điểm gốc đó. Sau đây là những điểm gốc mà trang đã kết nối trước.
 Điểm gốc
@@ -156,22 +217,17 @@ head > link
 Đề xuất kết nối trước
 Thêm gợi ý kết nối trước cho các nguồn gốc quan trọng nhất, nhưng hãy cố gắng sử dụng không quá 4 gợi ý.
 Không có điểm gốc nào khác phù hợp để kết nối trước
-
-
-
 Yêu cầu chặn quá trình hiển thị
 Các yêu cầu đang chặn quá trình kết xuất ban đầu của trang, điều này có thể làm trễ LCP. Việc hoãn hoặc dùng cùng dòng có thể di chuyển các yêu cầu mạng này ra khỏi đường dẫn quan trọng.LCPFCPKhông được tính
 URL
 Kích thước cần chuyển
 Thời lượng
 vercel.app Bên thứ nhất
-9,0 KiB	150 mili giây
-/assets/index-DLOCcgTR.css(fpt-2026-inky.vercel.app)
+9,0 KiB	170 mili giây
+/assets/index-DWyR-eYj.css(fpt-2026-delta.vercel.app)
 9,0 KiB
-150 mili giây
-
-
-
+170 mili giây
+Tối ưu hoá kích thước DOM
 DOM lớn có thể làm các phép tính về kiểu và quy trình trình bày lại bố cục dài hơn, ảnh hưởng đến tốc độ phản hồi của trang. DOM lớn cũng sẽ làm tăng mức sử dụng bộ nhớ. Tìm hiểu cách tránh kích thước DOM quá lớn.Không được tính
 Thống kê
 Phần tử
@@ -186,69 +242,52 @@ Hầu hết trẻ em
 Internet Giga 235.000đ /tháng TỐC ĐỘ (DOWNLOAD/UPLOAD) 300 Mbps 300 Mbps Modem …
 <div class="combo-sport-track">
 10
-
-
-
+Bảng chi tiết về LCP (Nội dung lớn nhất hiển thị)
 Mỗi phần phụ có một chiến lược cải thiện cụ thể. Tốt nhất là thời gian hiển thị LCP (Nội dung lớn nhất hiển thị) nên được dùng để tải các tài nguyên thay vì bị chậm trễ.LCPKhông được tính
 Phần phụ
 Thời lượng
 Thời gian cho byte đầu tiên
 0 mili giây
 Độ trễ khi tải tài nguyên
-150 mili giây
+80 mili giây
 Thời lượng tải tài nguyên
-300 mili giây
+380 mili giây
 Độ trễ khi hiển thị phần tử
-720 mili giây
+1.990 mili giây
 Banner FPT Telecom 1
 <img alt="Banner FPT Telecom 1" fetchpriority="high" loading="eager" width="1920" height="717" src="/images/69e041bf8f173_1_1920_953e52bd.webp" style="width: 100%; height: 100%; object-fit: cover;">
-
-
-Mã của bên thứ ba có thể tác động đáng kể đến hiệu suất tải. Giảm và trì hoãn việc tải mã của bên thứ ba để ưu tiên nội dung trên trang của bạn.Không được tính
-Bên thứ ba
-Kích thước cần chuyển
-Thời gian thực thi trên chuỗi chính
-Google Fonts cdn 
-144 KiB	0 mili giây
-…v20/UcC73FwrK….woff2(fonts.gstatic.com)
-84 KiB
-0 mili giây
-…v20/UcC73FwrK….woff2(fonts.gstatic.com)
-48 KiB
-0 mili giây
-…v20/UcC73FwrK….woff2(fonts.gstatic.com)
-11 KiB
-0 mili giây
-/css2?family=Inter:wght@400;500;600;700;800&display=swap(fonts.googleapis.com)
-2 KiB
-0 mili giây
-
-
-
+bên thứ ba
+Những thông tin chi tiết này cũng có trong Bảng điều khiển hiệu suất của Chrome DevTools – hãy ghi lại dấu vết để xem thông tin chi tiết hơn.
+Chẩn đoán
+Giảm JavaScript không dùng đến Mức tiết kiệm ước tính: 48 KiB
 Giảm JavaScript không dùng đến và trì hoãn việc tải các tập lệnh cho tới khi cần có các tập lệnh này để giảm số byte mà hoạt động mạng sử dụng. Tìm hiểu cách giảm JavaScript không dùng đến.LCPFCPKhông được tính
 URL
 Kích thước cần chuyển
 Mức tiết kiệm ước tính
 vercel.app Bên thứ nhất
 108,5 KiB	48,0 KiB
-/assets/Hero-QnbwYxf1.js(fpt-2026-inky.vercel.app)
+/assets/Hero-QnbwYxf1.js(fpt-2026-delta.vercel.app)
 42,5 KiB
 26,2 KiB
-/assets/index-ClwtI3fF.js(fpt-2026-inky.vercel.app)
+/assets/index-DLuGcsA_.js(fpt-2026-delta.vercel.app)
 65,9 KiB
 21,8 KiB
-
-
-
-
-Hiển thị hình ảnh có tỷ lệ khung hình không chính xác
-Kích thước hiển thị của hình ảnh phải khớp với tỷ lệ khung hình tự nhiên. Tìm hiểu thêm về tỷ lệ khung hình của hình ảnh.
+Tránh những việc cần nhiều thời gian thực hiện trong chuỗi chính Phát hiện thấy 4 việc cần nhiều thời gian thực hiện
+Liệt kê những việc cần nhiều thời gian thực hiện nhất trong chuỗi chính. Thông tin này khá hữu ích trong việc xác định những thành phần có thời gian phản hồi tương tác chậm nhất. Tìm hiểu cách tránh những việc cần nhiều thời gian thực hiện trong chuỗi chínhTBTKhông được tính
 URL
-Tỷ lệ khung hình (Hiển thị)
-Tỷ lệ khung hình (Thực tế)
+Thời gian bắt đầu
+Thời lượng
 vercel.app Bên thứ nhất
-Đã thông báo Bộ Công Thương
-<img alt="Đã thông báo Bộ Công Thương" class="_bctLogo_18plw_134" width="150" height="57" loading="lazy" src="/images/bct.png">
-/images/bct.png(fpt-2026-inky.vercel.app)
-150 x 40 (3.75)
-600 x 225 (2.67)
+284 mili giây
+/assets/Hero-QnbwYxf1.js(fpt-2026-delta.vercel.app)
+4.392 mili giây
+88 mili giây
+https://fpt-2026-delta.vercel.app
+794 mili giây
+86 mili giây
+/assets/index-DLuGcsA_.js(fpt-2026-delta.vercel.app)
+3.477 mili giây
+59 mili giây
+https://fpt-2026-delta.vercel.app
+937 mili giây
+51 mili giây

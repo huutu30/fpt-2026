@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Globe, Tv, Camera, Home as HomeIcon } from 'lucide-react';
 import { BANNER_DATA, QUICK_LINKS } from '../../data/productData';
 
@@ -15,37 +14,30 @@ export default function Hero({ hideQuickLinks = false }) {
   const [index, setIndex] = useState(0);
 
   // Logic chuyển slide
-  const nextSlide = () => setIndex((prev) => (prev === BANNER_DATA.length - 1 ? 0 : prev + 1));
-  const prevSlide = () => setIndex((prev) => (prev === 0 ? BANNER_DATA.length - 1 : prev - 1));
+  const nextSlide = useCallback(() => setIndex((prev) => (prev === BANNER_DATA.length - 1 ? 0 : prev + 1)), []);
+  const prevSlide = useCallback(() => setIndex((prev) => (prev === 0 ? BANNER_DATA.length - 1 : prev - 1)), []);
 
   // Tự động chạy slide sau 5 giây
   useEffect(() => {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [nextSlide]);
 
   if (!BANNER_DATA || BANNER_DATA.length === 0) return null;
 
   return (
     <section style={styles.heroContainer}>
-      {/* 1. SLIDER ẢNH TRÀN VIỀN */}
+      {/* 1. SLIDER ẢNH TRÀN VIỀN — dùng CSS transition thay Framer Motion */}
       <div className="hero-slider" style={styles.slider}>
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={index}
-            src={BANNER_DATA[index].image}
-            alt={`Banner FPT Telecom ${index + 1}`}
-            initial={{ opacity: 0.8 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0.8 }}
-            transition={{ duration: 0.8 }}
-            style={styles.slide}
-            fetchPriority={index === 0 ? "high" : "auto"}
-            loading={index === 0 ? "eager" : "lazy"}
-            width="1920"
-            height="717"
-          />
-        </AnimatePresence>
+        <img
+          src={BANNER_DATA[index].image}
+          alt={`Banner FPT Telecom ${index + 1}`}
+          style={styles.slide}
+          fetchPriority={index === 0 ? "high" : "auto"}
+          loading={index === 0 ? "eager" : "lazy"}
+          width="1920"
+          height="717"
+        />
 
         {/* Nút điều hướng Arrow */}
         <button onClick={prevSlide} style={{ ...styles.navBtn, left: '20px' }} aria-label="Slide trước">
@@ -66,16 +58,15 @@ export default function Hero({ hideQuickLinks = false }) {
         <div className="container hero-quicklink-wrapper">
           <div className="hero-quicklink-bar">
             {QUICK_LINKS.map((item) => (
-              <motion.div 
+              <div 
                 key={item.id} 
-                whileHover={{ y: -5 }} 
                 className="hero-quicklink-item"
               >
                 <div className="hero-quicklink-icon">
                   {iconMap[item.id] || <Globe size={24} color="#f57020" />}
                 </div>
                 <span className="hero-quicklink-label">{item.label}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -96,6 +87,7 @@ const styles = {
     height: '100%', 
     objectFit: 'cover',
     objectPosition: 'center',
+    transition: 'opacity 0.5s ease',
   },
   navBtn: {
     position: 'absolute', top: '50%', transform: 'translateY(-50%)',
