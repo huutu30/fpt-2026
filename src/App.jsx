@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import { RegisterProvider } from './context/RegisterContext';
+import { ProductDetailProvider } from './context/ProductDetailContext';
 import RegisterModal from './components/common/RegisterModal';
+import ProductDetailModal from './components/common/ProductDetailModal';
 import FloatingContact from './components/common/FloatingContact';
 import ScrollToTop from './components/common/ScrollToTop';
 import SupportCTA from './components/common/SupportCTA';
@@ -28,58 +30,61 @@ function App() {
 
   return (
     <RegisterProvider>
-      <Router>
-        <ScrollToTop />
-        <div className="app-container">
-          <Navbar region={region} setRegion={setRegion} />
-          
-          <RegisterModal />
-          <FloatingContact />
+      <ProductDetailProvider>
+        <Router>
+          <ScrollToTop />
+          <div className="app-container">
+            <Navbar region={region} setRegion={setRegion} />
+            
+            <RegisterModal />
+            <ProductDetailModal region={region} />
+            <FloatingContact />
 
-          <main id="main-content" role="main" style={{ minHeight: '100vh' }}>
-            <Suspense fallback={
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'center', 
-                alignItems: 'center', 
-                minHeight: '60vh',
-                color: '#999'
-              }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ 
-                    width: 40, height: 40, 
-                    border: '3px solid #f3f3f3', 
-                    borderTop: '3px solid #f57020', 
-                    borderRadius: '50%', 
-                    animation: 'spin 0.8s linear infinite',
-                    margin: '0 auto 12px'
-                  }} />
-                  Đang tải...
+            <main id="main-content" role="main" style={{ minHeight: '100vh' }}>
+              <Suspense fallback={
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  minHeight: '60vh',
+                  color: '#999'
+                }}>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ 
+                      width: 40, height: 40, 
+                      border: '3px solid #f3f3f3', 
+                      borderTop: '3px solid #f57020', 
+                      borderRadius: '50%', 
+                      animation: 'spin 0.8s linear infinite',
+                      margin: '0 auto 12px'
+                    }} />
+                    Đang tải...
+                  </div>
                 </div>
-              </div>
-            }>
-              <Routes>
-                <Route path="/" element={<Navigate to="/trang-chu" replace />} />
-                <Route path="/trang-chu" element={<Home region={region} />} />
-                <Route path="/internet/wifi-7" element={<Wifi7 region={region} />} />
-                <Route path="/internet/combo" element={<Combo region={region} />} />
-                <Route path="/internet/ca-nhan" element={<CaNhan region={region} />} />
-                <Route path="/internet/gia-dinh" element={<GiaDinh region={region} />} />
-                <Route path="/internet/game-thu" element={<GameThu region={region} />} />
-                <Route path="/internet/doanh-nghiep" element={<DoanhNghiep region={region} />} />
-                <Route path="/giai-tri/fpt-play" element={<FptPlay region={region} />} />
-                <Route path="/thiet-bi/camera" element={<Camera region={region} />} />
-                <Route path="/thiet-bi/smarthome" element={<SmartHome region={region} />} />
-                <Route path="/tin-tuc" element={<NewsPage />} />
-                <Route path="/tin-tuc/:id" element={<ArticlePage />} />
-                <Route path="/ho-tro" element={<Support />} />
-              </Routes>
-            </Suspense>
-          </main>
-          <SupportCTA />
-          <Footer />
-        </div>
-      </Router>
+              }>
+                <Routes>
+                  <Route path="/" element={<Navigate to="/trang-chu" replace />} />
+                  <Route path="/trang-chu" element={<Home region={region} />} />
+                  <Route path="/internet/wifi-7" element={<Wifi7 region={region} />} />
+                  <Route path="/internet/combo" element={<Combo region={region} />} />
+                  <Route path="/internet/ca-nhan" element={<CaNhan region={region} />} />
+                  <Route path="/internet/gia-dinh" element={<GiaDinh region={region} />} />
+                  <Route path="/internet/game-thu" element={<GameThu region={region} />} />
+                  <Route path="/internet/doanh-nghiep" element={<DoanhNghiep region={region} />} />
+                  <Route path="/giai-tri/fpt-play" element={<FptPlay region={region} />} />
+                  <Route path="/thiet-bi/camera" element={<Camera region={region} />} />
+                  <Route path="/thiet-bi/smarthome" element={<SmartHome region={region} />} />
+                  <Route path="/tin-tuc" element={<NewsPage />} />
+                  <Route path="/tin-tuc/:id" element={<ArticlePage />} />
+                  <Route path="/ho-tro" element={<Support />} />
+                </Routes>
+              </Suspense>
+            </main>
+            <SupportCTA />
+            <Footer />
+          </div>
+        </Router>
+      </ProductDetailProvider>
     </RegisterProvider>
   );
 }

@@ -1,5 +1,1 @@
-http://localhost:5173/internet/gia-dinh
-page này bỏ phần combo thể thao NHA, giữ lại internet gia đình, combo truyền hình và Internet & camera
-internet gia đình hiển thị: internet giga f1, internet sky f1, internet sky f2, combo giga f1, combo sky f1, internet meta, internet meta f1, internet meta f2, internet meta f3.
-combo truyền hình hiển thị: combo sky, combo giga, combo meta, combo giga f1, combo sky f1, combo meta f1, combo f-game.
-internet & camera hiển thị: camera_gia_dinh: autoOptimizeSEO 
+npx untun@latest tunnel http://localhost:5173

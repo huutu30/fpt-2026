@@ -2057,3 +2057,260 @@ body {
     /* Ép card gọn lại vì tính năng camera ít */
   }
 }
+
+/* ====================================================
+   PRODUCT DETAIL MODAL
+==================================================== */
+.pd-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.pd-modal-content {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pd-modal-close {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+.pd-modal-close:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.pd-modal-header {
+  background: linear-gradient(135deg, #1c6dd0 0%, #3b8fe8 100%);
+  padding: 24px;
+  color: #fff;
+  text-align: center;
+}
+.pd-modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.pd-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.pd-card-main {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.pd-name {
+  font-size: 1.5rem;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.pd-price-row {
+  margin-bottom: 16px;
+}
+.pd-price {
+  font-size: 2rem;
+  color: #f26f21;
+  font-weight: 800;
+}
+.pd-unit {
+  font-size: 1rem;
+  color: #666;
+}
+
+.pd-speed-box {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+.pd-speed-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+.pd-speed-values {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.pd-speed-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  color: #111;
+}
+.dl-icon { color: #f26f21; }
+.ul-icon { color: #1c6dd0; }
+
+.pd-section {
+  margin-bottom: 24px;
+}
+.pd-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+.pd-hardware-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.pd-hardware-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.pd-hardware-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.pd-hardware-grid::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+.pd-hardware-grid::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+.pd-hardware-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #eee;
+  flex: 0 0 100px;
+  scroll-snap-align: start;
+}
+.pd-hardware-img-wrapper {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pd-hardware-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.pd-hardware-item span {
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.pd-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pd-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+.pd-feature-list .check-icon {
+  color: #22c55e;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pd-feature-list .common-feature {
+  color: #555;
+}
+.pd-feature-list .common-feature svg {
+  color: #1c6dd0;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pd-modal-footer {
+  padding: 16px 24px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+.pd-btn-register {
+  width: 100%;
+  background: #f26f21;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(242, 111, 33, 0.3);
+}
+.pd-btn-register:hover {
+  background: #e05e10;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(242, 111, 33, 0.4);
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Xem chi tiet Button Text Link Style */
+.combo-btn-link {
+  background: transparent;
+  border: none;
+  color: #1c6dd0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+.combo-btn-link:hover {
+  color: #0d47a1;
+  text-decoration: underline;
+}
+

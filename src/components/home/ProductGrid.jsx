@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRegisterModal } from '../../context/RegisterContext';
+import { useProductDetail } from '../../context/ProductDetailContext';
 
 export default function ProductSlider({ title, data }) {
   const scrollRef = useRef(null);
@@ -43,6 +45,9 @@ export default function ProductSlider({ title, data }) {
 
 function ProductCard({ item }) {
   const isGbps = item?.dl?.toLowerCase()?.includes('gbps');
+  const { openModal } = useRegisterModal();
+  const { openDetail } = useProductDetail();
+
   return (
     <div className="card-fpt-inner">
       <div className="img-wrapper">
@@ -76,7 +81,10 @@ function ProductCard({ item }) {
           ))}
         </ul>
 
-        <button className="btn-fpt-order">Đăng ký ngay</button>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: 'auto' }}>
+          <button className="btn-fpt-order" onClick={() => openModal(item.name)}>Đăng ký ngay</button>
+          <button className="combo-btn-link" onClick={() => openDetail(item)}>Xem chi tiết</button>
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Download, Upload, Check } from 'lucide-react';
 import { useRegisterModal } from '../../context/RegisterContext';
+import { useProductDetail } from '../../context/ProductDetailContext';
 
 /**
  * ProductCardSlider - Card slider tái sử dụng cho mọi section
@@ -16,6 +17,7 @@ import { useRegisterModal } from '../../context/RegisterContext';
 export default function ProductCardSlider({ title, subtitle, data, region, badgeSub, customCardClass }) {
   const scrollRef = useRef(null);
   const { openModal } = useRegisterModal();
+  const { openDetail } = useProductDetail();
 
   const scroll = (dir) => {
     const el = scrollRef.current;
@@ -97,13 +99,20 @@ export default function ProductCardSlider({ title, subtitle, data, region, badge
                   </ul>
 
                   {/* BUTTON */}
-                  <div className="combo-card-actions">
+                  <div className="combo-card-actions" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <button
                       onClick={() => openModal(item.name)}
                       className="combo-btn-primary"
                       title={`Đăng ký ${item.name} ngay hôm nay`}
                     >
                       Đăng ký ngay
+                    </button>
+                    <button
+                      onClick={() => openDetail(item)}
+                      className="combo-btn-link"
+                      title={`Xem chi tiết ${item.name}`}
+                    >
+                      Xem chi tiết
                     </button>
                   </div>
                 </div>
