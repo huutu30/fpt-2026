@@ -24,12 +24,19 @@ export default function ProductDetailModal({ region }) {
     return () => { document.body.style.overflow = 'unset'; };
   }, [selectedProduct]);
 
-  // Smart Hardware Extractor
+  // Hardware Extractor: use explicit `devices` field if provided, else fallback to regex
   useEffect(() => {
     if (!selectedProduct) return;
-    
+
+    // ── Explicit devices list (preferred) ──────────────────────────────────────
+    if (selectedProduct.devices && selectedProduct.devices.length > 0) {
+      setHardwareImgs(selectedProduct.devices);
+      return;
+    }
+
+    // ── Legacy regex extraction (fallback for products without devices field) ──
     const features = selectedProduct.features || selectedProduct.details || [];
-    const allText = features.join(" "); // Read all features to ensure we don't miss anything
+    const allText = features.join(" ");
     const textLower = allText.toLowerCase();
     const newImgs = [];
     

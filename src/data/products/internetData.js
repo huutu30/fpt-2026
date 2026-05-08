@@ -28,6 +28,9 @@ export const internetData = {
         "Modem Wifi 6",
         "Kết nối trên 10 thiết bị",
       ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-6.webp', label: 'Modem Wi-Fi băng tần kép' },
+      ],
       alt: "Lắp đặt Internet Giga FPT giá rẻ",
       path: "/dang-ky?product=Internet%20Giga",
       btnTitle: "Đăng ký tư vấn Internet Giga ngay",
@@ -43,6 +46,9 @@ export const internetData = {
       features: [
         "Modem Wifi 6",
         "Kết nối trên 15 thiết bị",
+      ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-6.webp', label: 'Modem Wi-Fi 6 băng tần kép' },
       ],
       alt: "Lắp đặt Internet Sky FPT giá rẻ",
       path: "/dang-ky?product=Internet%20Sky",
@@ -79,6 +85,11 @@ export const internetData = {
         "Tặng 1 thiết bị Access Point",
         "Gần 120 kênh truyền hình trong nước và quốc tế",
       ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-6.webp', label: 'Modem Wi-Fi băng tần kép' },
+        { src: '/images/hardware/ont-1-port.webp', label: 'Bộ chuyển đổi ONT 1 port 1G' },
+        { src: '/images/hardware/access-point.webp', label: 'Thiết bị Access Point' },
+      ],
       alt: "Lắp đặt Internet Giga F1 FPT giá rẻ",
       path: "/dang-ky?product=Internet%20Giga%20F1",
       btnTitle: "Đăng ký tư vấn Internet Giga F1 ngay",
@@ -97,6 +108,11 @@ export const internetData = {
         "Phủ sóng ổn định cho gia đình ít tầng, diện tích nhỏ",
         "Tặng 1 thiết bị Access Point",
         "Gần 120 kênh truyền hình trong nước và quốc tế",
+      ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-6.webp', label: 'Modem Wi-Fi băng tần kép' },
+        { src: '/images/hardware/ont-1-port.webp', label: 'Bộ chuyển đổi ONT 1 port 1G' },
+        { src: '/images/hardware/access-point.webp', label: 'Thiết bị Access Point' },
       ],
       alt: "Lắp đặt Internet Sky F1 FPT giá rẻ",
       path: "/dang-ky?product=Internet%20Sky%20F1",
@@ -152,6 +168,11 @@ export const internetData = {
         "Kết nối lên đến 15 thiết bị",
         "Phủ sóng mạnh cho nhà nhiều tầng, không gian rộng",
       ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-6.webp', label: 'Modem Wi-Fi băng tần kép' },
+        { src: '/images/hardware/ont-1-port.webp', label: 'Bộ chuyển đổi ONT 1 port 1G' },
+        { src: '/images/hardware/access-point.webp', label: '02 Thiết bị Access Point' },
+      ],
       alt: "Lắp đặt Internet Sky F2 FPT giá rẻ",
       path: "/dang-ky?product=Internet%20Sky%20F2",
       btnTitle: "Đăng ký tư vấn Internet Sky F2 ngay",
@@ -168,6 +189,11 @@ export const internetData = {
         "Modem Wifi 6 và 3 Access Point",
         "Kết nối lên đến 15 thiết bị",
         "Phủ sóng mạnh cho nhà nhiều tầng, không gian rộng",
+      ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-6.webp', label: 'Modem Wi-Fi băng tần kép' },
+        { src: '/images/hardware/ont-1-port.webp', label: 'Bộ chuyển đổi ONT 1 port 1G' },
+        { src: '/images/hardware/access-point.webp', label: '03 Thiết bị Access Point' },
       ],
       alt: "Lắp đặt Internet Sky F3 FPT giá rẻ",
       path: "/dang-ky?product=Internet%20Sky%20F3",
