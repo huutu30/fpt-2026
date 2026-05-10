@@ -67,7 +67,9 @@
 
 /* ===== HERO SLIDER RESPONSIVE ===== */
 .hero-slider {
-  height: 550px;
+  width: 100%;
+  aspect-ratio: 1920 / 717;
+  height: auto;
 }
 
 /* HERO QUICK LINKS */
@@ -118,7 +120,31 @@
 
 @media (max-width: 768px) {
   .hero-slider {
-    height: 280px;
+    aspect-ratio: 800 / 300;
+    height: auto;
+  }
+  
+  .hero-quicklink-wrapper {
+    margin-top: -25px;
+  }
+  
+  .hero-quicklink-bar {
+    padding: 15px 10px;
+    border-radius: 15px;
+    width: calc(100% - 30px);
+  }
+  
+  .hero-quicklink-item {
+    gap: 8px;
+  }
+  
+  .hero-quicklink-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .hero-quicklink-label {
+    font-size: 12px;
   }
 }
 

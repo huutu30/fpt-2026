@@ -39,6 +39,8 @@ export default function Hero({ hideQuickLinks = false }) {
               media="(max-width: 768px)"
               srcSet={BANNER_DATA[index].mobileImage}
               type="image/webp"
+              width="800"
+              height="300"
             />
           )}
           <img
