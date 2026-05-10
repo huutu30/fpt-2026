@@ -4,7 +4,7 @@ import { useRegisterModal } from '../../context/RegisterContext';
 import styles from './RegisterModal.module.css';
 
 export default function RegisterModal() {
-  const { isOpen, closeModal, productName } = useRegisterModal();
+  const { isOpen, closeModal, productName, productId } = useRegisterModal();
   const [activeService, setActiveService] = useState('Internet');
   
   // States cho form để điều khiển class 'valid' của input (phục vụ floating label)
@@ -40,7 +40,16 @@ export default function RegisterModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Cảm ơn bạn! Yêu cầu tư vấn đã được gửi thành công.");
+    const formData = {
+      name,
+      phone,
+      address,
+      service: activeService,
+      productName: productName || '',
+      productId: productId || '',
+    };
+    console.log('📋 Form submitted:', formData);
+    alert(`Cảm ơn bạn! Yêu cầu tư vấn đã được gửi thành công.${productId ? `\nMã gói: ${productId}` : ''}`);
     closeModal();
   };
 
@@ -67,6 +76,19 @@ export default function RegisterModal() {
           </div>
 
           <form onSubmit={handleSubmit}>
+            {productName && (
+              <div className={styles.inputGroup} style={{ marginBottom: '30px' }}>
+                <input 
+                  type="text" 
+                  className={styles.inputField} 
+                  readOnly 
+                  value={productName}
+                  style={{ color: '#004a9c', fontWeight: '700', backgroundColor: '#f8fafc', paddingLeft: '15px', borderRadius: '8px', border: '1px solid #e2e8f0' }}
+                />
+                <label className={styles.inputLabel} style={{ top: '-20px', fontSize: '13px', color: '#f57020', fontWeight: '700' }}>Sản phẩm bạn đang chọn</label>
+              </div>
+            )}
+
             <div className={styles.inputRow}>
               <div className={styles.inputGroup}>
                 <input 

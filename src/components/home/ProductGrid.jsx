@@ -82,7 +82,7 @@ function ProductCard({ item }) {
         </ul>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: 'auto' }}>
-          <button className="btn-fpt-order" onClick={() => openModal(item.name)}>Đăng ký ngay</button>
+          <button className="btn-fpt-order" onClick={() => openModal(item.name, item.id)}>Đăng ký ngay</button>
           <button className="combo-btn-link" onClick={() => openDetail(item)}>Xem chi tiết</button>
         </div>
       </div>

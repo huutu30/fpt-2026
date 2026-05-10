@@ -101,7 +101,7 @@ export default function ProductCardSlider({ title, subtitle, data, region, badge
                   {/* BUTTON */}
                   <div className="combo-card-actions" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <button
-                      onClick={() => openModal(item.name)}
+                      onClick={() => openModal(item.name, item.id)}
                       className="combo-btn-primary"
                       title={`Đăng ký ${item.name} ngay hôm nay`}
                     >

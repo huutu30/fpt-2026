@@ -107,7 +107,7 @@ export default function ProductDetailModal({ region }) {
 
   const handleRegisterClick = () => {
     closeDetail();
-    openModal(selectedProduct.name);
+    openModal(selectedProduct.name, selectedProduct.id);
   };
 
   return (
