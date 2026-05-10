@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, ChevronDown, Phone, Menu, X, Wifi, Tv, Monitor, Headphones, Home } from 'lucide-react';
 import { NAV_MENU, HOTLINE, iconMap } from '../../data/menuConfig';
 
@@ -13,6 +13,18 @@ export default function Navbar({ region, setRegion }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef(null);
+  const location = useLocation();
+
+  // Xác định tab nào đang active dựa trên URL hiện tại
+  const getActiveTab = () => {
+    const path = location.pathname;
+    if (path.startsWith('/internet') || path.startsWith('/wifi')) return 'internet';
+    if (path.startsWith('/giai-tri') || path.startsWith('/truyen-hinh')) return 'tv';
+    if (path.startsWith('/thiet-bi') || path.startsWith('/camera')) return 'device';
+    if (path.startsWith('/ho-tro')) return 'support';
+    return 'home'; // Trang chủ hoặc các trang khác
+  };
+  const activeTab = getActiveTab();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -201,23 +213,23 @@ export default function Navbar({ region, setRegion }) {
 
       {/* ===== MOBILE BOTTOM NAV ===== */}
       <nav className="bottom-nav" role="navigation" aria-label="Menu nhanh" id="mobile-bottom-nav">
-        <Link to="/trang-chu" className="bottom-nav-item" id="bnav-trangchu" title="Trang chủ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+        <Link to="/trang-chu" className={`bottom-nav-item ${activeTab === 'home' ? 'center-item' : ''}`} id="bnav-trangchu" title="Trang chủ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Home size={20} aria-hidden="true" />
           <span>Trang chủ</span>
         </Link>
-        <Link to="/internet" className="bottom-nav-item center-item" id="bnav-internet" title="Internet" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+        <Link to="/internet/ca-nhan" className={`bottom-nav-item ${activeTab === 'internet' ? 'center-item' : ''}`} id="bnav-internet" title="Internet" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Wifi size={22} aria-hidden="true" />
           <span>Internet</span>
         </Link>
-        <Link to="/giai-tri/fpt-play" className="bottom-nav-item" id="bnav-tv" title="Truyền hình FPT Play" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+        <Link to="/giai-tri/fpt-play" className={`bottom-nav-item ${activeTab === 'tv' ? 'center-item' : ''}`} id="bnav-tv" title="Truyền hình FPT Play" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Tv size={20} aria-hidden="true" />
           <span>Truyền hình</span>
         </Link>
-        <Link to="/thiet-bi/camera" className="bottom-nav-item" id="bnav-device" title="Thiết bị thông minh" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+        <Link to="/thiet-bi/camera" className={`bottom-nav-item ${activeTab === 'device' ? 'center-item' : ''}`} id="bnav-device" title="Thiết bị thông minh" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Monitor size={20} aria-hidden="true" />
           <span>Thiết bị</span>
         </Link>
-        <Link to="/ho-tro" className="bottom-nav-item" id="bnav-support" title="Liên hệ hỗ trợ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+        <Link to="/ho-tro" className={`bottom-nav-item ${activeTab === 'support' ? 'center-item' : ''}`} id="bnav-support" title="Liên hệ hỗ trợ" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           <Headphones size={20} aria-hidden="true" />
           <span>Hỗ trợ</span>
         </Link>
