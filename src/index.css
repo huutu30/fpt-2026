@@ -223,14 +223,15 @@
   }
 
   .hero-quicklink-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   .hero-quicklink-label {
     font-size: 11px;
     line-height: 1.2;
     padding: 0 4px;
+    white-space: normal;
   }
 }
 

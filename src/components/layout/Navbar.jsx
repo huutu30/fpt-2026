@@ -184,7 +184,7 @@ export default function Navbar({ region, activeCity, setActiveCity }) {
               <span>{CITY_MAP[activeCity]}</span>
               <ChevronDown size={12} aria-hidden="true" />
             </button>
-            <div className="region-dropdown" id="mobile-region-dropdown" style={{ top: '100%', left: '0', right: 'auto', minWidth: '220px', width: 'max-content' }}>
+            <div className="region-dropdown" id="mobile-region-dropdown" style={{ top: '100%', right: '0', left: 'auto', minWidth: '220px', width: 'max-content' }}>
               <span className="region-label">Xem giá theo khu vực</span>
               {Object.entries(CITY_MAP).map(([key, label]) => (
                 <button
