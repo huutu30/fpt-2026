@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PhoneCall, MessageCircle, ShieldCheck, ArrowRight } from 'lucide-react';
 import styles from './Support.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 export default function Support() {
   const [formData, setFormData] = useState({
@@ -12,7 +13,6 @@ export default function Support() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Chuyên Viên Tư Vấn Cá Nhân | FPT Telecom";
   }, []);
 
   const handleSubmit = (e) => {
@@ -22,6 +22,12 @@ export default function Support() {
 
   return (
     <div className={styles.pageWrapper}>
+      <SEOHead
+        title="Chuyên Viên Tư Vấn Cá Nhân"
+        description="Liên hệ chuyên viên tư vấn FPT. Hỗ trợ đăng ký lắp mạng, chọn gói cước, khảo sát tại nhà. Gọi 0387 498 332 hoặc để lại thông tin."
+        canonicalPath="/ho-tro"
+        keywords="hỗ trợ FPT, tư vấn lắp mạng, liên hệ FPT Telecom"
+      />
       <div className={styles.container}>
         {/* Left Side: Premium Typography & Tags */}
         <div className={styles.textSide}>

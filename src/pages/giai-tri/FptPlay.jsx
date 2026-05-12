@@ -5,6 +5,7 @@ import ProductCardSlider from '../../components/common/ProductCardSlider';
 import NewsSection from '../../components/home/NewsSection';
 import Hero from '../../components/home/Hero';
 import styles from './FptPlay.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 const FAQ_DATA = [
   { q: "Có thể xem FPT Play trên các thiết bị nào?", a: "FPT Play là một dịch vụ truyền hình đa nền tảng, đa thiết bị, cho phép bạn thưởng thức kho nội dung phong phú trên Smart TV, điện thoại di động, máy tính bảng, máy tính bàn, máy tính xách tay và bộ giải mã truyền hình (FPT Play Box). Với khả năng tương thích đa nền tảng này, FPT Play mang đến sự linh hoạt tối đa, giúp người dùng tận hưởng thế giới giải trí không giới hạn ở bất kỳ đâu, trong bất kỳ thời điểm nào." },
@@ -19,7 +20,6 @@ export default function FptPlay({ region }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "FPT Play trực tiếp bóng đá - Combo truyền hình internet | FPT Telecom";
   }, []);
 
   const comboPackages = PRODUCT_DATA.the_thao || [];
@@ -28,6 +28,12 @@ export default function FptPlay({ region }) {
 
   return (
     <div className={styles.fptPlayPage}>
+      <SEOHead
+        title="FPT Play trực tiếp bóng đá - Combo truyền hình Internet"
+        description="FPT Play - Xem trực tiếp bóng đá Ngoại hạng Anh, Champions League. 120+ kênh truyền hình, kho phim 4K. Combo Internet + Truyền hình chỉ từ 200.000đ/tháng."
+        canonicalPath="/giai-tri/fpt-play"
+        keywords="FPT Play, truyền hình FPT, xem bóng đá, Ngoại hạng Anh, combo Internet truyền hình"
+      />
       
       {/* HERO SECTION */}
       <Hero hideQuickLinks={true} />

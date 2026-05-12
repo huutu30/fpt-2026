@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { NEWS_DATA } from '../../data/newsData';
 import { Clock } from 'lucide-react';
 import styles from './ArticlePage.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 export default function ArticlePage() {
   const { id } = useParams();
@@ -12,11 +13,6 @@ export default function ArticlePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (article) {
-      document.title = `${article.title} | FPT Telecom`;
-    } else {
-      document.title = "Không tìm thấy bài viết | FPT Telecom";
-    }
   }, [article]);
 
   if (!article) {
@@ -34,6 +30,13 @@ export default function ArticlePage() {
 
   return (
     <div className={styles.articlePage}>
+      <SEOHead
+        title={article.title}
+        description={article.desc}
+        canonicalPath={`/tin-tuc/${id}`}
+        ogImage={article.image}
+        ogType="article"
+      />
       <div className="container">
         
         {/* BREADCRUMB */}

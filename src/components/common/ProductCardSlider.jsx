@@ -107,13 +107,13 @@ export default function ProductCardSlider({ title, subtitle, data, region, badge
                     >
                       Đăng ký ngay
                     </button>
-                    <button
-                      onClick={() => openDetail(item)}
+                    <Link
+                      to={`/internet/${item.id}`}
                       className="combo-btn-link"
                       title={`Xem chi tiết ${item.name}`}
                     >
                       Xem chi tiết
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </article>

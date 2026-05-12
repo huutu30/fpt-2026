@@ -3,13 +3,13 @@ import { Shield, Zap, Cpu, Activity, ChevronDown, ChevronUp } from 'lucide-react
 import Wifi7Section from '../../components/home/Wifi7Section';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './Wifi7.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 export default function Wifi7({ region }) {
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Đăng ký lắp Wi-Fi 7, công nghệ XGS-PON | FPT Telecom";
   }, []);
 
   const toggleFaq = (index) => {
@@ -41,6 +41,12 @@ export default function Wifi7({ region }) {
 
   return (
     <div className={styles.wifi7Page}>
+      <SEOHead
+        title="Đăng ký lắp Wi-Fi 7, công nghệ XGS-PON"
+        description="Đăng ký Wi-Fi 7 FPT tốc độ lên đến 10Gbps. Công nghệ XGS-PON, MLO, băng thông 320MHz. Gói SpeedX2 và SpeedX10 cho gia đình và doanh nghiệp."
+        canonicalPath="/internet/wifi-7"
+        keywords="WiFi 7 FPT, SpeedX FPT, XGS-PON, 10Gbps, lắp WiFi 7, Wi-Fi 7 FPT Telecom"
+      />
       {/* HERO SECTION */}
       <section className={styles.heroSection}>
         {/* Background image - woman with devices */}

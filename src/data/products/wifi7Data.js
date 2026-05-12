@@ -32,6 +32,11 @@ export const wifi7Data = {
         "Tích hợp gói giải trí FPT Play",
         "Phủ sóng xuyên mọi vật cản",
       ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-7.webp', label: 'Modem Wi-Fi 7 kết nối đến 100 thiết bị' },
+        { src: '/images/hardware/mesh-wifi-7.webp', label: '01 Thiết bị Mesh Wi-Fi 7' },
+        { src: '/images/hardware/zplay.webp', label: 'Gói giải trí ZPlay' },
+      ],
     },
     {
       id: "speedx2-pro",
@@ -48,6 +53,11 @@ export const wifi7Data = {
         "Tặng 01 Mesh Wi-Fi 7 mở rộng vùng phủ",
         "Tích hợp FPT Play Box & Gói FPT Play VIP",
         "Phủ sóng xuyên mọi vật cản",
+      ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-7.webp', label: 'Modem Wi-Fi 7 kết nối đến 100 thiết bị' },
+        { src: '/images/hardware/mesh-wifi-7.webp', label: '01 Thiết bị Mesh Wi-Fi 7' },
+        { src: '/images/hardware/fpt-play-box.webp', label: 'FPT Play Box + Gói FPT Play VIP' },
       ],
     },
     {
@@ -66,6 +76,11 @@ export const wifi7Data = {
         "Tích hợp gói giải trí FPT Play",
         "Phủ sóng xuyên mọi vật cản",
       ],
+      devices: [
+        { src: '/images/hardware/modem-wifi-7.webp', label: 'Modem Wi-Fi 7 kết nối đến 100 thiết bị' },
+        { src: '/images/hardware/mesh-wifi-7.webp', label: '01 Thiết bị Mesh Wi-Fi 7' },
+        { src: '/images/hardware/zplay.webp', label: 'Gói giải trí ZPlay' },
+      ],
     },
     {
       id: "speedx10-pro",
@@ -76,6 +91,11 @@ export const wifi7Data = {
       image: "/images/1765095073_Combothet_8aa7eb1a.webp",
       hardware: "Wifi 7 Ultimate (XGS-PON)",
       details: ["Tốc độ 10Gbps nhanh nhất Việt Nam", "Wifi 7 tăng khả năng tải gấp 4 lần", "Đẳng cấp kết nối cho tương lai", "Xử lý sự cố ưu tiên trong 2 giờ"],
+      devices: [
+        { src: '/images/hardware/modem-wifi-7.webp', label: 'Modem Wi-Fi 7 kết nối đến 100 thiết bị' },
+        { src: '/images/hardware/mesh-wifi-7.webp', label: '01 Thiết bị Mesh Wi-Fi 7' },
+        { src: '/images/hardware/fpt-play-box.webp', label: 'FPT Play Box + Gói FPT Play VIP' },
+      ],
     },
     {
       id: "super-800-biz-plus",
@@ -85,6 +105,10 @@ export const wifi7Data = {
         "Gói cước mạnh mẽ nhất",
         "IP Tĩnh & Băng thông ưu tiên quốc tế",
         "Giải pháp cho data center/hosting",
+      ],
+      devices: [
+        { src: '/images/hardware/thiet-bi-can-bang-tai.webp', label: 'Thiết bị cân bằng tải' },
+        { src: '/images/hardware/access-point.webp', label: 'Thiết bị Access Point' },
       ],
       price: 3800000,
       dl: "800 Mbps",

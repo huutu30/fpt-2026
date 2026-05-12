@@ -6,6 +6,7 @@ import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './Camera.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 export default function Camera({ region }) {
   const { openModal } = useRegisterModal();
@@ -14,7 +15,6 @@ export default function Camera({ region }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Lắp đặt Camera FPT | Trọn gói, tư vấn thi công nhanh 24h | FPT Telecom";
   }, []);
 
   // ---------- Data ----------
@@ -34,6 +34,12 @@ export default function Camera({ region }) {
 
   return (
     <div className={styles.cameraPage}>
+      <SEOHead
+        title="Lắp đặt Camera FPT | Trọn gói, thi công nhanh 24h"
+        description="Camera AI FPT nhận diện khuôn mặt, lưu trữ Cloud Tier III. Combo camera từ 1.100.000đ. Combo Internet + Camera chỉ từ 250.000đ/tháng. Lắp đặt toàn quốc."
+        canonicalPath="/thiet-bi/camera"
+        keywords="Camera FPT, camera AI, lắp camera an ninh, Cloud camera, combo Internet camera FPT"
+      />
 
       {/* ===== HERO SECTION ===== */}
       <section className={styles.hero}>

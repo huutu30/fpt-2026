@@ -7,6 +7,7 @@ import NewsSection from '../../components/home/NewsSection';
 import { Link } from 'react-router-dom';
 import Hero from '../../components/home/Hero';
 import styles from './CaNhan.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 const TABS = [
   { id: 'internet', label: 'Internet Cá Nhân', icon: <Wifi size={18} /> },
@@ -43,7 +44,6 @@ export default function CaNhan({ region }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Bảng giá gói cước internet FPT cá nhân gia đình | FPT Telecom";
   }, []);
 
   // Lấy sản phẩm theo ID từ một danh sách cụ thể
@@ -77,6 +77,12 @@ export default function CaNhan({ region }) {
 
   return (
     <div className={styles.caNhanPage}>
+      <SEOHead
+        title="Bảng giá gói cước Internet FPT cá nhân gia đình"
+        description="Đăng ký gói cước Internet FPT cá nhân chỉ từ 195.000đ/tháng. Tốc độ cao đến 1Gbps, Wi-Fi 6, lắp đặt nhanh 24h. Xem bảng giá mạng FPT mới nhất."
+        canonicalPath="/internet/ca-nhan"
+        keywords="gói cước FPT cá nhân, bảng giá mạng FPT, Internet FPT, lắp mạng FPT cá nhân, WiFi FPT"
+      />
       {/* HERO SECTION */}
       <Hero hideQuickLinks />
 

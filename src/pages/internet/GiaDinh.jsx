@@ -7,6 +7,7 @@ import NewsSection from '../../components/home/NewsSection';
 import { Link } from 'react-router-dom';
 import Hero from '../../components/home/Hero';
 import styles from './GiaDinh.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 const TABS = [
   { id: 'internet', label: 'Internet Gia Đình', icon: <Home size={18} /> },
@@ -48,7 +49,6 @@ export default function GiaDinh({ region }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Gói cước Internet cho hộ gia đình | Khuyến mãi HOT 04/2026 | FPT Telecom";
   }, []);
 
   const allProducts = Object.values(PRODUCT_DATA).flat();
@@ -74,6 +74,12 @@ export default function GiaDinh({ region }) {
 
   return (
     <div className={styles.giaDinhPage}>
+      <SEOHead
+        title="Gói cước Internet FPT cho hộ gia đình | Khuyến mãi HOT"
+        description="Đăng ký lắp mạng Internet FPT gia đình. Phủ sóng rộng đến 200m², Wi-Fi 6 + Access Point, combo truyền hình. Giá chỉ từ 205.000đ/tháng. Lắp đặt trong 24h."
+        canonicalPath="/internet/gia-dinh"
+        keywords="Internet FPT gia đình, lắp mạng gia đình, WiFi FPT nhà nhiều tầng, combo Internet truyền hình FPT"
+      />
       {/* HERO SECTION */}
       <Hero hideQuickLinks />
 

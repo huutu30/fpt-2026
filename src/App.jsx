@@ -24,6 +24,8 @@ const SmartHome = lazy(() => import('./pages/smart-device/SmartHome'));
 const Support = lazy(() => import('./pages/support/Support'));
 const NewsPage = lazy(() => import('./pages/news/NewsPage'));
 const ArticlePage = lazy(() => import('./pages/news/ArticlePage'));
+const PackageDetail = lazy(() => import('./pages/internet/PackageDetail'));
+const LocalLanding = lazy(() => import('./pages/local/LocalLanding'));
 
 function App() {
   const [region, setRegion] = useState('hcm');
@@ -77,6 +79,8 @@ function App() {
                   <Route path="/tin-tuc" element={<NewsPage />} />
                   <Route path="/tin-tuc/:id" element={<ArticlePage />} />
                   <Route path="/ho-tro" element={<Support />} />
+                  <Route path="/internet/:slug" element={<PackageDetail region={region} />} />
+                  <Route path="/lap-internet-wifi/:city" element={<LocalLanding region={region} />} />
                 </Routes>
               </Suspense>
             </main>

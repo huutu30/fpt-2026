@@ -126,6 +126,21 @@ export default function Footer() {
               <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tìm điểm giao dịch</Link></li>
             </ul>
           </div>
+
+          {/* Column 5: Lắp mạng tại */}
+          <div className={styles.footerCol}>
+            <h3>Lắp mạng FPT tại</h3>
+            <ul className={styles.footerLinks}>
+              <li><Link to="/lap-internet-wifi/hcm" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>TP. Hồ Chí Minh</Link></li>
+              <li><Link to="/lap-internet-wifi/ha-noi" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Hà Nội</Link></li>
+              <li><Link to="/lap-internet-wifi/da-nang" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Đà Nẵng</Link></li>
+              <li><Link to="/lap-internet-wifi/hai-phong" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Hải Phòng</Link></li>
+              <li><Link to="/lap-internet-wifi/binh-duong" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Bình Dương</Link></li>
+              <li><Link to="/lap-internet-wifi/dong-nai" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Đồng Nai</Link></li>
+              <li><Link to="/lap-internet-wifi/khanh-hoa" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Khánh Hòa</Link></li>
+              <li><Link to="/lap-internet-wifi/vung-tau" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Vũng Tàu</Link></li>
+            </ul>
+          </div>
           
         </div>
       </div>

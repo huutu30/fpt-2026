@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { NEWS_DATA } from '../../data/newsData';
 import styles from './NewsPage.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 export default function NewsPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Tin tức Công nghệ, Giải trí, Thể thao | FPT Telecom";
   }, []);
 
   // Giả định tin đầu tiên là Tin Nổi Bật (Featured)
@@ -26,6 +26,12 @@ export default function NewsPage() {
 
   return (
     <div className={styles.newsPage}>
+      <SEOHead
+        title="Tin tức Công nghệ, Giải trí, Thể thao"
+        description="Cập nhật tin tức mới nhất về công nghệ, giải trí, thể thao, game và khuyến mãi từ FPT Telecom."
+        canonicalPath="/tin-tuc"
+        keywords="tin tức FPT, công nghệ, giải trí, thể thao, khuyến mãi FPT"
+      />
       <div className="container">
         <div className={styles.breadcrumb}>
           <Link to="/">Trang chủ</Link> / <span>Tin tức</span>

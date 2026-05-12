@@ -35,6 +35,11 @@ export default function Navbar({ region, setRegion }) {
   useEffect(() => {
     const onClick = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) setActiveMega(null);
+      // Close region dropdown when clicking outside
+      const regionWrapper = document.getElementById('topbar-region-wrapper');
+      if (regionWrapper && !regionWrapper.contains(e.target)) {
+        document.getElementById('region-dropdown')?.classList.remove('show');
+      }
     };
     document.addEventListener('mousedown', onClick);
     return () => document.removeEventListener('mousedown', onClick);
@@ -66,16 +71,39 @@ export default function Navbar({ region, setRegion }) {
             <Phone size={14} aria-hidden="true" />
             <span>Hotline: <strong>{HOTLINE}</strong></span>
           </a>
-          <button 
-            className="topbar-location"
-            onClick={() => setRegion(region === 'hcm' ? 'tinh' : 'hcm')}
-            aria-label={`Đổi khu vực – Hiện tại: ${region === 'hcm' ? 'Nội thành' : 'Toàn quốc'}`}
-            title="Nhấn để đổi khu vực xem giá"
-            id="btn-region"
-          >
-            <span>{region === 'hcm' ? '📍 Nội thành HCM / HN' : '📍 Toàn quốc (Tỉnh)'}</span>
-            <ChevronDown size={12} aria-hidden="true" />
-          </button>
+        <div className="topbar-region-wrapper" id="topbar-region-wrapper">
+            <button 
+              className="topbar-location"
+              onClick={() => {
+                const dropdown = document.getElementById('region-dropdown');
+                if (dropdown) dropdown.classList.toggle('show');
+              }}
+              aria-label={`Đổi khu vực – Hiện tại: ${region === 'hcm' ? 'Nội thành' : 'Toàn quốc'}`}
+              title="Nhấn để chọn khu vực xem giá"
+              id="btn-region"
+            >
+              <span>{region === 'hcm' ? '📍 Nội thành HCM / HN' : '📍 Toàn quốc (Tỉnh)'}</span>
+              <ChevronDown size={12} aria-hidden="true" />
+            </button>
+            <div className="region-dropdown" id="region-dropdown">
+              <button className={`region-option ${region === 'hcm' ? 'active' : ''}`} onClick={() => { setRegion('hcm'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>
+                📍 Nội thành HCM / HN
+              </button>
+              <button className={`region-option ${region === 'tinh' ? 'active' : ''}`} onClick={() => { setRegion('tinh'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>
+                📍 Toàn quốc (Tỉnh)
+              </button>
+              <div className="region-divider"></div>
+              <span className="region-label">Xem giá theo khu vực</span>
+              <Link to="/lap-internet-wifi/hcm" className="region-link" onClick={() => { setRegion('hcm'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>TP. Hồ Chí Minh</Link>
+              <Link to="/lap-internet-wifi/ha-noi" className="region-link" onClick={() => { setRegion('hcm'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>Hà Nội</Link>
+              <Link to="/lap-internet-wifi/da-nang" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>Đà Nẵng</Link>
+              <Link to="/lap-internet-wifi/hai-phong" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>Hải Phòng</Link>
+              <Link to="/lap-internet-wifi/binh-duong" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>Bình Dương</Link>
+              <Link to="/lap-internet-wifi/dong-nai" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>Đồng Nai</Link>
+              <Link to="/lap-internet-wifi/khanh-hoa" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>Khánh Hòa</Link>
+              <Link to="/lap-internet-wifi/vung-tau" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('region-dropdown')?.classList.remove('show'); }}>Vũng Tàu</Link>
+            </div>
+          </div>
         </div>
       </div>
 

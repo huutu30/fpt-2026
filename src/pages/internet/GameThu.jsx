@@ -5,6 +5,7 @@ import ProductCardSlider from '../../components/common/ProductCardSlider';
 import { useRegisterModal } from '../../context/RegisterContext';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './GameThu.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 const GAME_IMAGES = [
   { src: 'https://hi-static.fpt.vn/sys/shop/prod/2026-04-08/69d603a75acde_valorant.png', name: 'Valorant' },
@@ -31,13 +32,18 @@ export default function GameThu({ region }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Gói cước Internet game thủ FPT | Ping thấp, giảm lag | FPT Telecom";
   }, []);
 
   const gamePackages = PRODUCT_DATA.f_game || [];
 
   return (
     <div className={styles.gameThuPage}>
+      <SEOHead
+        title="Gói cước Internet game thủ FPT | Ping thấp, giảm lag"
+        description="Đăng ký gói cước F-Game FPT dành cho game thủ. Tốc độ 1Gbps, công nghệ Ultra Fast giảm ping xuống 16ms, không giật lag. Phù hợp game thủ, streamer."
+        canonicalPath="/internet/game-thu"
+        keywords="Internet game thủ FPT, F-Game FPT, WiFi chơi game, ping thấp, streamer FPT, Ultra Fast"
+      />
       
       {/* BANNER IMAGE */}
       <section className={styles.heroBanner}>

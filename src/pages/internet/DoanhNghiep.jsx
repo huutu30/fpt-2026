@@ -5,6 +5,7 @@ import { PRODUCT_DATA } from '../../data/productData';
 import { useRegisterModal } from '../../context/RegisterContext';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './DoanhNghiep.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 const FAQ_DATA = [
   { q: "Internet doanh nghiệp FPT phù hợp với các đối tượng, mô hình kinh doanh nào?", a: "Các gói cước Internet doanh nghiệp FPT phù hợp với văn phòng, cửa hàng, công ty vừa và lớn, hoặc doanh nghiệp cần đường truyền ổn định để làm việc, họp online và vận hành hệ thống mỗi ngày." },
@@ -21,11 +22,16 @@ export default function DoanhNghiep({ region }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Đăng ký lắp WiFi doanh nghiệp FPT | IP Tĩnh, bảo mật cao";
   }, []);
 
   return (
     <div className={styles.doanhNghiepPage}>
+      <SEOHead
+        title="Đăng ký lắp WiFi doanh nghiệp FPT | IP Tĩnh, bảo mật cao"
+        description="Gói cước Internet FPT doanh nghiệp. Băng thông lớn đến 800Mbps, IP Tĩnh, cân bằng tải, hỗ trợ kỹ thuật 24/7. Phù hợp văn phòng, quán cafe, công ty."
+        canonicalPath="/internet/doanh-nghiep"
+        keywords="Internet doanh nghiệp FPT, WiFi doanh nghiệp, IP tĩnh FPT, lắp mạng văn phòng, cân bằng tải FPT"
+      />
 
       {/* BANNER IMAGE */}
       <section className={styles.heroBanner}>

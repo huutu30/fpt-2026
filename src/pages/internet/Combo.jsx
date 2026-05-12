@@ -3,11 +3,11 @@ import { PRODUCT_DATA } from '../../data/productData';
 import ProductCardSlider from '../../components/common/ProductCardSlider';
 import { Check, Gift, Tv, Smartphone, Zap } from 'lucide-react';
 import styles from './Combo.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 export default function Combo({ region }) {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Combo Internet Thể thao & Giải trí | FPT Telecom";
   }, []);
 
   // Filter specific data
@@ -16,6 +16,12 @@ export default function Combo({ region }) {
 
   return (
     <div className={styles.comboPage}>
+      <SEOHead
+        title="Combo Internet Thể thao & Giải trí | Xem Ngoại hạng Anh"
+        description="Đăng ký Combo Internet + Truyền hình FPT. Xem trực tiếp Ngoại hạng Anh, La Liga, Champions League. Kích hoạt ngay, nét 4K. Giá từ 200.000đ/tháng."
+        canonicalPath="/internet/combo"
+        keywords="Combo Internet FPT, xem Ngoại hạng Anh, truyền hình FPT Play, combo thể thao FPT"
+      />
       {/* HERO BANNER */}
       <section className={styles.heroSection}>
         <div className={styles.heroOverlay}></div>

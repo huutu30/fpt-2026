@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Home, Cpu, Shield, Zap, Check, ChevronDown, ChevronUp } from 'lucide-react';
 import NewsSection from '../../components/home/NewsSection';
 import styles from './SmartHome.module.css';
+import SEOHead from '../../components/common/SEOHead';
 
 export default function SmartHome({ region }) {
   const { openModal } = useRegisterModal();
@@ -11,7 +12,6 @@ export default function SmartHome({ region }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "FPT Smart Home - Thiết bị thông minh | FPT Telecom";
   }, []);
 
   const smarthomeProducts = [
@@ -120,6 +120,12 @@ export default function SmartHome({ region }) {
 
   return (
     <div className={styles.page}>
+      <SEOHead
+        title="FPT Smart Home - Thiết bị thông minh"
+        description="FPT Smart Home - Giải pháp nhà thông minh toàn diện. Điều khiển bằng giọng nói tiếng Việt. Công tắc cảm ứng, cảm biến khói, ổ cắm thông minh."
+        canonicalPath="/thiet-bi/smarthome"
+        keywords="FPT Smart Home, nhà thông minh, thiết bị thông minh FPT, công tắc cảm ứng, IoT FPT"
+      />
       {/* ===== HERO SECTION ===== */}
       <section className={styles.hero}>
         <img 

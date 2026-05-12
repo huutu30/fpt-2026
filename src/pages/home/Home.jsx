@@ -6,9 +6,17 @@ import { PRODUCT_DATA } from "../../data/productData";
 import Wifi7Section from "../../components/home/Wifi7Section";
 import ProductCategorySection from "../../components/home/ProductCategorySection";
 import NewsSection from "../../components/home/NewsSection";
+import SEOHead from "../../components/common/SEOHead";
 
 export default function Home({ region }) {
-  const [activeCategory, setActiveCategory] = useState("ca_nhan_gia_dinh");
+  const [activeCategory, setActiveCategory] = useState(() => {
+    return sessionStorage.getItem("homeActiveTab") || "ca_nhan_gia_dinh";
+  });
+
+  const handleTabChange = (id) => {
+    setActiveCategory(id);
+    sessionStorage.setItem("homeActiveTab", id);
+  };
 
   // Lấy danh sách toàn bộ sản phẩm từ tất cả các mảng trong PRODUCT_DATA
   const allProducts = Object.values(PRODUCT_DATA).flat();
@@ -59,6 +67,12 @@ export default function Home({ region }) {
 
   return (
     <div className="home-page">
+      <SEOHead
+        title="Lắp mạng Internet cáp quang, Truyền hình & Camera"
+        description="FPT Telecom - Đăng ký lắp đặt Internet cáp quang tốc độ cao, Truyền hình FPT Play, Camera an ninh. Wi-Fi 6, lắp đặt trong 24h. Giá chỉ từ 195.000đ/tháng."
+        canonicalPath="/trang-chu"
+        keywords="lắp mạng FPT, Internet FPT, cáp quang FPT, WiFi FPT, FPT Telecom, lắp WiFi, truyền hình FPT"
+      />
       <Hero />
 
       <div className="container">
@@ -66,7 +80,7 @@ export default function Home({ region }) {
         {/* SECTION 2: KHÁM PHÁ SẢN PHẨM NỔI BẬT */}
         <DiscoverySection
           activeTab={activeCategory}
-          onTabChange={(id) => setActiveCategory(id)}
+          onTabChange={handleTabChange}
           region={region}
         />
 
