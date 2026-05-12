@@ -53,7 +53,7 @@ export default function ProductSlider({ title, data, region, showLocation }) {
       <div className="fpt-track-container" ref={scrollRef}>
         {data.map((item) => {
           const currentPrice =
-            typeof item.price === "object" ? item.price[region] : item.price;
+            typeof item.price === "object" ? (item.price[region] || item.price['tinh']) : item.price;
 
           return (
             <div key={item.id} className="fpt-card-column">

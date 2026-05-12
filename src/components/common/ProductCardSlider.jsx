@@ -46,7 +46,7 @@ export default function ProductCardSlider({ title, subtitle, data, region, badge
 
         <div className="combo-sport-track" ref={scrollRef}>
           {data.map((item) => {
-            const price = typeof item.price === 'object' ? item.price[region] : item.price;
+            const price = typeof item.price === 'object' ? (item.price[region] || item.price['tinh']) : item.price;
 
             return (
               <article className={`combo-card ${customCardClass || ''}`.trim()} key={item.id}>

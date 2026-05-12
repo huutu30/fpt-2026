@@ -28,7 +28,14 @@ const PackageDetail = lazy(() => import('./pages/internet/PackageDetail'));
 const LocalLanding = lazy(() => import('./pages/local/LocalLanding'));
 
 function App() {
-  const [region, setRegion] = useState('hcm');
+  const [activeCity, setActiveCity] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const match = window.location.pathname.match(/^\/lap-internet-wifi\/([^\/]+)/);
+      if (match) return match[1];
+    }
+    return 'toan-quoc';
+  });
+  const region = (activeCity === 'hcm' || activeCity === 'ha-noi') ? 'hcm' : 'tinh';
 
   return (
     <RegisterProvider>
@@ -36,11 +43,15 @@ function App() {
         <Router>
           <ScrollToTop />
           <div className="app-container">
-            <Navbar region={region} setRegion={setRegion} />
+            <Navbar region={region} activeCity={activeCity} setActiveCity={setActiveCity} />
             
             <RegisterModal />
             <ProductDetailModal region={region} />
             <FloatingContact />
+
+            <div id="global-loader" className="global-loader">
+              <div className="global-loader-spinner"></div>
+            </div>
 
             <main id="main-content" role="main" style={{ minHeight: '100vh' }}>
               <Suspense fallback={

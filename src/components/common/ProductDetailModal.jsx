@@ -102,7 +102,7 @@ export default function ProductDetailModal({ region }) {
 
   if (!selectedProduct) return null;
 
-  const price = typeof selectedProduct.price === 'object' ? selectedProduct.price[region] : selectedProduct.price;
+  const price = typeof selectedProduct.price === 'object' ? (selectedProduct.price[region] || selectedProduct.price['tinh']) : selectedProduct.price;
   const features = selectedProduct.features || selectedProduct.details || [];
 
   const handleRegisterClick = () => {

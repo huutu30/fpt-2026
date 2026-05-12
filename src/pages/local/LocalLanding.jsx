@@ -55,6 +55,11 @@ export const CITY_DATA = {
     shortName: 'Vũng Tàu',
     region: 'tinh',
   },
+  'toan-quoc': {
+    name: 'Toàn quốc',
+    shortName: 'Ngoại thành',
+    region: 'tinh',
+  },
 };
 
 export default function LocalLanding({ region: appRegion, setRegion }) {

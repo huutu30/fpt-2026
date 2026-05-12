@@ -2,15 +2,13 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const location = useLocation();
+  const { pathname, state } = location;
   const prevPath = useRef(pathname);
 
   useEffect(() => {
-    const wasLocal = prevPath.current.startsWith('/lap-internet-wifi/');
-    const isLocal = pathname.startsWith('/lap-internet-wifi/');
-
-    // Không scroll khi chuyển giữa các trang local (giữ nguyên scroll position)
-    if (wasLocal && isLocal) {
+    // Nếu có truyền state preventScrollTop = true thì KHÔNG cuộn lên đầu trang
+    if (state?.preventScrollTop) {
       prevPath.current = pathname;
       return;
     }
@@ -23,7 +21,7 @@ export default function ScrollToTop() {
     });
 
     prevPath.current = pathname;
-  }, [pathname]);
+  }, [pathname, state]);
 
   return null;
 }
