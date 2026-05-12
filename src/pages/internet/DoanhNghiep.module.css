@@ -185,10 +185,14 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .heroBanner {
-    aspect-ratio: 16 / 9;
+    display: block;
   }
   .heroBannerImg {
+    aspect-ratio: 4 / 3;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   .sectionTitle {
     font-size: 26px;
