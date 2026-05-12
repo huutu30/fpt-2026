@@ -40,6 +40,12 @@ export default function Navbar({ region, setRegion }) {
       if (regionWrapper && !regionWrapper.contains(e.target)) {
         document.getElementById('region-dropdown')?.classList.remove('show');
       }
+      
+      // Close mobile region dropdown when clicking outside
+      const mobileRegionWrapper = document.querySelector('.mobile-region-wrapper');
+      if (mobileRegionWrapper && !mobileRegionWrapper.contains(e.target)) {
+        document.getElementById('mobile-region-dropdown')?.classList.remove('show');
+      }
     };
     document.addEventListener('mousedown', onClick);
     return () => document.removeEventListener('mousedown', onClick);
@@ -130,16 +136,39 @@ export default function Navbar({ region, setRegion }) {
           </button>
 
           {/* MOBILE LOCATION PILL */}
-          <button
-            className="mobile-location-pill"
-            onClick={() => setRegion(region === 'hcm' ? 'tinh' : 'hcm')}
-            aria-label={`Đổi khu vực – Hiện tại: ${region === 'hcm' ? 'Nội thành' : 'Toàn quốc'}`}
-            id="btn-mobile-region"
-          >
-            <span className="mobile-loc-dot">📍</span>
-            <span>{region === 'hcm' ? 'Nội thành' : 'Toàn quốc'}</span>
-            <ChevronDown size={12} aria-hidden="true" />
-          </button>
+          <div className="mobile-region-wrapper" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <button
+              className="mobile-location-pill"
+              onClick={() => {
+                const dropdown = document.getElementById('mobile-region-dropdown');
+                if (dropdown) dropdown.classList.toggle('show');
+              }}
+              aria-label={`Đổi khu vực – Hiện tại: ${region === 'hcm' ? 'Nội thành' : 'Toàn quốc'}`}
+              id="btn-mobile-region"
+            >
+              <span className="mobile-loc-dot">📍</span>
+              <span>{region === 'hcm' ? 'Nội thành' : 'Toàn quốc'}</span>
+              <ChevronDown size={12} aria-hidden="true" />
+            </button>
+            <div className="region-dropdown" id="mobile-region-dropdown" style={{ top: '100%', left: '0', right: 'auto', minWidth: '180px' }}>
+              <button className={`region-option ${region === 'hcm' ? 'active' : ''}`} onClick={() => { setRegion('hcm'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); }}>
+                📍 Nội thành HCM / HN
+              </button>
+              <button className={`region-option ${region === 'tinh' ? 'active' : ''}`} onClick={() => { setRegion('tinh'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); }}>
+                📍 Toàn quốc (Tỉnh)
+              </button>
+              <div className="region-divider"></div>
+              <span className="region-label">Xem giá theo khu vực</span>
+              <Link to="/lap-internet-wifi/hcm" className="region-link" onClick={() => { setRegion('hcm'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>TP. Hồ Chí Minh</Link>
+              <Link to="/lap-internet-wifi/ha-noi" className="region-link" onClick={() => { setRegion('hcm'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>Hà Nội</Link>
+              <Link to="/lap-internet-wifi/da-nang" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>Đà Nẵng</Link>
+              <Link to="/lap-internet-wifi/hai-phong" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>Hải Phòng</Link>
+              <Link to="/lap-internet-wifi/binh-duong" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>Bình Dương</Link>
+              <Link to="/lap-internet-wifi/dong-nai" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>Đồng Nai</Link>
+              <Link to="/lap-internet-wifi/khanh-hoa" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>Khánh Hòa</Link>
+              <Link to="/lap-internet-wifi/vung-tau" className="region-link" onClick={() => { setRegion('tinh'); document.getElementById('mobile-region-dropdown')?.classList.remove('show'); setMobileOpen(false); }}>Vũng Tàu</Link>
+            </div>
+          </div>
 
           {/* MENU */}
           <div className={`nav-menu ${mobileOpen ? 'mobile-open' : ''}`} id="main-nav-menu">
