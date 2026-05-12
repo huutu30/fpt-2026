@@ -32,6 +32,10 @@ function App() {
     if (typeof window !== 'undefined') {
       const match = window.location.pathname.match(/^\/lap-internet-wifi\/([^\/]+)/);
       if (match) return match[1];
+      try {
+        const saved = localStorage.getItem('fpt_active_city');
+        if (saved) return saved;
+      } catch(e) {}
     }
     return 'toan-quoc';
   });
@@ -77,7 +81,7 @@ function App() {
               }>
                 <Routes>
                   <Route path="/" element={<Navigate to="/trang-chu" replace />} />
-                  <Route path="/trang-chu" element={<Home region={region} />} />
+                  <Route path="/trang-chu" element={<Home region={region} activeCity={activeCity} />} />
                   <Route path="/internet/wifi-7" element={<Wifi7 region={region} />} />
                   <Route path="/internet/combo" element={<Combo region={region} />} />
                   <Route path="/internet/ca-nhan" element={<CaNhan region={region} />} />

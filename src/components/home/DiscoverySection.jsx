@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { CITY_DATA } from '../../pages/local/LocalLanding';
+
 /**
  * DiscoverySection - Thanh tab chọn loại sản phẩm
  * Giống FPT.vn: tabs ngang, active có underline cam, centered
  */
-export default function DiscoverySection({ activeTab, onTabChange, region }) {
+export default function DiscoverySection({ activeTab, onTabChange, region, activeCity }) {
   const tabs = [
     { id: 'ca_nhan_gia_dinh', label: 'Internet cá nhân & gia đình' },
     { id: 'game_thu', label: 'Internet game thủ' },
@@ -14,6 +16,10 @@ export default function DiscoverySection({ activeTab, onTabChange, region }) {
   ];
 
   const regionLabel = (() => {
+    if (activeCity && CITY_DATA[activeCity]) {
+      return CITY_DATA[activeCity].name;
+    }
+    if (activeCity === 'toan-quoc') return 'Ngoại thành (Tỉnh)';
     if (!region) return '...';
     const r = region.toLowerCase();
     if (r === 'hcm' || r === 'hanoi' || r === 'hn') return 'Nội thành (HCM & Hà Nội)';

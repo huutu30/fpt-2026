@@ -118,7 +118,7 @@ export default function LocalLanding({ region: appRegion, setRegion }) {
         keywords={`lắp mạng FPT ${cityData.name}, Internet FPT ${cityData.shortName}, lắp wifi FPT ${cityData.name}, cáp quang FPT ${cityData.shortName}`}
         jsonLd={[jsonLd, breadcrumbLd]}
       />
-      <Home region={region} />
+      <Home region={region} activeCity={city} />
     </>
   );
 }

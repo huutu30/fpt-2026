@@ -36,10 +36,14 @@ export default function Navbar({ region, activeCity, setActiveCity }) {
     const loader = document.getElementById('global-loader');
     if (loader) loader.classList.add('active');
 
-    // Simulate 500ms loading before changing state and navigating
+    // Simulate loading before changing state and navigating
     setTimeout(() => {
       setActiveCity(key);
-      navigate(`/lap-internet-wifi/${key}`, { state: { preventScrollTop: true } });
+      try { localStorage.setItem('fpt_active_city', key); } catch(e) {}
+      
+      if (location.pathname.startsWith('/lap-internet-wifi/')) {
+        navigate(`/lap-internet-wifi/${key}`, { state: { preventScrollTop: true } });
+      }
       
       // Hide loader shortly after
       setTimeout(() => {

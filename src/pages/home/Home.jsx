@@ -8,7 +8,7 @@ import ProductCategorySection from "../../components/home/ProductCategorySection
 import NewsSection from "../../components/home/NewsSection";
 import SEOHead from "../../components/common/SEOHead";
 
-export default function Home({ region }) {
+export default function Home({ region, activeCity }) {
   const [activeCategory, setActiveCategory] = useState(() => {
     return sessionStorage.getItem("homeActiveTab") || "ca_nhan_gia_dinh";
   });
@@ -82,6 +82,7 @@ export default function Home({ region }) {
           activeTab={activeCategory}
           onTabChange={handleTabChange}
           region={region}
+          activeCity={activeCity}
         />
 
         {/* CARDS THEO TAB – CÙNG DESIGN CARD MỚI */}
