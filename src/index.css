@@ -199,7 +199,7 @@
 
 @media (max-width: 768px) {
   .hero-slider {
-    aspect-ratio: 800 / 300;
+    aspect-ratio: 16 / 9;
     height: auto;
   }
 
