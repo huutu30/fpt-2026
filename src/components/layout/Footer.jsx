@@ -93,37 +93,21 @@ export default function Footer() {
           <div className={styles.footerCol}>
             <h3>Về FPT Telecom</h3>
             <ul className={styles.footerLinks}>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Giới thiệu chung</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Liên kết - Thành viên</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Khách hàng - Đối tác</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Quan hệ cổ đông</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tập đoàn FPT</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tuyển dụng</Link></li>
+              <li><Link to="/gioi-thieu" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Giới thiệu chung</Link></li>
+              <li><Link to="/lien-ket-thanh-vien" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Liên kết - Thành viên</Link></li>
+              <li><Link to="/khach-hang-doi-tac" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Khách hàng - Đối tác</Link></li>
+              <li><Link to="/tap-doan-fpt" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tập đoàn FPT</Link></li>
               <li><Link to="/tin-tuc" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tin tức</Link></li>
             </ul>
           </div>
-
-          {/* Column 3: Khách hàng FPT Telecom */}
-          <div className={styles.footerCol}>
-            <h3>Khách hàng FPT Telecom</h3>
-            <ul className={styles.footerLinks}>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Hướng dẫn sử dụng dịch vụ</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Thanh toán hóa đơn</Link></li>
-              <li><Link to="/ho-tro" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Góp ý khách hàng</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Sản phẩm dịch vụ */}
+          {/* Column 3: Sản phẩm dịch vụ */}
           <div className={styles.footerCol}>
             <h3>Sản phẩm dịch vụ</h3>
             <ul className={styles.footerLinks}>
               <li><Link to="/internet/ca-nhan" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Lắp đặt WiFi Internet</Link></li>
-              <li><Link to="/internet/combo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Internet - Truyền hình FPT Play</Link></li>
-              <li><Link to="/internet/wifi-7" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Internet Wi-Fi 7 (SpeedX)</Link></li>
+              <li><Link to="/giai-tri/fpt-play" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Internet - Truyền hình FPT Play</Link></li>
               <li><Link to="/thiet-bi/camera" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>FPT Camera</Link></li>
               <li><Link to="/thiet-bi/smarthome" className={styles.highlightLink} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>FPT Smart Home</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Khuyến mãi mới nhất</Link></li>
-              <li><Link to="#" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Tìm điểm giao dịch</Link></li>
             </ul>
           </div>
 

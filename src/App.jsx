@@ -12,8 +12,12 @@ import SupportCTA from './components/common/SupportCTA';
 
 // Lazy-load pages: giảm JS bundle ban đầu, chỉ tải khi user truy cập
 const Home = lazy(() => import('./pages/home/Home'));
+const PrivacyPolicy = lazy(() => import('./pages/policy/PrivacyPolicy'));
+const AboutUs = lazy(() => import('./pages/about/AboutUs'));
+const LienKetThanhVien = lazy(() => import('./pages/about/LienKetThanhVien'));
+const KhachHangDoiTac = lazy(() => import('./pages/about/KhachHangDoiTac'));
+const TapDoanFPT = lazy(() => import('./pages/about/TapDoanFPT'));
 const Wifi7 = lazy(() => import('./pages/internet/Wifi7'));
-const Combo = lazy(() => import('./pages/internet/Combo'));
 const CaNhan = lazy(() => import('./pages/internet/CaNhan'));
 const GiaDinh = lazy(() => import('./pages/internet/GiaDinh'));
 const GameThu = lazy(() => import('./pages/internet/GameThu'));
@@ -83,7 +87,7 @@ function App() {
                   <Route path="/" element={<Navigate to="/trang-chu" replace />} />
                   <Route path="/trang-chu" element={<Home region={region} activeCity={activeCity} />} />
                   <Route path="/internet/wifi-7" element={<Wifi7 region={region} />} />
-                  <Route path="/internet/combo" element={<Combo region={region} />} />
+                  <Route path="/internet/combo" element={<Navigate to="/giai-tri/fpt-play" replace />} />
                   <Route path="/internet/ca-nhan" element={<CaNhan region={region} />} />
                   <Route path="/internet/gia-dinh" element={<GiaDinh region={region} />} />
                   <Route path="/internet/game-thu" element={<GameThu region={region} />} />
@@ -94,6 +98,12 @@ function App() {
                   <Route path="/tin-tuc" element={<NewsPage />} />
                   <Route path="/tin-tuc/:id" element={<ArticlePage />} />
                   <Route path="/ho-tro" element={<Support />} />
+                  {/* About & Policy Pages */}
+                  <Route path="/chinh-sach-bao-mat" element={<PrivacyPolicy />} />
+                  <Route path="/gioi-thieu" element={<AboutUs />} />
+                  <Route path="/lien-ket-thanh-vien" element={<LienKetThanhVien />} />
+                  <Route path="/khach-hang-doi-tac" element={<KhachHangDoiTac />} />
+                  <Route path="/tap-doan-fpt" element={<TapDoanFPT />} />
                   <Route path="/internet/:slug" element={<PackageDetail region={region} />} />
                   <Route path="/lap-internet-wifi/:city" element={<LocalLanding region={region} />} />
                 </Routes>
@@ -108,4 +118,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;

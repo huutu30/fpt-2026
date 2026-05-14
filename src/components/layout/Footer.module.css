@@ -4,7 +4,8 @@
   font-family: inherit;
   font-size: 14px;
   border-top: 1px solid #e5e7eb;
-  min-height: 400px; /* Prevent CLS: reserve space for footer */
+  min-height: 400px;
+  /* Prevent CLS: reserve space for footer */
   contain: layout style;
 }
 
@@ -68,7 +69,8 @@
 }
 
 .igIcon {
-  color: #E1306C; /* Simplified IG color */
+  color: #E1306C;
+  /* Simplified IG color */
 }
 
 .zaloLogo {
@@ -176,6 +178,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .footerMain {
     grid-template-columns: 1fr;
   }
