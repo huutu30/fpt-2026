@@ -40,7 +40,8 @@
   position: absolute;
   top: -50%;
   right: -20%;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 500px;
   background: radial-gradient(circle, rgba(245, 112, 32, 0.15), transparent 70%);
   border-radius: 50%;
