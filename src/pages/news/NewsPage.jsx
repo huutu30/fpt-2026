@@ -43,7 +43,7 @@ export default function NewsPage() {
             
             {/* Tin nổi bật (To nhất) */}
             {featuredNews && (
-              <Link to={`/tin-tuc/${featuredNews.id}`} className={styles.featuredNews}>
+              <Link to={`/tin-tuc/${featuredNews.slug}`} className={styles.featuredNews}>
                 <div className={styles.featuredImageWrapper}>
                   <img src={featuredNews.image} alt={featuredNews.title} className={styles.featuredImage} />
                 </div>
@@ -60,7 +60,7 @@ export default function NewsPage() {
             <h2 className={styles.sectionTitle}>Tin mới cập nhật</h2>
             <div className={styles.newsList}>
               {regularNews.map(news => (
-                <Link to={`/tin-tuc/${news.id}`} key={news.id} className={styles.newsItem}>
+                <Link to={`/tin-tuc/${news.slug}`} key={news.id} className={styles.newsItem}>
                   <div className={styles.itemImageWrapper}>
                     <img src={news.image} alt={news.title} className={styles.itemImage} />
                   </div>
@@ -89,22 +89,7 @@ export default function NewsPage() {
               </ul>
             </div>
 
-            {/* Banner Gói Cước */}
-            <div className={styles.widget} style={{ padding: '20px', background: '#f8fafc' }}>
-              <h3 className={styles.widgetTitle}>Gói cước HOT</h3>
-              
-              <Link to="/internet/combo" className={styles.adCard}>
-                <span className={styles.adTag}>Bán chạy</span>
-                <div className={styles.adTitle}>FPT Play Ngoại Hạng Anh V.VIP 1</div>
-                <div className={styles.adPrice}>200.000đ/tháng</div>
-              </Link>
 
-              <Link to="/internet/wifi-7" className={styles.adCard} style={{ background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)' }}>
-                <span className={styles.adTag}>Mới ra mắt</span>
-                <div className={styles.adTitle}>Internet Wi-Fi 7 SpeedX2</div>
-                <div className={styles.adPrice}>999.000đ/tháng</div>
-              </Link>
-            </div>
 
           </aside>
         </div>

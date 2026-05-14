@@ -96,7 +96,7 @@ function App() {
                   <Route path="/thiet-bi/camera" element={<Camera region={region} />} />
                   <Route path="/thiet-bi/smarthome" element={<SmartHome region={region} />} />
                   <Route path="/tin-tuc" element={<NewsPage />} />
-                  <Route path="/tin-tuc/:id" element={<ArticlePage />} />
+                  <Route path="/tin-tuc/:slug" element={<ArticlePage />} />
                   <Route path="/ho-tro" element={<Support />} />
                   {/* About & Policy Pages */}
                   <Route path="/chinh-sach-bao-mat" element={<PrivacyPolicy />} />

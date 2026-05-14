@@ -6,10 +6,10 @@ import styles from './ArticlePage.module.css';
 import SEOHead from '../../components/common/SEOHead';
 
 export default function ArticlePage() {
-  const { id } = useParams();
+  const { slug } = useParams();
   
-  // Find the article by ID
-  const article = NEWS_DATA.find(news => news.id === parseInt(id));
+  // Find the article by slug
+  const article = NEWS_DATA.find(news => news.slug === slug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,7 +33,7 @@ export default function ArticlePage() {
       <SEOHead
         title={article.title}
         description={article.desc}
-        canonicalPath={`/tin-tuc/${id}`}
+        canonicalPath={`/tin-tuc/${slug}`}
         ogImage={article.image}
         ogType="article"
       />
@@ -84,42 +84,26 @@ export default function ArticlePage() {
               )}
             </article>
           </main>
-
-          {/* CỘT PHẢI: SIDEBAR (Widgets) */}
-          <aside className={styles.sidebar}>
-            
-            {/* Banner Gói Cước (Chốt Sales) */}
-            <div className={styles.widget} style={{ padding: '20px', background: '#f8fafc' }}>
-              <h3 className={styles.widgetTitle}>Đừng bỏ lỡ ưu đãi</h3>
-              
-              <Link to="/internet/combo" className={styles.adCard}>
-                <span className={styles.adTag}>Siêu Hot</span>
-                <div className={styles.adTitle}>FPT Play Ngoại Hạng Anh V.VIP 1</div>
-                <div className={styles.adPrice}>200.000đ/tháng</div>
-              </Link>
-
-              <Link to="/internet/wifi-7" className={styles.adCard} style={{ background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)' }}>
-                <span className={styles.adTag}>Mới ra mắt</span>
-                <div className={styles.adTitle}>Internet Wi-Fi 7 SpeedX2</div>
-                <div className={styles.adPrice}>999.000đ/tháng</div>
-              </Link>
-            </div>
-
-            {/* Tin tức liên quan (Lấy ngẫu nhiên 3 tin) */}
-            <div className={styles.widget}>
-              <h3 className={styles.widgetTitle}>Bài viết liên quan</h3>
-              <ul className={styles.categoryList}>
-                {NEWS_DATA.filter(n => n.id !== article.id).slice(0, 3).map(n => (
-                  <li key={n.id}>
-                    <Link to={`/tin-tuc/${n.id}`}>{n.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </aside>
-
         </div>
+
+
+        {/* BÀI VIẾT LIÊN QUAN (NẰM DƯỚI CÙNG) */}
+        <section className={styles.relatedBottomSection}>
+          <h2 className={styles.relatedBottomTitle}>Bài viết liên quan</h2>
+          <div className={styles.relatedBottomGrid}>
+            {NEWS_DATA.filter(n => n.id !== article.id).slice(0, 4).map(n => (
+              <Link to={`/tin-tuc/${n.slug}`} key={n.id} className={styles.relatedCard}>
+                <div className={styles.relatedImageWrapper}>
+                  <img src={n.image} alt={n.title} className={styles.relatedImage} loading="lazy" />
+                </div>
+                <div className={styles.relatedContent}>
+                  <span className={styles.relatedDate}>{n.date}</span>
+                  <h3 className={styles.relatedTitle}>{n.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

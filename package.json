@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cheerio": "^1.2.0",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.8.0",
+    "puppeteer": "^24.43.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-helmet-async": "^3.0.0",
