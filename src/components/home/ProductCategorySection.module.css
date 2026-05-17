@@ -124,6 +124,9 @@
 @media (max-width: 768px) {
   .section {
     padding: 32px 0 40px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
 
   .title {
@@ -131,13 +134,24 @@
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-    padding: 0 var(--space-4);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    padding: 0 16px 16px;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
   }
 
   .card {
-    aspect-ratio: 1 / 1.1; /* Ngắn hơn nữa để tiết kiệm không gian */
+    flex: 0 0 45%; /* Show ~2 cards on tablet */
+    scroll-snap-align: start;
+    aspect-ratio: 5 / 8; /* Giữ nguyên tỷ lệ chuẩn */
     min-height: auto;
     border-radius: var(--radius-md);
   }
@@ -159,15 +173,8 @@
 }
 
 @media (max-width: 480px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-3);
-    padding: 0 var(--space-3);
-  }
-
   .card {
-    aspect-ratio: 1 / 1.1;
-    min-height: auto;
+    flex: 0 0 65%; /* Show 1.5 cards on mobile so user knows to swipe */
   }
 
   .cardName {
@@ -176,11 +183,5 @@
 
   .cardType {
     font-size: 10px;
-  }
-
-  .cardImgWrap {
-    height: 100%;
-    bottom: 0;
-    inset: 0;
   }
 }
