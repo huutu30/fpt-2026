@@ -12,6 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { SITE_URL } from '../src/config/site.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -142,8 +143,9 @@ async function prerender() {
     }
   }
 
-  // 8. Auto-generate sitemap.xml từ danh sách routes
+  // 8. Auto-generate sitemap.xml + robots.txt từ danh sách routes
   generateSitemap(routes);
+  generateRobotsTxt();
 
   // 9. Cleanup — xóa server bundle (không cần deploy)
   fs.rmSync(path.join(DIST, 'server'), { recursive: true, force: true });
@@ -155,7 +157,6 @@ async function prerender() {
   }
 }
 
-const SITE_URL = 'https://fptlapmang.id.vn';
 
 /**
  * Tự động sinh sitemap.xml từ danh sách routes.
@@ -202,6 +203,16 @@ function generateSitemap(routes) {
   const sitemapPath = path.join(DIST, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, xml);
   console.log(`\n🗺️  Sitemap generated: ${routes.length} URLs → dist/sitemap.xml`);
+}
+
+/**
+ * Auto-generate robots.txt với domain từ config.
+ */
+function generateRobotsTxt() {
+  const content = `User-agent: *\nAllow: /\nDisallow: /assets/*\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+  const robotsPath = path.join(DIST, 'robots.txt');
+  fs.writeFileSync(robotsPath, content);
+  console.log(`🤖 robots.txt generated → dist/robots.txt`);
 }
 
 prerender().catch(err => {

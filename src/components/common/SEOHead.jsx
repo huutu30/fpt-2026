@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-
-const SITE_NAME = 'FPT Telecom';
+import { SITE_URL, SITE_NAME } from '../../config/site';
 const DEFAULT_OG_IMAGE = '/images/69e041bf8f173_1_1920_953e52bd.webp';
 
 /**
@@ -25,9 +24,9 @@ export default function SEOHead({
   jsonLd = null,
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - Lắp mạng Internet cáp quang, Truyền hình & Camera`;
-  const fullUrl = canonicalPath ? `https://fptlapmang.id.vn${canonicalPath}` : 'https://fptlapmang.id.vn';
+  const fullUrl = canonicalPath ? `${SITE_URL}${canonicalPath}` : SITE_URL;
   const finalOgImage = ogImage || DEFAULT_OG_IMAGE;
-  const ogImageUrl = finalOgImage.startsWith('http') ? finalOgImage : `https://fptlapmang.id.vn${finalOgImage}`;
+  const ogImageUrl = finalOgImage.startsWith('http') ? finalOgImage : `${SITE_URL}${finalOgImage}`;
 
   return (
     <Helmet>
