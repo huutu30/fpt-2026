@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Hero from "../../components/home/Hero";
 import DiscoverySection from "../../components/home/DiscoverySection";
 import ProductCardSlider from "../../components/common/ProductCardSlider";
@@ -9,16 +10,16 @@ import NewsSection from "../../components/home/NewsSection";
 import SEOHead from "../../components/common/SEOHead";
 
 export default function Home({ region, activeCity }) {
-  const [activeCategory, setActiveCategory] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return sessionStorage.getItem("homeActiveTab") || "ca_nhan_gia_dinh";
-    }
-    return "ca_nhan_gia_dinh";
-  });
+  const [activeCategory, setActiveCategory] = useState("ca_nhan_gia_dinh");
+  const location = useLocation();
+
+  // Reset về tab mặc định khi user click lại link Trang chủ trên navbar
+  useEffect(() => {
+    setActiveCategory("ca_nhan_gia_dinh");
+  }, [location.key]);
 
   const handleTabChange = (id) => {
     setActiveCategory(id);
-    sessionStorage.setItem("homeActiveTab", id);
   };
 
   // Lấy danh sách toàn bộ sản phẩm từ tất cả các mảng trong PRODUCT_DATA

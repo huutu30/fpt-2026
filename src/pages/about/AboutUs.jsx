@@ -265,23 +265,13 @@ export default function AboutUs() {
 
       {/* ===== CHỨNG CHỈ QUỐC TẾ ===== */}
       <Section bg="#fff">
-        <SectionTitle icon="https://fpt.vn/storage/upload/images/pages/intro/gioithieu-huychuong.png" color="#0056D2">Các chứng chỉ quốc tế</SectionTitle>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px' }}>
-          {certifications.map((item, i) => (
-            <div key={i} style={{
-              padding: '12px 20px', backgroundColor: '#f1f5f9', borderRadius: '8px',
-              border: '1px solid #e2e8f0', fontSize: '14px', color: '#334155', fontWeight: '500',
-            }}>
-              ✅ {item}
-            </div>
-          ))}
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '40px', borderBottom: '2px solid #f57020', paddingBottom: '10px' }}>
+          <img src="https://fpt.vn/storage/upload/images/pages/intro/gioithieu-huychuong.png" alt="" style={{ width: '40px', height: '40px' }} />
+          <h2 style={{ fontSize: '24px', fontWeight: '400', color: '#f57020', margin: 0, textTransform: 'uppercase' }}>Các chứng chỉ quốc tế</h2>
         </div>
-      </Section>
 
-      {/* ===== PARTNER LOGOS (images from fpt.vn) ===== */}
-      <Section bg="#f5f6fa">
-        <h2 style={{ fontSize: '22px', fontWeight: '800', color: '#0f172a', textAlign: 'center', marginBottom: '30px' }}>Hình ảnh hoạt động</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
+        {/* LOGOS */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px', marginBottom: '40px' }}>
           {[
             'https://fpt.vn/storage/upload/images/pages/intro/gioithieu_03.png',
             'https://fpt.vn/storage/upload/images/pages/intro/gioithieu_05.png',
@@ -293,9 +283,14 @@ export default function AboutUs() {
             'https://fpt.vn/storage/upload/images/pages/intro/gioithieu_17.png',
             'https://fpt.vn/storage/upload/images/pages/intro/gioithieu_19.jpg',
           ].map((src, i) => (
-            <div key={i} style={{ borderRadius: '8px', overflow: 'hidden', backgroundColor: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-              <img src={src} alt={`FPT Telecom hoạt động ${i + 1}`} style={{ width: '100%', display: 'block', objectFit: 'cover', height: '140px' }} />
-            </div>
+            <img key={i} src={src} alt={`Chứng chỉ ${i + 1}`} style={{ height: '80px', objectFit: 'contain' }} />
+          ))}
+        </div>
+
+        {/* TEXT LIST */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', color: '#111', fontSize: '15px' }}>
+          {certifications.map((item, i) => (
+            <div key={i}>{item}</div>
           ))}
         </div>
       </Section>

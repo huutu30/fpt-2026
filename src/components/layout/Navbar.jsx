@@ -279,23 +279,12 @@ export default function Navbar({ region, activeCity, setActiveCity }) {
               ))}
             </ul>
 
-            {/* SEARCH MOBILE */}
-            <div className="nav-search mobile-only" role="search" aria-label="Tìm kiếm">
-              <Search size={18} aria-hidden="true" />
-              <input type="search" placeholder="Tìm gói cước, dịch vụ..." aria-label="Nhập từ khoá tìm kiếm" id="mobile-search" />
-            </div>
-
             {/* HOTLINE MOBILE */}
             <a href={`tel:${HOTLINE.replace(/\s/g, '')}`} className="nav-hotline-mobile mobile-only" id="mobile-hotline">
               <Phone size={16} aria-hidden="true" />
               <span>Gọi ngay: <strong>{HOTLINE}</strong></span>
             </a>
           </div>
-
-          {/* SEARCH DESKTOP */}
-          <button className="search-desktop" aria-label="Tìm kiếm" title="Tìm kiếm sản phẩm, dịch vụ" id="btn-search-desktop">
-            <Search size={20} aria-hidden="true" />
-          </button>
 
         </div>
       </nav>

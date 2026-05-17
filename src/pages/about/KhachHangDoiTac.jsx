@@ -74,92 +74,43 @@ export default function KhachHangDoiTac() {
         {/* Logo grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(6, 1fr)',
-          gap: '0',
-          border: '1px solid #e5e7eb',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
+          gap: '16px',
         }}>
-          {paginatedLogos.map((src, i) => (
-            <div key={`${page}-${i}`} style={{
+          {customerLogos.map((src, i) => (
+            <div key={i} style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '20px',
-              borderRight: (i + 1) % 6 !== 0 ? '1px solid #e5e7eb' : 'none',
-              borderBottom: i < paginatedLogos.length - 6 ? '1px solid #e5e7eb' : 'none',
+              padding: '15px',
               backgroundColor: '#fff',
-              minHeight: '90px',
-            }}>
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px',
+              minHeight: '80px',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            }}
+            onMouseEnter={(e) => { 
+              e.currentTarget.style.transform = 'translateY(-3px)'; 
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; 
+            }}
+            onMouseLeave={(e) => { 
+              e.currentTarget.style.transform = 'translateY(0)'; 
+              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'; 
+            }}
+            >
               <img
                 src={src}
-                alt={`Khách hàng ${(page - 1) * ITEMS_PER_PAGE + i + 1}`}
+                alt={`Khách hàng tiêu biểu ${i + 1}`}
                 style={{
-                  maxWidth: '120px',
-                  maxHeight: '50px',
+                  maxWidth: '100%',
+                  maxHeight: '45px',
                   objectFit: 'contain',
                   filter: 'grayscale(0)',
-                  transition: 'transform 0.2s ease',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
               />
             </div>
           ))}
-        </div>
-
-        {/* Pagination */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '6px',
-          marginTop: '25px',
-        }}>
-          <button
-            onClick={() => setPage(p => Math.max(1, p - 1))}
-            disabled={page === 1}
-            style={{
-              width: '36px', height: '36px', borderRadius: '50%',
-              border: '1px solid #d1d5db', backgroundColor: '#fff',
-              cursor: page === 1 ? 'default' : 'pointer',
-              opacity: page === 1 ? 0.4 : 1,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '16px', color: '#6b7280',
-            }}
-          >
-            ‹
-          </button>
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i + 1)}
-              style={{
-                width: '36px', height: '36px', borderRadius: '50%',
-                border: page === i + 1 ? 'none' : '1px solid #d1d5db',
-                backgroundColor: page === i + 1 ? '#f57020' : '#fff',
-                color: page === i + 1 ? '#fff' : '#374151',
-                fontWeight: page === i + 1 ? '700' : '400',
-                cursor: 'pointer',
-                fontSize: '14px',
-                transition: 'all 0.2s ease',
-              }}
-            >
-              {i + 1}
-            </button>
-          ))}
-          <button
-            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-            disabled={page === totalPages}
-            style={{
-              width: '36px', height: '36px', borderRadius: '50%',
-              border: '1px solid #d1d5db', backgroundColor: '#fff',
-              cursor: page === totalPages ? 'default' : 'pointer',
-              opacity: page === totalPages ? 0.4 : 1,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '16px', color: '#6b7280',
-            }}
-          >
-            ›
-          </button>
         </div>
       </Section>
 

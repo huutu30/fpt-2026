@@ -62,7 +62,7 @@ export default function GiaDinh({ region }) {
       "giga-f1", "sky-f1", "sky-f2", "combo-giga-f1", "combo-sky-f1", "meta", "meta-f1", "meta-f2", "meta-f3"
     ],
     combo: [
-      "c-the-thao-sky", "combo-giga", "c-the-thao-meta", "combo-giga-f1", "combo-sky-f1", "c-the-thao-meta-f1", "combo-fgame"
+      "combo-sky", "combo-giga", "combo-meta", "combo-giga-f1", "combo-sky-f1", "combo-meta-f1", "combo-fgame"
     ],
     camera: PRODUCT_DATA.camera_gia_dinh.map(p => p.id)
   };

@@ -60,7 +60,7 @@ export const internetData = {
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 92,
-      image: "/images/Internet_META_496x40_2e6f473c.webp",
+      image: "/images/internet-meta.webp",
       price: { "hcm": 325000, "tinh": 300000 },
       features: [
         "Modem Wifi 6",
@@ -330,7 +330,7 @@ export const internetData = {
       dl: "300 Mbps",
       ul: "300 Mbps",
       speedPercent: 60,
-      image: "/images/Internet_META_496x40_2e6f473c.webp",
+      image: "/images/internet-meta.webp",
       features: [
         "Modem Wifi 6",
         "Bảo mật an toàn F-Safe cho gia đình",
@@ -352,7 +352,7 @@ export const internetData = {
       dl: "300 Mbps",
       ul: "300 Mbps",
       speedPercent: 60,
-      image: "/images/combo_giga_f1_fpt_jp_f0fc4617.webp",
+      image: "/images/combo-giga-f1.webp",
       features: [
         "Modem Wifi 6 & Fpt Play Box",
         "Kết nối trên 10 thiết bị",
@@ -421,7 +421,7 @@ export const internetData = {
       dl: "1 Gbps",
       ul: "1 Gbps",
       speedPercent: 100,
-      image: "/images/Internet_META_496x40_2e6f473c.webp",
+      image: "/images/internet-meta.webp",
       features: [
         "Modem Wifi 6 chuyên dụng",
         "Kết nối ổn định trên 25 thiết bị",
@@ -555,7 +555,7 @@ export const internetData = {
       dl: "800 Mbps",
       ul: "800 Mbps",
       hardware: "Modem Wifi 6 & 1 Access Point",
-      image: "/images/Internet_LUX800_jpg_f2525718.webp",
+      image: "/images/lux-800.webp",
       price: 1000000,
       features: [
         "Modem wifi6 và 1 access point",
@@ -580,7 +580,7 @@ export const internetData = {
       dl: "500 Mbps",
       ul: "500 Mbps",
       hardware: "Wi-Fi 6 + AP + Fpt Play Box",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAm91dhaLWFXHsCep1fHxuXUm_k6bHtZ9X6w&s",
+      image: "/images/lux-800.webp",
       price: 875000,
       features: [
         "Modem wifi6 và 1 access point",
@@ -606,7 +606,7 @@ export const internetData = {
       dl: "800 Mbps",
       ul: "800 Mbps",
       hardware: "Wi-Fi 6 + AP + Fpt Play Box",
-      image: "/images/Combo_LUX800_991x800_e1c1c4b1.webp",
+      image: "/images/lux-800.webp",
       price: 1075600,
       features: [
         "Modem wifi6 và 1 access point",
@@ -675,7 +675,7 @@ export const internetData = {
       dl: "500 Mbps",
       ul: "500 Mbps",
       hardware: "Cân bằng tải & 1 Access Point",
-      image: "/images/470_crop_S500_1_png_6f7b3ef6.webp",
+      image: "/images/super-500-biz.webp",
       price: 1400000,
       features: [
         "Chịu tải cao cho văn phòng lớn",
@@ -697,7 +697,7 @@ export const internetData = {
       dl: "500 Mbps",
       ul: "500 Mbps",
       hardware: "Cân bằng tải & 1 AP & IP Tĩnh",
-      image: "/images/Super600_Biz_Plus_FP_9a6be008.webp",
+      image: "/images/super-500-biz-plus.webp",
       price: 1700000,
       features: [
         "Trang bị thiết bị cân bằng tải và 1 thiết bị access point",
@@ -719,7 +719,7 @@ export const internetData = {
       dl: "600 Mbps",
       ul: "600 Mbps",
       hardware: "Cân bằng tải & 1 Access Point",
-      image: "/images/Super600_Biz_FPT_375_12e7542b.webp",
+      image: "/images/super-600-biz.webp",
       price: 2500000,
       features: [
         "Trang bị thiết bị cân bằng tải và 1 thiết bị access point",
@@ -741,7 +741,7 @@ export const internetData = {
       dl: "600 Mbps",
       ul: "600 Mbps",
       hardware: "Cân bằng tải & 1 AP & IP Tĩnh",
-      image: "/images/Super600_Biz_Plus_FP_ee1ee79a.webp",
+      image: "/images/super-600-biz-plus.webp",
       price: 2800000,
       features: [
         "Trang bị thiết bị cân bằng tải và 1 thiết bị access point",
@@ -764,7 +764,7 @@ export const internetData = {
       dl: "800 Mbps",
       ul: "800 Mbps",
       hardware: "Cân bằng tải & 1 Access Point",
-      image: "/images/470_crop_super800_1__9a563585.webp",
+      image: "/images/super-800-biz.webp",
       price: 3400000,
       features: [
         "Trang bị thiết bị cân bằng tải và 1 thiết bị access point",
@@ -810,7 +810,7 @@ export const internetData = {
       ul: "1 Gbps",
       speedPercent: 95,
       price: { "hcm": 325000, "tinh": 295000 },
-      image: "/images/Internet_META_496x40_2e6f473c.webp",
+      image: "/images/internet-meta.webp",
       features: [
         "Modem Wifi 6",
         "Sử dụng cùng lúc đến 25 thiết bị",

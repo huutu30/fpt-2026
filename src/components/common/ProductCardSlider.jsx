@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Download, Upload, Check } from 'lucide-react';
 import { useRegisterModal } from '../../context/RegisterContext';
 import { useProductDetail } from '../../context/ProductDetailContext';
@@ -18,12 +18,65 @@ export default function ProductCardSlider({ title, subtitle, data, region, badge
   const scrollRef = useRef(null);
   const { openModal } = useRegisterModal();
   const { openDetail } = useProductDetail();
+  const location = useLocation();
+
+  const animationRef = useRef(null);
+
+  // Reset scroll về đầu mỗi khi data thay đổi hoặc chuyển hướng (click lại tab/trang)
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = 0;
+    }
+    // Cleanup animation khi component unmount
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
+  }, [location.key, data]);
 
   const scroll = (dir) => {
     const el = scrollRef.current;
     if (!el) return;
-    const w = el.offsetWidth * 0.75;
-    el.scrollBy({ left: dir === 'left' ? -w : w, behavior: 'smooth' });
+    
+    const card = el.querySelector('.combo-card');
+    if (!card) return;
+
+    // Hủy animation cũ nếu người dùng bấm liên tục
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+
+    const gap = 20;
+    const step = card.offsetWidth + gap;
+    const distance = dir === 'left' ? -step : step;
+    
+    const start = el.scrollLeft;
+    const duration = 500; 
+    let startTime = null;
+
+    el.style.scrollSnapType = 'none';
+
+    const easeOutCubic = (t) => {
+      return 1 - Math.pow(1 - t, 3);
+    };
+
+    const animateScroll = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      
+      const nextScrollLeft = start + distance * easeOutCubic(progress);
+      el.scrollLeft = nextScrollLeft;
+
+      if (timeElapsed < duration) {
+        animationRef.current = requestAnimationFrame(animateScroll);
+      } else {
+        el.scrollLeft = start + distance; 
+        el.style.scrollSnapType = '';
+        animationRef.current = null;
+      }
+    };
+
+    animationRef.current = requestAnimationFrame(animateScroll);
   };
 
   if (!data || data.length === 0) return null;
@@ -47,6 +100,16 @@ export default function ProductCardSlider({ title, subtitle, data, region, badge
         <div className="combo-sport-track" ref={scrollRef}>
           {data.map((item) => {
             const price = typeof item.price === 'object' ? (item.price[region] || item.price['tinh']) : item.price;
+
+            if (item.isBanner) {
+              return (
+                <article className={`combo-card banner-card ${customCardClass || ''}`.trim()} key={item.id} style={{ padding: 0, border: 'none', background: 'transparent', display: 'block' }}>
+                  <a href={item.link || '#'} style={{ display: 'block', height: '100%' }}>
+                    <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-md)' }} />
+                  </a>
+                </article>
+              );
+            }
 
             return (
               <article className={`combo-card ${customCardClass || ''}`.trim()} key={item.id}>
@@ -105,15 +168,17 @@ export default function ProductCardSlider({ title, subtitle, data, region, badge
                       className="combo-btn-primary"
                       title={`Đăng ký ${item.name} ngay hôm nay`}
                     >
-                      Đăng ký ngay
+                      Mua ngay
                     </button>
-                    <Link
-                      to={`/internet/${item.id}`}
-                      className="combo-btn-link"
-                      title={`Xem chi tiết ${item.name}`}
-                    >
-                      Xem chi tiết
-                    </Link>
+                    {!item.hideDetailBtn && (
+                      <Link
+                        to={`/internet/${item.id}`}
+                        className="combo-btn-link"
+                        title={`Xem chi tiết ${item.name}`}
+                      >
+                        Xem chi tiết
+                      </Link>
+                    )}
                   </div>
                 </div>
               </article>
