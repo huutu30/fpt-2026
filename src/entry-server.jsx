@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider, HelmetData } from 'react-helmet-async';
 
 // Layout & Common
 import Navbar from './components/layout/Navbar';
@@ -93,10 +93,10 @@ export function render(url) {
   }
   const region = (activeCity === 'hcm' || activeCity === 'ha-noi') ? 'hcm' : 'tinh';
 
-  const helmetContext = {};
+  const helmetData = new HelmetData({});
 
   const html = renderToString(
-    <HelmetProvider context={helmetContext}>
+    <HelmetProvider context={helmetData.context}>
       <RegisterProvider>
         <ProductDetailProvider>
           <StaticRouter location={url}>
@@ -139,5 +139,5 @@ export function render(url) {
     </HelmetProvider>
   );
 
-  return { html, helmet: helmetContext.helmet };
+  return { html, helmet: helmetData.context.helmet };
 }

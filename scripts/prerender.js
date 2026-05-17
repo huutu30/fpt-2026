@@ -18,6 +18,68 @@ const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const SERVER_ENTRY = path.join(DIST, 'server', 'entry-server.js');
 
+/**
+ * Trích xuất Helmet tags từ rendered HTML.
+ * Helmet render title/meta/link/script inline trong component tree.
+ * Ta extract ra → chuyển vào <head>, xóa khỏi body.
+ * 
+ * Cách nhận biết: Helmet tags nằm ngay đầu rendered HTML,
+ * trước <div class="app-container"> (vì Helmet render trước tree).
+ */
+function extractAndClean(html) {
+  // Tìm vị trí bắt đầu nội dung thực (đầu component tree)
+  const appStart = html.indexOf('<div class="app-container">');
+  if (appStart === -1) {
+    return { cleanHtml: html, headTags: '' };
+  }
+
+  // Phần đầu = Helmet rendered tags
+  const helmetSection = html.substring(0, appStart);
+  // Phần sau = nội dung trang thực
+  const cleanHtml = html.substring(appStart);
+
+  // Extract title từ helmet section
+  let title = '';
+  const titleMatch = helmetSection.match(/<title[^>]*>(.*?)<\/title>/);
+  if (titleMatch) {
+    title = titleMatch[1];
+  }
+
+  // Extract tất cả meta tags
+  const metas = [];
+  const metaRegex = /<meta[^>]*\/?>/gi;
+  let m;
+  while ((m = metaRegex.exec(helmetSection)) !== null) {
+    metas.push(m[0]);
+  }
+
+  // Extract link tags (canonical, preload)
+  const links = [];
+  const linkRegex = /<link[^>]*\/?>/gi;
+  while ((m = linkRegex.exec(helmetSection)) !== null) {
+    links.push(m[0]);
+  }
+
+  // Extract JSON-LD scripts
+  const scripts = [];
+  const scriptRegex = /<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi;
+  while ((m = scriptRegex.exec(helmetSection)) !== null) {
+    scripts.push(m[0]);
+  }
+
+  // Build head injection string
+  const headParts = [];
+  if (metas.length > 0) headParts.push(...metas);
+  if (links.length > 0) headParts.push(...links);
+  if (scripts.length > 0) headParts.push(...scripts);
+
+  return {
+    cleanHtml,
+    title,
+    headTags: headParts.join('\n    '),
+  };
+}
+
 async function prerender() {
   console.log('\n🚀 Pre-rendering bắt đầu...\n');
 
@@ -38,53 +100,35 @@ async function prerender() {
   for (const route of routes) {
     try {
       // 4. Render route thành HTML
-      const { html, helmet } = render(route);
+      const { html } = render(route);
 
-      // 5. Inject vào template
+      // 5. Extract Helmet tags + clean body
+      const { cleanHtml, title, headTags } = extractAndClean(html);
+
+      // 6. Build final page
       let page = template;
 
-      // Inject rendered HTML vào <div id="root">
+      // Inject clean HTML vào <div id="root">
       page = page.replace(
         '<div id="root"></div>',
-        `<div id="root">${html}</div>`
+        `<div id="root">${cleanHtml}</div>`
       );
 
-      // Inject helmet title
-      if (helmet?.title) {
-        const titleStr = helmet.title.toString();
-        page = page.replace(/<title>.*?<\/title>/, titleStr);
+      // Inject Helmet title (thay thế title gốc)
+      if (title) {
+        page = page.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
       }
 
-      // Inject helmet meta tags (description, OG, twitter, etc.)
-      if (helmet?.meta) {
-        const metaStr = helmet.meta.toString();
-        if (metaStr) {
-          // Xóa meta description/keywords cũ từ template rồi thêm mới
-          page = page.replace(/<meta name="description"[^>]*>/, '');
-          page = page.replace(/<meta name="keywords"[^>]*>/, '');
-          page = page.replace(/<meta name="robots"[^>]*>/, '');
-          page = page.replace('</head>', `${metaStr}\n</head>`);
-        }
+      // Inject Helmet meta/link/script vào <head>
+      if (headTags) {
+        // Xóa meta tags cũ từ template (sẽ được thay thế bởi Helmet tags)
+        page = page.replace(/<meta name="description"[^>]*>/, '');
+        page = page.replace(/<meta name="keywords"[^>]*>/, '');
+        page = page.replace(/<meta name="robots"[^>]*>/, '');
+        page = page.replace('</head>', `    ${headTags}\n  </head>`);
       }
 
-      // Inject helmet link tags (canonical)
-      if (helmet?.link) {
-        const linkStr = helmet.link.toString();
-        if (linkStr) {
-          page = page.replace('</head>', `${linkStr}\n</head>`);
-        }
-      }
-
-      // Inject JSON-LD scripts
-      if (helmet?.script) {
-        const scriptStr = helmet.script.toString();
-        if (scriptStr) {
-          page = page.replace('</head>', `${scriptStr}\n</head>`);
-        }
-      }
-
-      // 6. Tạo thư mục và ghi file
-      // /trang-chu → dist/trang-chu/index.html
+      // 7. Tạo thư mục và ghi file
       const routePath = route === '/' ? '/index' : route;
       const filePath = path.join(DIST, routePath, 'index.html');
       fs.mkdirSync(path.dirname(filePath), { recursive: true });
@@ -98,7 +142,7 @@ async function prerender() {
     }
   }
 
-  // 7. Cleanup — xóa server bundle (không cần deploy)
+  // 8. Cleanup — xóa server bundle (không cần deploy)
   fs.rmSync(path.join(DIST, 'server'), { recursive: true, force: true });
 
   console.log(`\n🏁 Pre-render hoàn tất: ${success} thành công, ${failed} lỗi.\n`);

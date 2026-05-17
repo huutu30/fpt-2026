@@ -25,9 +25,9 @@ export default function SEOHead({
   jsonLd = null,
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - Lắp mạng Internet cáp quang, Truyền hình & Camera`;
-  const fullUrl = canonicalPath ? `https://fpt-2026.vercel.app${canonicalPath}` : 'https://fpt-2026.vercel.app';
+  const fullUrl = canonicalPath ? `https://fptlapmang.id.vn${canonicalPath}` : 'https://fptlapmang.id.vn';
   const finalOgImage = ogImage || DEFAULT_OG_IMAGE;
-  const ogImageUrl = finalOgImage.startsWith('http') ? finalOgImage : `https://fpt-2026.vercel.app${finalOgImage}`;
+  const ogImageUrl = finalOgImage.startsWith('http') ? finalOgImage : `https://fptlapmang.id.vn${finalOgImage}`;
 
   return (
     <Helmet>
