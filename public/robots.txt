@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /api/*
+Disallow: /assets/*
 
-Sitemap: https://fpt-2026.vercel.app/sitemap.xml
+Sitemap: https://fptlapmang.id.vn/sitemap.xml

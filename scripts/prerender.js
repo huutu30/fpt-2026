@@ -142,7 +142,10 @@ async function prerender() {
     }
   }
 
-  // 8. Cleanup — xóa server bundle (không cần deploy)
+  // 8. Auto-generate sitemap.xml từ danh sách routes
+  generateSitemap(routes);
+
+  // 9. Cleanup — xóa server bundle (không cần deploy)
   fs.rmSync(path.join(DIST, 'server'), { recursive: true, force: true });
 
   console.log(`\n🏁 Pre-render hoàn tất: ${success} thành công, ${failed} lỗi.\n`);
@@ -150,6 +153,55 @@ async function prerender() {
   if (failed > 0) {
     process.exit(1);
   }
+}
+
+const SITE_URL = 'https://fptlapmang.id.vn';
+
+/**
+ * Tự động sinh sitemap.xml từ danh sách routes.
+ * Priority: trang chủ = 1.0, danh mục = 0.9, sản phẩm = 0.8,
+ * tin tức = 0.7, địa phương = 0.8, hỗ trợ/about = 0.5
+ */
+function generateSitemap(routes) {
+  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+
+  function getPriority(route) {
+    if (route === '/trang-chu') return '1.0';
+    if (route.startsWith('/internet/ca-nhan') || route.startsWith('/internet/gia-dinh') ||
+        route.startsWith('/internet/game-thu') || route.startsWith('/internet/doanh-nghiep') ||
+        route.startsWith('/internet/wifi-7')) return '0.9';
+    if (route.startsWith('/internet/')) return '0.8';
+    if (route.startsWith('/giai-tri/') || route.startsWith('/thiet-bi/')) return '0.8';
+    if (route.startsWith('/lap-internet-wifi/')) return '0.8';
+    if (route === '/tin-tuc') return '0.7';
+    if (route.startsWith('/tin-tuc/')) return '0.6';
+    return '0.5';
+  }
+
+  function getChangefreq(route) {
+    if (route === '/trang-chu' || route === '/tin-tuc') return 'daily';
+    if (route.startsWith('/tin-tuc/')) return 'monthly';
+    if (route.startsWith('/internet/') || route.startsWith('/lap-internet-wifi/')) return 'weekly';
+    return 'monthly';
+  }
+
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+
+  for (const route of routes) {
+    xml += `  <url>\n`;
+    xml += `    <loc>${SITE_URL}${route}</loc>\n`;
+    xml += `    <lastmod>${today}</lastmod>\n`;
+    xml += `    <changefreq>${getChangefreq(route)}</changefreq>\n`;
+    xml += `    <priority>${getPriority(route)}</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
+  xml += `</urlset>\n`;
+
+  const sitemapPath = path.join(DIST, 'sitemap.xml');
+  fs.writeFileSync(sitemapPath, xml);
+  console.log(`\n🗺️  Sitemap generated: ${routes.length} URLs → dist/sitemap.xml`);
 }
 
 prerender().catch(err => {
