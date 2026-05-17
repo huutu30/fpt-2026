@@ -10,7 +10,10 @@ import SEOHead from "../../components/common/SEOHead";
 
 export default function Home({ region, activeCity }) {
   const [activeCategory, setActiveCategory] = useState(() => {
-    return sessionStorage.getItem("homeActiveTab") || "ca_nhan_gia_dinh";
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem("homeActiveTab") || "ca_nhan_gia_dinh";
+    }
+    return "ca_nhan_gia_dinh";
   });
 
   const handleTabChange = (id) => {
