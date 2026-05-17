@@ -406,14 +406,14 @@ export const truyenHinhData = {
       id: "banner-vvip",
       name: "Banner Khuyến Mãi",
       isBanner: true,
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-15/6a06cc4ab950f_318x421%20%281%29.jpg",
+      image: "/images/optimized/fpt_promo_banner.webp",
       link: "/dang-ky",
     },
     {
       id: "vvip1",
       name: "Gói V.VIP 1",
       price: 120000,
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-15/6a06c5c4e2879_G%C3%B3i%20V.VIP%201-UU%20DAI%2030%25.jpg",
+      image: "/images/optimized/fpt_vvip_1.webp",
       features: [
         "Kho giải trí đa dạng, đặc biệt bóng đá Anh & bóng đá Việt",
         "Xem Ngoại Hạng Anh & FA Cup",
@@ -424,7 +424,7 @@ export const truyenHinhData = {
       id: "vvip2",
       name: "Gói V.VIP 2",
       price: 150000,
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-15/6a06c5b7174f8_G%C3%B3i%20V.VIP%202-1250x902%20%281%29.jpg",
+      image: "/images/optimized/fpt_vvip_2.webp",
       features: [
         "Kho giải trí đa dạng, đặc biệt bóng đá Anh & bóng đá Việt",
         "Xem Ngoại Hạng Anh & FA Cup",
@@ -435,7 +435,7 @@ export const truyenHinhData = {
       id: "premium-fpt-play",
       name: "Gói Premium FPT Play",
       price: 75000,
-      image: "https://hi-static.fpt.vn/sys/shop/prod/2025-12-01/692d2536e31ea_FPT%20Play%20Premium.png",
+      image: "/images/optimized/fpt_play_premium.webp",
       features: [
         "Kho phim đặc sắc (trừ Galaxy Play)",
         "Thể thao đỉnh cao",

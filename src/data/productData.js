@@ -23,38 +23,38 @@ const autoOptimizeSEO = (products) => {
 export const BANNER_DATA = [
   {
     id: 1,
-    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-05/69f946dd13884_uu-dai-lap-mang-giam-50000-vnd-fpt.png",
-    mobileImage: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-05/69f946dd13884_uu-dai-lap-mang-giam-50000-vnd-fpt.png",
+    image: "/images/optimized/banner_1.webp",
+    mobileImage: "/images/optimized/banner_1.webp",
     link: "/khuyen-mai"
   },
   {
     id: 2,
-    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-08/69fdb4a3a067a_gioi-thieu-ban-moi-nhan-300k.jpg",
-    mobileImage: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-08/69fdb4a3a067a_gioi-thieu-ban-moi-nhan-300k.jpg",
+    image: "/images/optimized/banner_2.webp",
+    mobileImage: "/images/optimized/banner_2.webp",
     link: "/khuyen-mai"
   },
   {
     id: 3,
-    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-15/6a06bf94a53b0_1920X717.jpg",
-    mobileImage: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-15/6a06bf94a53b0_1920X717.jpg",
+    image: "/images/optimized/banner_3.webp",
+    mobileImage: "/images/optimized/banner_3.webp",
     link: "/khuyen-mai"
   },
   {
     id: 4,
-    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-16/69e041bf8f173_1_1920x717%20%283%29.jpg",
-    mobileImage: "https://hi-static.fpt.vn/sys/shop/prod/2026-04-16/69e041bf8f173_1_1920x717%20%283%29.jpg",
+    image: "/images/optimized/banner_4.webp",
+    mobileImage: "/images/optimized/banner_4.webp",
     link: "/khuyen-mai"
   },
   {
     id: 5,
-    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-05/69f9b4c70ca43_uu-dai-1-trieu-3-camera-fpt.jpg",
-    mobileImage: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-05/69f9b4c70ca43_uu-dai-1-trieu-3-camera-fpt.jpg",
+    image: "/images/optimized/banner_5.webp",
+    mobileImage: "/images/optimized/banner_5.webp",
     link: "/khuyen-mai"
   },
   {
     id: 6,
-    image: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-13/6a046076700ba_mo-ruong-nhan-qua-hi-fpt.png",
-    mobileImage: "https://hi-static.fpt.vn/sys/shop/prod/2026-05-13/6a046076700ba_mo-ruong-nhan-qua-hi-fpt.png",
+    image: "/images/optimized/banner_6.webp",
+    mobileImage: "/images/optimized/banner_6.webp",
     link: "/khuyen-mai"
   }
 ];
