@@ -14,13 +14,13 @@ export const iconMap = {
  * - hasMega: có mega menu con không
  */
 export const NAV_MENU = [
-  { 
-    title: 'Trang chủ', 
+  {
+    title: 'Trang chủ',
     seoTitle: 'Trang chủ FPT Telecom - Đăng ký Internet, Truyền hình, Camera',
     path: '/trang-chu',
   },
-  { 
-    title: 'Sản phẩm dịch vụ', 
+  {
+    title: 'Sản phẩm dịch vụ',
     seoTitle: 'Tất cả gói cước Internet, Truyền hình và Camera FPT Telecom',
     path: '#',
     hasMega: true,
@@ -49,17 +49,17 @@ export const NAV_MENU = [
       },
     ]
   },
-  { 
-    title: 'Tin tức', 
+  {
+    title: 'Tin tức',
     seoTitle: 'Tin tức khuyến mãi và cập nhật mới nhất từ FPT Telecom',
     path: '/tin-tuc',
   },
-  { 
-    title: 'Hỗ trợ', 
+  {
+    title: 'Hỗ trợ',
     seoTitle: 'Liên hệ hỗ trợ kỹ thuật và tư vấn dịch vụ FPT Telecom',
     path: '/ho-tro',
   },
 ];
 
 /** Số điện thoại hotline hiển thị trên navbar */
-export const HOTLINE = '0387498332';
+export const HOTLINE = '0393084825';
