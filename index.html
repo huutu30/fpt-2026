@@ -15,6 +15,7 @@
   <!-- LCP Preload: Tối ưu tải ảnh banner đầu tiên -->
   <link rel="preload" as="image" href="/images/optimized/banner_1.webp" fetchpriority="high">
   <link rel="preconnect" href="https://hi-static.fpt.vn" crossorigin="anonymous">
+  <link rel="preconnect" href="https://portal-sop.fpt.vn" crossorigin>
 </head>
 
 <body>
@@ -22,21 +23,32 @@
   <script type="module" src="/src/main.jsx"></script>
   <script>
     !(function () {
-      const livechatUrl = 'https://portal-sop.fpt.vn/livechat-service/widget.css';
-      document
-        .getElementsByTagName("head")[0]
-        .insertAdjacentHTML(
-          "beforeend",
-          `<link rel='stylesheet' href=${livechatUrl} />`
-        );
-      const e = document.createElement("div");
-      e.setAttribute("id", "livechat-sop"), document.body.appendChild(e);
-      localStorage.setItem('sop_id', '3853');
-      const t = document.createElement("script");
-      t.setAttribute("type", "module"),
-        t.setAttribute("crossorigin", ""),
-        (t.src = "https://portal-sop.fpt.vn/livechat-service/Widget.js"),
-        document.body.appendChild(t);
+      if (document.getElementById("livechat-sop")) return;
+
+      // 1. Nhúng CSS của Livechat SOP
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://portal-sop.fpt.vn/livechat-service/widget.css";
+      document.head.appendChild(link);
+
+      // 2. Tạo container cho Livechat
+      const chatContainer = document.createElement("div");
+      chatContainer.id = "livechat-sop";
+      document.body.appendChild(chatContainer);
+
+      // 3. Thiết lập sop_id an toàn (tránh lỗi Safari Incognito / Storage disabled)
+      try {
+        localStorage.setItem("sop_id", "3867");
+      } catch (err) {
+        console.warn("Không thể lưu sop_id vào localStorage:", err);
+      }
+
+      // 4. Nhúng script Widget.js
+      const script = document.createElement("script");
+      script.type = "module";
+      script.crossOrigin = "";
+      script.src = "https://portal-sop.fpt.vn/livechat-service/Widget.js";
+      document.body.appendChild(script);
     })();
   </script>
 </body>
